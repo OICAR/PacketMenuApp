@@ -1,0 +1,47 @@
+﻿@model IEnumerable<WeatherForecastDTO>
+
+
+@{
+    ViewData["Title"] = "Home Page";
+    
+}
+
+<div class="text-center center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
+<div class="form-horizontal container center">
+
+    <hr />
+    <div class="form-group center container">
+
+
+        <table class="striped centered">
+            <thead>
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.TemperatureC)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Summary)
+                    </th>
+                </tr>
+            </thead>
+
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @item.TemperatureC
+                        </td>
+                        <td>
+                            @item.Summary
+                        </td>
+
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div> 

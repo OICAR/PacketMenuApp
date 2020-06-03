@@ -1,0 +1,48 @@
+﻿@using Microsoft.AspNetCore.Identity
+@inject SignInManager<ApplicationUser> SignInManager
+@inject UserManager<ApplicationUser> UserManager
+
+
+
+@if (SignInManager.IsSignedIn(User))
+{
+    var photoPath = (await UserManager.GetUserAsync(User)).PhotoPath;
+    string absolutePath = System.IO.Directory.GetCurrentDirectory()+@"\wwwroot\img\"+photoPath;
+
+    <li>
+        <div class="user-view">
+            <div class="background">
+                <img src="~/img/side_nav_bg.jpeg">
+            </div>
+            @if (System.IO.File.Exists(absolutePath))
+            {
+                <img src="@("~/img/"+photoPath)" class="responsive-img circle col s12"
+                     asp-append-version="true" />
+            }
+            else
+            {
+                <img src="~/img/pf.png" class="responsive-img circle col s12"
+                     asp-append-version="true" />
+            }
+            <a href="#name"><span class="white-text name">@((await UserManager.GetUserAsync(User)).FirstName) @((await UserManager.GetUserAsync(User)).LastName)</span></a>
+            <a href="#email"><span class="white-text email">@User.Identity.Name</span></a>
+        </div>
+    </li>
+}
+else
+{
+    <li>
+        <div class="user-view">
+            <div class="background">
+                <img src="~/img/side_nav_bg.jpeg">
+            </div>
+            <a href="#user">
+                <img class="circle"
+                     src="~/img/pf.png"
+                     asp-append-version="true">
+            </a>
+            <a>Guest</a>
+        </div>
+    </li>
+}
+

@@ -1,0 +1,20 @@
+﻿@{
+    Layout = "/Areas/Identity/Pages/Account/Manage/_LayoutManage.cshtml";
+}
+<div class="container">
+    <div class="card teal" style="padding-top:1%;padding-bottom:2%;margin-top:2%">
+        <h3 class="white-text center font-weight-bold">Account Management</h3>
+    </div>
+</div>
+
+<div>
+    <div class="row container center" style="min-height:55vh">
+        <div class="col-md-8">
+            @RenderBody()
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @RenderSection("Scripts", required: false)
+}

@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ContentModelStore">
+    <e p="C:\Users\koweratus\.Rider2019.2\config\consoles\db" t="IncludeRecursive" />
+    <e p="C:\Users\koweratus\.Rider2019.2\config\extensions" t="IncludeRecursive" />
+    <e p="C:\Users\koweratus\.Rider2019.2\config\scratches" t="IncludeRecursive" />
+    <e p="C:\Users\koweratus\.Rider2019.2\system\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\koweratus\.Rider2019.2\system\resharper-host\local\Transient\ReSharperHost\v192\SolutionCaches\_PocketMenuProject.-1261383858.00" t="ExcludeRecursive" />
+    <e p="C:\Users\koweratus\Desktop\OICAR\Kafa\OicarProject\PocketMenuProject" t="IncludeFlat">
+      <e p=".dockerignore" t="Include" />
+      <e p="packages" t="ExcludeRecursive" />
+      <e p="PocketMenuProject.sln" t="IncludeFlat" />
+      <e p="PocketMenuUI" t="IncludeRecursive">
+        <e p="AppSettings.cs" t="Include" />
+        <e p="appsettings.Development.json" t="Include" />
+        <e p="appsettings.json" t="Include" />
+        <e p="Areas" t="Include">
+          <e p="Identity" t="Include">
+            <e p="IdentityHostingStartup.cs" t="Include" />
+            <e p="Pages" t="Include">
+              <e p="_ValidationScriptsPartial.cshtml" t="Include" />
+              <e p="_ViewImports.cshtml" t="Include" />
+              <e p="_ViewStart.cshtml" t="Include" />
+              <e p="Account" t="Include">
+                <e p="_StatusMessage.cshtml" t="Include" />
+                <e p="_ViewImports.cshtml" t="Include" />
+                <e p="AccessDenied.cshtml" t="Include" />
+                <e p="AccessDenied.cshtml.cs" t="Include" />
+                <e p="ConfirmEmail.cshtml" t="Include" />
+                <e p="ConfirmEmail.cshtml.cs" t="Include" />
+                <e p="ConfirmEmailChange.cshtml" t="Include" />
+                <e p="ConfirmEmailChange.cshtml.cs" t="Include" />
+                <e p="ExternalLogin.cshtml" t="Include" />
+                <e p="ExternalLogin.cshtml.cs" t="Include" />
+                <e p="ForgotPassword.cshtml" t="Include" />
+                <e p="ForgotPassword.cshtml.cs" t="Include" />
+                <e p="ForgotPasswordConfirmation.cshtml" t="Include" />
+                <e p="ForgotPasswordConfirmation.cshtml.cs" t="Include" />
+                <e p="Lockout.cshtml" t="Include" />
+                <e p="Lockout.cshtml.cs" t="Include" />
+                <e p="Login.cshtml" t="Include" />
+                <e p="Login.cshtml.cs" t="Include" />
+                <e p="LoginWith2fa.cshtml" t="Include" />
+                <e p="LoginWith2fa.cshtml.cs" t="Include" />
+                <e p="LoginWithRecoveryCode.cshtml" t="Include" />
+                <e p="LoginWithRecoveryCode.cshtml.cs" t="Include" />
+                <e p="Logout.cshtml" t="Include" />
+                <e p="Logout.cshtml.cs" t="Include" />
+                <e p="Manage" t="Include">
+                  <e p="_Layout.cshtml" t="Include" />
+                  <e p="_LayoutManage.cshtml" t="Include" />
+                  <e p="_ManageNav.cshtml" t="Include" />
+                  <e p="_StatusMessage.cshtml" t="Include" />
+                  <e p="_ViewImports.cshtml" t="Include" />
+                  <e p="ChangePassword.cshtml" t="Include" />
+                  <e p="ChangePassword.cshtml.cs" t="Include" />
+                  <e p="DeletePersonalData.cshtml" t="Include" />
+                  <e p="DeletePersonalData.cshtml.cs" t="Include" />
+                  <e p="Disable2fa.cshtml" t="Include" />
+                  <e p="Disable2fa.cshtml.cs" t="Include" />
+                  <e p="DownloadPersonalData.cshtml" t="Include" />
+                  <e p="DownloadPersonalData.cshtml.cs" t="Include" />
+                  <e p="Email.cshtml" t="Include" />
+                  <e p="Email.cshtml.cs" t="Include" />
+                  <e p="EnableAuthenticator.cshtml" t="Include" />
+                  <e p="EnableAuthenticator.cshtml.cs" t="Include" />
+                  <e p="ExternalLogins.cshtml" t="Include" />
+                  <e p="ExternalLogins.cshtml.cs" t="Include" />
+                  <e p="GenerateRecoveryCodes.cshtml" t="Include" />
+                  <e p="GenerateRecoveryCodes.cshtml.cs" t="Include" />
+                  <e p="Index.cshtml" t="Include" />
+                  <e p="Index.cshtml.cs" t="Include" />
+                  <e p="ManageNavPages.cs" t="Include" />
+                  <e p="PersonalData.cshtml" t="Include" />
+                  <e p="PersonalData.cshtml.cs" t="Include" />
+                  <e p="ResetAuthenticator.cshtml" t="Include" />
+                  <e p="ResetAuthenticator.cshtml.cs" t="Include" />
+                  <e p="SetPassword.cshtml" t="Include" />
+                  <e p="SetPassword.cshtml.cs" t="Include" />
+                  <e p="ShowRecoveryCodes.cshtml" t="Include" />
+                  <e p="ShowRecoveryCodes.cshtml.cs" t="Include" />
+                  <e p="TwoFactorAuthentication.cshtml" t="Include" />
+                  <e p="TwoFactorAuthentication.cshtml.cs" t="Include" />
+                </e>
+                <e p="Register.cshtml" t="Include" />
+                <e p="Register.cshtml.cs" t="Include" />
+                <e p="RegisterConfirmation.cshtml" t="Include" />
+                <e p="RegisterConfirmation.cshtml.cs" t="Include" />
+                <e p="ResendEmailConfirmation.cshtml" t="Include" />
+                <e p="ResendEmailConfirmation.cshtml.cs" t="Include" />
+                <e p="ResetPassword.cshtml" t="Include" />
+                <e p="ResetPassword.cshtml.cs" t="Include" />
+                <e p="ResetPasswordConfirmation.cshtml" t="Include" />
+                <e p="ResetPasswordConfirmation.cshtml.cs" t="Include" />
+              </e>
+              <e p="Error.cshtml" t="Include" />
+              <e p="Error.cshtml.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="Controllers" t="Include">
+          <e p="GoogleMapsController.cs" t="Include" />
+          <e p="HomeController.cs" t="Include" />
+          <e p="QRCodeController.cs" t="Include" />
+        </e>
+        <e p="Data" t="Include">
+          <e p="ApplicationDbContext.cs" t="Include" />
+          <e p="Migrations" t="Include">
+            <e p="00000000000000_CreateIdentitySchema.cs" t="Include" />
+            <e p="00000000000000_CreateIdentitySchema.Designer.cs" t="Include" />
+            <e p="20200530124141_Extend_IdentityUser.cs" t="Include" />
+            <e p="20200530124141_Extend_IdentityUser.Designer.cs" t="Include" />
+            <e p="20200530155257_Photo_Path.cs" t="Include" />
+            <e p="20200530155257_Photo_Path.Designer.cs" t="Include" />
+            <e p="20200530155656_IForm_File.cs" t="Include" />
+            <e p="20200530155656_IForm_File.Designer.cs" t="Include" />
+            <e p="ApplicationDbContextModelSnapshot.cs" t="Include" />
+          </e>
+        </e>
+        <e p="Dockerfile" t="Include" />
+        <e p="Infrastructure" t="Include">
+          <e p="API.cs" t="Include" />
+        </e>
+        <e p="Models" t="Include">
+          <e p="ApplicationUser.cs" t="Include" />
+          <e p="Client.cs" t="Include" />
+          <e p="ErrorViewModel.cs" t="Include" />
+          <e p="ModelsDTO" t="Include">
+            <e p="WeatherForecastDTO.cs" t="Include" />
+            <e p="XMLModel.cs" t="Include" />
+          </e>
+        </e>
+        <e p="obj" t="ExcludeRecursive">
+          <e p="Debug" t="Include">
+            <e p="netcoreapp3.1" t="Include">
+              <e p="PocketMenuUI.AssemblyInfo.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+        <e p="PocketMenuUI.csproj" t="IncludeRecursive" />
+        <e p="Program.cs" t="Include" />
+        <e p="Properties" t="Include">
+          <e p="launchSettings.json" t="Include" />
+          <e p="PublishProfiles" t="Include">
+            <e p="PocketMenuUI20200429072409 - Web Deploy.pubxml" t="Include" />
+          </e>
+        </e>
+        <e p="ScaffoldingReadMe.txt" t="Include" />
+        <e p="Services" t="Include">
+          <e p="AuthMessageSenderOptions.cs" t="Include" />
+          <e p="EmailSender.cs" t="Include" />
+          <e p="IQRCodeGenerator.cs" t="Include" />
+          <e p="IWatherForecast.cs" t="Include" />
+          <e p="QRService.cs" t="Include" />
+          <e p="WeatherForecastService.cs" t="Include" />
+        </e>
+        <e p="Startup.cs" t="Include" />
+        <e p="ViewModel" t="Include">
+          <e p="QRDataCatering.cs" t="Include" />
+          <e p="QRImage.cs" t="Include" />
+        </e>
+        <e p="Views" t="Include">
+          <e p="_ViewImports.cshtml" t="Include" />
+          <e p="_ViewStart.cshtml" t="Include" />
+          <e p="GoogleMaps" t="Include">
+            <e p="Index.cshtml" t="Include" />
+          </e>
+          <e p="Home" t="Include">
+            <e p="Index.cshtml" t="Include" />
+            <e p="Privacy.cshtml" t="Include" />
+          </e>
+          <e p="QRCode" t="Include">
+            <e p="Index.cshtml" t="Include" />
+          </e>
+          <e p="Shared" t="Include">
+            <e p="_Layout.cshtml" t="Include" />
+            <e p="_LoginPartial.cshtml" t="Include" />
+            <e p="_LoginPartialManage.cshtml" t="Include" />
+            <e p="_ValidationScriptsPartial.cshtml" t="Include" />
+            <e p="Error.cshtml" t="Include" />
+          </e>
+        </e>
+        <e p="wwwroot" t="Include">
+          <e p="css" t="Include">
+            <e p="Main.css" t="Include" />
+            <e p="meh.css" t="Include" />
+            <e p="site.css" t="Include" />
+          </e>
+          <e p="favicon.ico" t="Include" />
+          <e p="img" t="Include">
+            <e p="41554747-5431-43b8-a43f-1d854aa72fd0_2054c7b3d5b8fb8fc19c7b42a6e3d98b.png" t="Include" />
+            <e p="657c5ec5-0cc0-49b1-8b89-3aaefb51c5fc.jpg" t="Include" />
+            <e p="d7b6804a-f6ee-4164-90a5-9d49360bc691_20668561_1621692937862853_87860989_n.jpg" t="Include" />
+            <e p="disqus.png" t="Include" />
+            <e p="land.png" t="Include" />
+            <e p="map_mock.png" t="Include" />
+            <e p="meals.png" t="Include" />
+            <e p="pf.png" t="Include" />
+            <e p="resort1.jpg" t="Include" />
+            <e p="resort2.jpg" t="Include" />
+            <e p="resort3.jpg" t="Include" />
+            <e p="side_nav_bg.jpeg" t="Include" />
+          </e>
+          <e p="js" t="Include">
+            <e p="site.js" t="Include" />
+          </e>
+          <e p="lib" t="Include">
+            <e p="bootstrap" t="Include">
+              <e p="dist" t="Include">
+                <e p="css" t="Include">
+                  <e p="bootstrap-grid.css" t="Include" />
+                  <e p="bootstrap-grid.css.map" t="Include" />
+                  <e p="bootstrap-grid.min.css" t="Include" />
+                  <e p="bootstrap-grid.min.css.map" t="Include" />
+                  <e p="bootstrap-reboot.css" t="Include" />
+                  <e p="bootstrap-reboot.css.map" t="Include" />
+                  <e p="bootstrap-reboot.min.css" t="Include" />
+                  <e p="bootstrap-reboot.min.css.map" t="Include" />
+                  <e p="bootstrap.css" t="Include" />
+                  <e p="bootstrap.css.map" t="Include" />
+                  <e p="bootstrap.min.css" t="Include" />
+                  <e p="bootstrap.min.css.map" t="Include" />
+                </e>
+                <e p="js" t="Include">
+                  <e p="bootstrap.bundle.js" t="Include" />
+                  <e p="bootstrap.bundle.js.map" t="Include" />
+                  <e p="bootstrap.bundle.min.js" t="Include" />
+                  <e p="bootstrap.bundle.min.js.map" t="Include" />
+                  <e p="bootstrap.js" t="Include" />
+                  <e p="bootstrap.js.map" t="Include" />
+                  <e p="bootstrap.min.js" t="Include" />
+                  <e p="bootstrap.min.js.map" t="Include" />
+                </e>
+              </e>
+              <e p="LICENSE" t="Include" />
+            </e>
+            <e p="jquery" t="Include">
+              <e p="dist" t="Include">
+                <e p="jquery.js" t="Include" />
+                <e p="jquery.min.js" t="Include" />
+                <e p="jquery.min.map" t="Include" />
+              </e>
+              <e p="LICENSE.txt" t="Include" />
+            </e>
+            <e p="jquery-validation" t="Include">
+              <e p="dist" t="Include">
+                <e p="additional-methods.js" t="Include" />
+                <e p="additional-methods.min.js" t="Include" />
+                <e p="jquery.validate.js" t="Include" />
+                <e p="jquery.validate.min.js" t="Include" />
+              </e>
+              <e p="LICENSE.md" t="Include" />
+            </e>
+            <e p="jquery-validation-unobtrusive" t="Include">
+              <e p="jquery.validate.unobtrusive.js" t="Include" />
+              <e p="jquery.validate.unobtrusive.min.js" t="Include" />
+              <e p="LICENSE.txt" t="Include" />
+            </e>
+          </e>
+        </e>
+      </e>
+      <e p="WebMVC" t="Include" />
+    </e>
+  </component>
+</project>

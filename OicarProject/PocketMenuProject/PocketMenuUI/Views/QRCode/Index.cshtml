@@ -1,0 +1,79 @@
+﻿@model XMLModel
+
+<h1 class="center">｡゜(｀Д´)゜｡</h1>
+
+<head>
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+</head>
+
+
+<div class="card container" style="margin:auto">
+    <div class="container center">
+        <br>
+        <h4>Prijavite svoj jelovnik!</h4>
+        <br>
+        <form enctype="multipart/form-data" asp-controller="QRCode"
+              asp-action="SingleFile" method="post">
+            <div class="form-group row">
+                <div class="col-sm-10">
+                    <label asp-for="Name" class="col-sm-2 col-form-label">
+                    </label>
+                    <input class="form-control" asp-for="Name" />
+                </div>
+            </div>
+            <span asp-validation-for="Name" lass="text-danger"></span>
+            <div class="form-group row">
+                <div class="col-sm-10">
+                    <label class="col-sm-2
+        col-form-label" asp-for="Coordinates"></label>
+                    <input class="form-control" asp-for="Coordinates" />
+                    <span asp-validation-for="Coordinates"
+                          class="text-danger">
+                    </span>
+                </div>
+            </div>
+            <div>
+                <button type="submit" class="waves-effect waves-light btn blue">SUBMIT</button>
+            </div>
+            <input name="__RequestVerificationToken" type="hidden" value="CfDJ8Ml2megPImtHhsB882OgtR6f7RaPz1pCS0Bsx0VwthFPCLYPhbuDgcIGd50jHWM6kL3a-vst1RPezJK3cnK-n3GTy3EF7lAZcdXr_QFjz3j3nuO0OY1P6kjax6HxUaw1ylXpaD2yGfKBci1tX0rRLJk">
+
+        </form>
+
+        @*<form enctype="multipart/form-data" method="post" action="/QRCode/SingleFile">
+                <span class="waves-effect waves-light btn" style="position: relative;overflow: hidden;">
+                    Upload File <input type="file" name="file" style="position: absolute;top: 0;right: 0;min-width: 100%;min-height: 100%;font-size: 100px;text-align: right;filter: alpha(opacity=0);opacity: 0;outline: none;background: white;cursor: inherit;display: block;">
+                </span>
+
+                <button type="submit" class="waves-effect waves-light btn">SUBMIT</button>
+                <input name="__RequestVerificationToken" type="hidden" value="CfDJ8Ml2megPImtHhsB882OgtR6f7RaPz1pCS0Bsx0VwthFPCLYPhbuDgcIGd50jHWM6kL3a-vst1RPezJK3cnK-n3GTy3EF7lAZcdXr_QFjz3j3nuO0OY1P6kjax6HxUaw1ylXpaD2yGfKBci1tX0rRLJk">
+            </form>*@
+        <br>
+
+    </div>
+</div>
+
+<div class="container" style="margin:auto;margin-top:5%">
+    <div class="center">
+        <img class="card center responsive-img" src="https://i.pinimg.com/originals/24/24/b1/2424b13c835714d8492088ff64d2b7b6.jpg">
+    </div>
+</div>
+
+<partial name="_Disqus" />
+
+@section scripts {
+    <script>
+        var UploadFile = function (e) {
+            var file = e.target.files[0];
+
+            var formData = new FormData();
+
+            formData.append("file", file);
+
+            axios.post("/QRCode/SingleFile", formData);
+        }
+    </script>
+}

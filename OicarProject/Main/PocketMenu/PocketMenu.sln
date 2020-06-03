@@ -1,0 +1,58 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29613.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WebMVC", "WebMVC", "{131B4D44-0A34-4874-9F1A-79BA77B9C8D7}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ApiGateway", "ApiGateway", "{30BB4F89-4FAE-43B2-B3FF-E497C6438119}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{51CBAA12-6E02-4E94-B345-DB7145882EC7}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Api-Gateway", "..\..\Api-Gateway\Api-Gateway\Api-Gateway.csproj", "{114ABE7C-AF14-4242-9C7A-4B89EA1FF954}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Service01", "..\..\Services\Service01\Service01.csproj", "{0CB2755A-B852-467F-A5FF-C83255B9DA7F}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "QRService", "..\..\Services\QRService\QRService.csproj", "{4FCFB72A-5199-4283-9F48-FFE4DAA56089}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PocketMenuUI", "..\..\PocketMenuProject\PocketMenuUI\PocketMenuUI.csproj", "{75BA6FEC-09DB-4C2B-9118-EE0F2B91197B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WebMVC", "WebMVC", "{7D27ABD5-595B-4AFE-863B-F48D605B290A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{114ABE7C-AF14-4242-9C7A-4B89EA1FF954}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{114ABE7C-AF14-4242-9C7A-4B89EA1FF954}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{114ABE7C-AF14-4242-9C7A-4B89EA1FF954}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{114ABE7C-AF14-4242-9C7A-4B89EA1FF954}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0CB2755A-B852-467F-A5FF-C83255B9DA7F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0CB2755A-B852-467F-A5FF-C83255B9DA7F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0CB2755A-B852-467F-A5FF-C83255B9DA7F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0CB2755A-B852-467F-A5FF-C83255B9DA7F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4FCFB72A-5199-4283-9F48-FFE4DAA56089}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4FCFB72A-5199-4283-9F48-FFE4DAA56089}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4FCFB72A-5199-4283-9F48-FFE4DAA56089}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4FCFB72A-5199-4283-9F48-FFE4DAA56089}.Release|Any CPU.Build.0 = Release|Any CPU
+		{75BA6FEC-09DB-4C2B-9118-EE0F2B91197B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{75BA6FEC-09DB-4C2B-9118-EE0F2B91197B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{75BA6FEC-09DB-4C2B-9118-EE0F2B91197B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{75BA6FEC-09DB-4C2B-9118-EE0F2B91197B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{114ABE7C-AF14-4242-9C7A-4B89EA1FF954} = {30BB4F89-4FAE-43B2-B3FF-E497C6438119}
+		{0CB2755A-B852-467F-A5FF-C83255B9DA7F} = {51CBAA12-6E02-4E94-B345-DB7145882EC7}
+		{4FCFB72A-5199-4283-9F48-FFE4DAA56089} = {51CBAA12-6E02-4E94-B345-DB7145882EC7}
+		{75BA6FEC-09DB-4C2B-9118-EE0F2B91197B} = {131B4D44-0A34-4874-9F1A-79BA77B9C8D7}
+		{7D27ABD5-595B-4AFE-863B-F48D605B290A} = {131B4D44-0A34-4874-9F1A-79BA77B9C8D7}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {BFC80537-7F9D-4548-BBFD-A28C7C3924B2}
+	EndGlobalSection
+EndGlobal

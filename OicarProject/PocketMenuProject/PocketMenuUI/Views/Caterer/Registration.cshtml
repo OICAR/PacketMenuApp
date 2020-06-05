@@ -1,0 +1,93 @@
+﻿@model PocketMenuUI.ViewModel.CatererViewModel
+
+@{
+    ViewData["Title"] = "Registration";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<partial name="~/Views/Excel/_Index.cshtml"  />
+
+<h1>Registration</h1>
+
+<h4>CatererViewModel</h4>
+<hr />
+
+<div class="row">
+    <div class="col-md-4">
+        <form enctype="multipart/form-data" asp-action="Create">
+            <div class="container">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-group">
+                    <label asp-for="CatererName" class="control-label"></label>
+                    <input asp-for="CatererName" class="form-control" />
+                    <span asp-validation-for="CatererName" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label hidden asp-for="Lat" class="control-label"></label>
+                    <input hidden id="latitude-output" asp-for="Lat" class="form-control" />
+                    <span asp-validation-for="Lat" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label hidden asp-for="Long" class="control-label"></label>
+                    <input hidden id="longitude-output" asp-for="Long" class="form-control" />
+                    <span asp-validation-for="Long" class="text-danger"></span>
+                </div>
+                <div class="form-group row">
+                    <div class="col-md-10">
+                        <div class="custom-file">
+                            <input asp-for="FormDocument" id="fileupload" class="form-control custom-file-input" />
+                            <label class="custom-file-label">Choose File....</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <input type="button" name="Upload" value="Upload" id="btnupload" class="btn btn-primary" />
+
+                </div>
+                <div class="clearfix">&nbsp;</div>
+                <div class="row">
+                    <div id="divPrint"></div>
+
+                </div>
+                <div class="form-group row">
+
+                    <div class="col-md-10">
+                        <input asp-for="CateringFacilitiName" type="text" id="txtName" placeholder="CateringFacilitiName" class="form-control" />
+                    </div>
+
+                </div>
+            </div>
+            <div hidden class="form-group row">
+                <div class="col-sm-10">
+                    <label asp-for="Address" class="col-sm-2
+                        col-form-label"></label>
+                </div>
+                <input class="form-control"
+                       id="formatted-address"
+                       asp-for="Address" />
+            </div>
+
+            <input type="text" id="location-input"
+                   placeholder="Please insert your address or point of interest..."
+                   class="form-control form-control-lg">
+            <div id="formatted-components"></div>
+
+
+            <div class="container">
+                    <div class="col-md-4">
+                        <input type="button" name="Upload" value=" Google Submit" id="btngoogleupload" class="btn btn-primary" />
+
+                    </div>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="REGISTER" class="btn btn-primary" />
+            </div>
+        </form>
+
+    </div>
+</div>
+<partial name="~/Views/GoogleMaps/_GoogleMapsPart.cshtml" />
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+

@@ -40,14 +40,21 @@ namespace PocketMenuUI.Controllers
 
 
             IFormFile file = Request.Form.Files[0];
-            caterer.Document = file;
+            caterer.FormDocument = file;
             //string tableData=  ExcelUtility.DisplayTable(file);
 
             string tableData = await _ExcelSvc.PostExcel(caterer);
 
             //_ExcelSvc.Get();
 
-            return this.Content(tableData);
+
+            return RedirectToAction("Registration", "Caterer", new
+            {
+                test = tableData
+             
+            });
+
+            //return this.Content(tableData);
         }
 
 

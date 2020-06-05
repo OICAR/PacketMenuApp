@@ -61,14 +61,14 @@ namespace PocketMenuUI.Services
         public async Task<string> PostExcel(CatererViewModel model)
         {
 
-            //  var uri = API.ExcelAPI.PostExcel(_Url);
+              var uri = API.ExcelAPI.PostExcel(_Url);
 
-            var uri = "http://localhost:62755/api/home";
+
 
 
             var request = new HttpRequestMessage(HttpMethod.Post, uri);
 
-            var bytes = GetBytes(model.Document);
+            var bytes = GetBytes(model.FormDocument);
 
 
             CatererDTO caterer = new CatererDTO();

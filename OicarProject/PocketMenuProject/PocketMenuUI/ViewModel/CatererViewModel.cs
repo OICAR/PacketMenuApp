@@ -9,9 +9,18 @@ namespace PocketMenuUI.ViewModel
     public class CatererViewModel
     {
 
-        public string Name { get; set; }
+        public string CatererName { get; set; }
 
-        public IFormFile Document { get; set; }
+        public string CateringFacilitiName { get; set; }
+
+        //public int? Rating { get; set; }
+        public string Address { get; set; }
+        public double Lat { get; set; }
+        public double Long { get; set; }
+
+        public byte[] Document { get; set; }
+
+        public IFormFile FormDocument { get; set; }
 
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PocketMenuUI.Utils.StringUtilities;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -29,13 +30,13 @@ namespace PocketMenuUI.Models.ModelsDTO
 
         public string temp { get; set; }
 
- 
-
-        public HashSet<string> Preferences { get; set; }
 
 
+        public HashSet<string> Preferences { get => Preferences = temp == null ? null : StringUtility.ParseString(';', temp); set{ } }
 
-      public  Dictionary<string, bool> EatingHabits { get; set; }
+
+
+        public Dictionary<string, bool> EatingHabits { get; set; }
 
 
 

@@ -65,14 +65,13 @@ namespace PocketMenuUI.Services
 
 
 
-
             var request = new HttpRequestMessage(HttpMethod.Post, uri);
 
-            var bytes = GetBytes(model.FormDocument);
+            var bytes = await GetBytes(model.FormDocument);
 
 
             CatererDTO caterer = new CatererDTO();
-            caterer.Document = await bytes;
+            caterer.Document = bytes;
 
 
             request.Content = new StringContent(System.Text.Json.JsonSerializer.Serialize(caterer));

@@ -10,7 +10,7 @@ namespace PocketMenuUI.Models
         //Ode dodati ako nesto pri registraciji ili u profilu.
         public string FirstName { get; set; }
         public string LastName { get; set; }
-        
+      
         public string PhotoPath { get; set; }
        
         [NotMapped]

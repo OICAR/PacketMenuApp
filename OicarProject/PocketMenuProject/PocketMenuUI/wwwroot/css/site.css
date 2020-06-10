@@ -23,11 +23,15 @@ a {
   background-color: #1b6ec2;
   border-color: #1861ac;
 }
+/*input[type="radio"] {
+    opacity: 1;
+}*/
 
 /* Sticky footer styles
 -------------------------------------------------- */
 html {
-  font-size: 14px;
+    font-size: 14px;
+    
 }
 @media (min-width: 768px) {
   html {

@@ -1,0 +1,83 @@
+﻿@model UserDTO
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Create</h1>
+
+<h4>UserDTO</h4>
+<hr />
+
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="FullName" class="control-label"></label>
+                <input asp-for="FullName" class="form-control" />
+                <span asp-validation-for="FullName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+
+                <p>
+                    <label>
+                        <input asp-for="Gender" value="F" type="radio" />
+                        <span>Male</span>
+                    </label>
+                </p>
+                <p>
+                    <label>
+                        <input asp-for="Gender" value="M" type="radio" />
+                        <span>Female</span>
+                    </label>
+                </p>
+
+            </div>
+            <div class="form-group">
+
+
+                @foreach (var item in Model.EatingHabits)
+                {
+                <p>
+                    <label>
+                        <input type="checkbox" name="@("EatingHabits[" + item.Key + "]")"
+                               value="true" />
+                        <span>@item.Key</span>
+                        <input name="@("EatingHabits[" + item.Key + "]")" type="hidden" value="false">
+                    </label>
+                </p>
+
+                }
+
+            </div>
+
+            <div class="form-group">
+
+                        <div class="row">
+                            <div class="input-field col s6">
+                                <i class="material-icons prefix">mode_edit</i>
+                                <textarea asp-for="temp"  id="icon_prefix2" class="materialize-textarea"></textarea>
+                                <label for="icon_prefix2">Favorite Food</label>
+                                <span class="helper-text" data-error="wrong" data-success="right">Example:pizza;burger;cheese</span>
+                            </div>
+                        </div>
+
+            </div>
+
+                <div class="form-group">
+                    <input type="submit" value="Create" class="btn btn-primary" />
+                </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+<script>
+
+  $('#textarea1').val('New Text');
+  M.textareaAutoResize($('#textarea1'));
+</script>

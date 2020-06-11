@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Drawing.Text;
 using System.Linq;
 using System.Net.Http;
 using System.Net.Http.Headers;
@@ -39,6 +40,22 @@ namespace PocketMenuUI.Controllers
             return Redirect("https://dapperdatabaseapi20200527121926.azurewebsites.net");
 
         }
+
+        public ActionResult Menu()
+        {
+            List<Meal> meals = new List<Meal> {
+            new Meal("Spaghetti bolognes","Spaghetti, bolognese sauce",35.00),
+            new Meal("Salad", "Onions, tomatoes, turnips",18.00) };
+
+            List<Beverage> drinks = new List<Beverage> {
+            new Beverage("Coca-Cola",15.00),
+            new Beverage("Sprite",15.00) };
+
+            Menu menu = new Menu(meals,drinks);
+
+            return View(menu);
+        }
+
             public async  Task<ActionResult> Index()
         {
 

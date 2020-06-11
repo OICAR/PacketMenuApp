@@ -1,0 +1,79 @@
+﻿@model Menu
+@{
+    ViewBag.Title = "Food Menu";
+
+}
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<link href="~/css/Menu.css" rel="stylesheet" />
+
+<div class="parallax-container para">
+    <div class="parallax">
+        <img src="~/img/banner.jpg" />
+    </div>
+</div>
+
+<div class="bg">
+    <div class="container">
+        <div class="row">
+            <div class="card yellow darken-3 col l6 m6 s12 offset-l3 offset-m3" style="padding-top:1%;padding-bottom:2%;margin-top:2%">
+                <h3 class="white-text center font-weight-bold">Restoran X</h3>
+            </div>
+        </div>
+    </div>
+
+    @if (Model.Meals != null)
+    {
+        <div class="container">
+            <div class="row">
+                <ul class="collection col l6 m6 s12 offset-l3 offset-m3 with-header z-depth-1 white-bg">
+                    <li class="collection-header"><h4>Meals</h4></li>
+                    @foreach (var m in Model.Meals)
+                    {
+                        <li class="collection-item avatar shorten-item">
+                            <div class="yellow darken-3 circle z-depth-1 enlarge">
+                                <div class="white-text center-align avatar-align">
+                                    <p>@m.Price kn</p>
+                                </div>
+                            </div>
+                            <span class="title" style="font-weight:bold">@m.Title</span>
+                            <p>
+                                @m.Ingredients
+                            </p>
+                        </li>
+                    }
+                </ul>
+            </div>
+        </div>
+    }
+    @if (Model.Beverages != null)
+    {
+        <div class="container">
+            <div class="row">
+                <ul class="collection col l6 m6 s12 offset-l3 offset-m3 with-header z-depth-1 white-bg">
+                    <li class="collection-header"><h4>Drinks</h4></li>
+                    @foreach (var m in Model.Beverages)
+                    {
+                        <li class="collection-item avatar shorten-item">
+                            <div class="yellow darken-3 circle z-depth-1 enlarge">
+                                <div class="white-text center-align avatar-align">
+                                    <p>@m.Price kn</p>
+                                </div>
+                            </div>
+                            <p class="title p-drink">
+                                @m.Title
+                            </p>
+                        </li>
+                    }
+                </ul>
+            </div>
+        </div>
+    }
+    <br/>
+</div>
+
+<script>
+    $(document).ready(function () {
+        $('.parallax').parallax();
+    });
+</script>

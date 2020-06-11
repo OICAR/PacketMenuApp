@@ -15,6 +15,8 @@ namespace PocketMenuUI.Models
        
         [NotMapped]
         public IFormFile Photo { get; set; }
+        
+        public bool SaladFilter { get; set; }
 
     }
  

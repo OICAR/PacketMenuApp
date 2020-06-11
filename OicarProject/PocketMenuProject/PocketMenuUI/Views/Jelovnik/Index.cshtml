@@ -1,24 +1,37 @@
 ﻿@model IEnumerable<Meal>
 @{
     ViewBag.Title = "Food Menu";
-
 }
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-<link href="~/css/Menu.css" rel="stylesheet" />
-<form asp-controller="Jelovnik" asp-action="Index" method="get">
+<link href="~/css/Menu.css" rel="stylesheet"/>
+<form asp-action="Index" method="post">
     <div class="parallax-container para">
         <div class="parallax">
             <img src="~/img/banner.jpg"/>
         </div>
     </div>
     <div>
-        <p>
+        @*<p>
             Find price:
-            <input type="text" 
+            <input type="text"
                    name="searchQuery" value=""/>
+          
+        </p>*@
+        <p>
+            <label>
+                
+                <input type="checkbox" name="searchQuery" value="true"/>
+                <span>Salad</span>
+            </label>
+            <label>
+                
+            <input type="checkbox" name="search" value="true"/>
+            <span>Pizza</span>
+            </label>
             <input type="submit" value="Search"/>
-            <a asp-controller="Jelovnik" asp-action="Index">Remove Filter</a>
+            <a asp-action="Index">Remove Filter</a>
+
         </p>
     </div>
     <div class="bg">
@@ -29,6 +42,8 @@
                 </div>
             </div>
         </div>
+
+
         <div class="container">
             <div class="row">
                 <ul class="collection col l6 m6 s12 offset-l3 offset-m3 with-header z-depth-1 white-bg">
@@ -52,7 +67,7 @@
                 </ul>
             </div>
         </div>
-        
+
         @*@if (Model.Beverages != null)
         {
             <div class="container">
@@ -83,4 +98,4 @@
     $(document).ready(function () {
         $('.parallax').parallax();
     });
-</script>
+</script></Meal>

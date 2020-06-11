@@ -1,4 +1,4 @@
-﻿using System;
+﻿﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Drawing.Text;
@@ -21,9 +21,8 @@ namespace PocketMenuUI.Controllers
     {
         private readonly ILogger<HomeController> _logger;
         private IWatherForecast _weatherSvc;
-       
-
-        public HomeController(ILogger<HomeController> logger,IWatherForecast watherForecastService)
+        
+        public HomeController(ILogger<HomeController> logger,IWatherForecast watherForecastService )
         {
             _weatherSvc = watherForecastService;
             _logger = logger;
@@ -41,20 +40,6 @@ namespace PocketMenuUI.Controllers
 
         }
 
-        public ActionResult Menu()
-        {
-            List<Meal> meals = new List<Meal> {
-            new Meal("Spaghetti bolognes","Spaghetti, bolognese sauce",35.00),
-            new Meal("Salad", "Onions, tomatoes, turnips",18.00) };
-
-            List<Beverage> drinks = new List<Beverage> {
-            new Beverage("Coca-Cola",15.00),
-            new Beverage("Sprite",15.00) };
-
-            Menu menu = new Menu(meals,drinks);
-
-            return View(menu);
-        }
 
             public async  Task<ActionResult> Index()
         {

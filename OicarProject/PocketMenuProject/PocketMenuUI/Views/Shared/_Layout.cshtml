@@ -8,20 +8,20 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>@ViewData["Title"] - PocketMenuUI</title>
-    @*<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />*@
-    <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="~/css/site.css"/>
     <!--Import Google Icon Font-->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    <link href="~/css/Main.css" rel="stylesheet" />
+    <link href="~/css/Main.css" rel="stylesheet"/>
     <script defer src="https://use.fontawesome.com/releases/v5.0.9/js/all.js" integrity="sha384-8iPTk2s/jMVj81dnzb/iFR2sdA7u06vHJyyLlAd4snFpCl/SnyUjRrbdJsw1pGIl"
             crossorigin="anonymous"></script>
     <!--Let browser know website is optimized for mobile-->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <!-- Chrome, Firefox OS and Opera -->
     <meta name="theme-color" content="#2196f3">
     <!-- Windows Phone -->
@@ -30,93 +30,96 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="#2196f3 ">
 </head>
 <body>
-    <header>
-        <!-- Navbar -->
-        <div class="navbar-fixed">
-            <nav class="blue nav-extended">
-                <div class="container">
-                    <div class="nav-wrapper">
-                        <a href="#" class="brand-logo center">Pocket Menu</a>
-                        <a href="#" data-target="mobile-nav" class="sidenav-trigger">
-                            <i class="material-icons">menu</i>
-                        </a>
-                        <ul class="right hide-on-med-and-down">
-                            <partial name="_LoginPartial" />
-                        </ul>
-                        <ul class="left hide-on-med-and-down">
-                            <li>
-                                <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                            </li>
-                            <li>
-                                <a class="nav-link text-dark" asp-area="" asp-controller="User" asp-action="Create">Test</a>
-                            </li>
-                            <li>
-                                <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Maps">Maps</a>
-                            </li>
-                            <li>
-                                <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Menu">Menu</a>
-                            </li>
-                            <li>
-                                <a class="nav-link text-dark" asp-area="" asp-controller="QRCode" asp-action="Index">QRCode</a>
-                            </li>
-                            <li>
-                                <a class="nav-link text-dark" asp-area="" asp-controller="GoogleMaps" asp-action="Index">Maps</a>
-                            </li>
-                            <li>
-                                <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="SwaggerIndex">Swagger</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </nav>
-        </div>
-        <!-- SideNav -->
-        <ul class="sidenav" id="mobile-nav">
-            <partial name="_NavHeader" />
-            <li>
-                <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-            </li>
-            <li>
-                <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-            </li>
-            <li>
-                <a class="nav-link text-dark" asp-area="" asp-controller="QRCode" asp-action="Index">QRCode</a>
-            </li>
-            <li>
-                <a class="nav-link text-dark" asp-area="" asp-controller="GoogleMaps" asp-action="Index">Maps</a>
-            </li>
-            <partial name="_LoginPartial" />
-        </ul>
-    </header>
-
-    <main role="main" >
-        @RenderBody()
-        <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-    </main>
-
-
-    <footer class="page-footer blue" >
-        <div class="container">
-            <div class="row">
-                <div class="col l6 s12">
-                    <h5 class="white-text">Pocket Menu</h5>
-                </div>
-            </div>
-        </div>
-        <div class="footer-copyright">
+<header>
+    <!-- Navbar -->
+    <div class="navbar-fixed">
+        <nav class="blue nav-extended">
             <div class="container">
-                &copy; 2020 - Visoko Uciliste Algebra <a asp-area="" asp-controller="Privacy" asp-action="Privacy">Privacy</a>
+                <div class="nav-wrapper">
+                    <a href="#" class="brand-logo center">Pocket Menu</a>
+                    <a href="#" data-target="mobile-nav" class="sidenav-trigger">
+                        <i class="material-icons">menu</i>
+                    </a>
+                    <ul class="right hide-on-med-and-down">
+                        <partial name="_LoginPartial"/>
+                    </ul>
+                    <ul class="left hide-on-med-and-down">
+                        <li>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                        </li>
+                        <li>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="User" asp-action="Create">Test</a>
+                        </li>
+                        <li>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Maps">Maps</a>
+                        </li>
+                        <li>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Jelovnik" asp-action="Index">Menu</a>
+                        </li>
+                        <li>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="QRCode" asp-action="Index">QRCode</a>
+                        </li>
+                        <li>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="GoogleMaps" asp-action="Index">Maps</a>
+                        </li>
+                        <li>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="SwaggerIndex">Swagger</a>
+                        </li>
+                        <li>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Caterer" asp-action="Registration">Caterer</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+    <!-- SideNav -->
+    <ul class="sidenav" id="mobile-nav">
+        <partial name="_NavHeader"/>
+        <li>
+            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+        </li>
+        <li>
+            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+        </li>
+        <li>
+            <a class="nav-link text-dark" asp-area="" asp-controller="QRCode" asp-action="Index">QRCode</a>
+        </li>
+        <li>
+            <a class="nav-link text-dark" asp-area="" asp-controller="GoogleMaps" asp-action="Index">Maps</a>
+        </li>
+        <partial name="_LoginPartial"/>
+    </ul>
+</header>
+
+<main role="main">
+    @RenderBody()
+    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</main>
+
+
+<footer class="page-footer blue">
+    <div class="container">
+        <div class="row">
+            <div class="col l6 s12">
+                <h5 class="white-text">Pocket Menu</h5>
             </div>
         </div>
-    </footer>
+    </div>
+    <div class="footer-copyright">
+        <div class="container">
+            &copy; 2020 - Visoko Uciliste Algebra <a asp-area="" asp-controller="Privacy" asp-action="Privacy">Privacy</a>
+        </div>
+    </div>
+</footer>
 
-    <!-- Compiled and minified JavaScript -->
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <script src="~/js/site.js" asp-append-version="true"></script>
-    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-    @RenderSection("Scripts", required: false)
-    <script>
+<!-- Compiled and minified JavaScript -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<script src="~/js/site.js" asp-append-version="true"></script>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+@RenderSection("Scripts", required: false)
+<script>
         // Sidenav
         const sideNav = document.querySelector('.sidenav');
         M.Sidenav.init(sideNav, {});
@@ -130,6 +133,6 @@
             interval: 6000
         });
     </script>
-    <script id="dsq-count-scr" src="//pocket-menu.disqus.com/count.js" async></script>
+<script id="dsq-count-scr" src="//pocket-menu.disqus.com/count.js" async></script>
 </body>
 </html>

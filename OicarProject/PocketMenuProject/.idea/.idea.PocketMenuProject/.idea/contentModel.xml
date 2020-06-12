@@ -106,6 +106,7 @@
           <e p="HomeController.cs" t="Include" />
           <e p="JelovnikController.cs" t="Include" />
           <e p="QRCodeController.cs" t="Include" />
+          <e p="RoleController.cs" t="Include" />
           <e p="UserController.cs" t="Include" />
         </e>
         <e p="Data" t="Include">
@@ -122,6 +123,8 @@
             <e p="20200530155656_IForm_File.Designer.cs" t="Include" />
             <e p="20200611161117_filerTest.cs" t="Include" />
             <e p="20200611161117_filerTest.Designer.cs" t="Include" />
+            <e p="20200612113151_roleName.cs" t="Include" />
+            <e p="20200612113151_roleName.Designer.cs" t="Include" />
             <e p="ApplicationDbContextModelSnapshot.cs" t="Include" />
           </e>
           <e p="Services" t="Include">
@@ -143,6 +146,7 @@
         </e>
         <e p="Models" t="Include">
           <e p="Alergy.cs" t="Include" />
+          <e p="ApplicationRole.cs" t="Include" />
           <e p="ApplicationUser.cs" t="Include" />
           <e p="Beverage.cs" t="Include" />
           <e p="EatingHabits.cs" t="Include" />
@@ -196,6 +200,7 @@
         </e>
         <e p="ViewModel" t="Include">
           <e p="CatererViewModel.cs" t="Include" />
+          <e p="CreateRoleViewModel.cs" t="Include" />
           <e p="GoogleMapsCreateViewModel.cs" t="Include" />
           <e p="QRDataCatering.cs" t="Include" />
           <e p="QRImage.cs" t="Include" />
@@ -226,6 +231,10 @@
           </e>
           <e p="Menu" t="Include" />
           <e p="QRCode" t="Include">
+            <e p="Index.cshtml" t="Include" />
+          </e>
+          <e p="Role" t="Include">
+            <e p="Create.cshtml" t="Include" />
             <e p="Index.cshtml" t="Include" />
           </e>
           <e p="Shared" t="Include">

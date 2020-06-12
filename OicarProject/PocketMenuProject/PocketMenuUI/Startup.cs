@@ -37,7 +37,9 @@ namespace PocketMenuUI
             services.AddDbContext<JelovnikDbContext>(options =>
                 options.UseSqlServer(
                     Configuration.GetConnectionString("JelovnikConnection")));
-            services.AddDefaultIdentity<ApplicationUser>(options => options.SignIn.RequireConfirmedAccount = true)
+            services.AddDefaultIdentity<ApplicationUser>
+            (options => options.SignIn
+            .RequireConfirmedAccount = true).AddRoles<IdentityRole>()
                 .AddEntityFrameworkStores<ApplicationDbContext>();
             services.AddTransient<IEmailSender, EmailSender>();
             services.AddTransient<IJelovnikRepository, 

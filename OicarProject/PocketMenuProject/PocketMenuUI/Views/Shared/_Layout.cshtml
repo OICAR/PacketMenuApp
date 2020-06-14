@@ -11,7 +11,7 @@
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>@ViewData["Title"] - PocketMenuUI</title>
-    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css"/>
+
     <link rel="stylesheet" href="~/css/site.css"/>
     <!--Import Google Icon Font-->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -28,6 +28,25 @@
     <meta name="msapplication-navbutton-color" content="#2196f3">
     <!-- iOS Safari -->
     <meta name="apple-mobile-web-app-status-bar-style" content="#2196f3 ">
+    <style>
+        .separator {
+            display: flex;
+            align-items: center;
+            text-align: center;
+        }
+        .separator::before, .separator::after {
+            content: '';
+            flex: 1;
+            border-bottom: 1px solid #000;
+        }
+        .separator::before {
+            margin-right: .25em;
+        }
+        .separator::after {
+            margin-left: .25em;
+        }
+  
+    </style>
 </head>
 <body>
 <header>
@@ -49,9 +68,6 @@
                         </li>
                         <li>
                             <a class="nav-link text-dark" asp-area="" asp-controller="User" asp-action="Create">Test</a>
-                        </li>
-                        <li>
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Role" asp-action="CreateRole">CR</a>
                         </li>
                         <li>
                             <a class="nav-link text-dark" asp-area="" asp-controller="Jelovnik" asp-action="Index">Menu</a>
@@ -116,6 +132,7 @@
 <!-- Compiled and minified JavaScript -->
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 <script src="~/js/site.js" asp-append-version="true"></script>
 <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 @RenderSection("Scripts", required: false)
@@ -133,6 +150,17 @@
             interval: 6000
         });
     </script>
+<script>
+
+   
+
+$(document).ready(function(){
+    // the "href" attribute of the modal trigger must specify the modal ID that wants to be triggered
+    $('.modal').modal();
+});
+
+
+</script>
 <script id="dsq-count-scr" src="//pocket-menu.disqus.com/count.js" async></script>
 </body>
 </html>

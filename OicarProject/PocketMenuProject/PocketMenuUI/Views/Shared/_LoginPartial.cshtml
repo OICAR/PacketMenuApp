@@ -5,23 +5,55 @@
 
 @if (SignInManager.IsSignedIn(User))
 {
-<li>
-    <a class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage">Profile</a>
-</li>
-<li><div class="divider"></div></li>
-<li>
-    <form class="form-inline nav-link text-dark center" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })">
-        <a href="#" onclick="this.parentNode.submit();">Logout</a>
-    </form>
-</li>
+    <li>
+        <a class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage">Profile</a>
+    </li>
+    <li>
+        <div class="divider"></div>
+    </li>
+    <li>
+        <form class="form-inline nav-link text-dark center" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new {area = ""})">
+            <a href="#" onclick="this.parentNode.submit();">Logout</a>
+        </form>
+    </li>
 }
 else
 {
-<li>
-    <a class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Register">Register</a>
-</li>
-<li>
-    <a class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Login">Login</a>
-</li>
-}
+    <li>
+        <a class="nav-link text-dark modal-trigger waves-effect waves-light"
+           href="#modal1" data-toggle="modal">
+            Register
+        </a>
+    </li>
+    <!-- Modal Structure -->
+    <div id="modal1" class="modal modal-fixed-footer" 
+    style="width: 20%;height: 40%;overflow-y: hidden;background: #0f6674">
+        <div class="modal-content " dismissible="false">
+            <h5> I want to register as:</h5>
+        
+                
+            <a class="waves-effect waves-light btn-large
+            " style=" margin-left: 30%;" asp-area="Identity" 
+            asp-page="/Account/Register"><i class="material-icons right">cloud</i>User</a>
+            
+           
+            <div class="separator">or</div>
+        
+                <a class="waves-effect waves-light 
+                btn-large"style=" margin-left: 27%;" 
+                asp-area="" asp-controller="Caterer" asp-action="Registration"><i class="material-icons right">cloud</i>
+                Caterer
+            </a>
+           
+          
+        </div>
+        <div class="modal-footer" style="background: #0f6674">
+            <a href="#!" class="modal-close waves-effect waves-green btn-flat">Close</a>
+        </div>
+    </div>
+   
 
+    <li>
+        <a class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Login">Login</a>
+    </li>
+}

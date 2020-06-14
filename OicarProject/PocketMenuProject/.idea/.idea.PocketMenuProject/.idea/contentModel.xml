@@ -123,8 +123,6 @@
             <e p="20200530155656_IForm_File.Designer.cs" t="Include" />
             <e p="20200611161117_filerTest.cs" t="Include" />
             <e p="20200611161117_filerTest.Designer.cs" t="Include" />
-            <e p="20200612113151_roleName.cs" t="Include" />
-            <e p="20200612113151_roleName.Designer.cs" t="Include" />
             <e p="ApplicationDbContextModelSnapshot.cs" t="Include" />
           </e>
           <e p="Services" t="Include">

@@ -205,9 +205,6 @@ namespace PocketMenuUI.Data.Migrations
                     b.Property<string>("PhotoPath")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("RoleName")
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<bool>("SaladFilter")
                         .HasColumnType("bit");
 

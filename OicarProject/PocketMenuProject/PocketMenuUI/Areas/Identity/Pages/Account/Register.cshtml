@@ -2,7 +2,7 @@
 @model RegisterModel
 @{
     ViewData["Title"] = "Register";
-    var roles = (List<IdentityRole>)ViewData["roles"];
+//    var roles = (List<IdentityRole>)ViewData["roles"];
 }
 <br/>
 <div class="row">
@@ -16,8 +16,7 @@
                     <div asp-validation-summary="All" class="text-danger"></div>
                     <div class="form-group input-field col s12">
                         <input asp-for="Input.FirstName" id="firstname" class="form-control"/>
-                        <label asp-for="Input.FirstName"
-                               for="firstname">
+                        <label asp-for="Input.FirstName" for="firstname">
                         </label>
                         <span asp-validation-for="Input.FirstName" class="text-danger"></span>
                     </div>
@@ -29,7 +28,7 @@
                         </label>
                         <span asp-validation-for="Input.LastName" class="text-danger"></span>
                     </div>
-                    <div class="form-group input-field col s12">
+                    @*<div class="form-group input-field col s12">
                         <label asp-for="Input.RoleName"></label>
                         <select asp-for="Input.RoleName" 
                         class="form-control" 
@@ -38,7 +37,7 @@
                         .RoleName" class="text-danger"></span>
 
 
-                    </div>
+                    </div>*@
                     <div asp-validation-summary="All" class="text-danger"></div>
                     <div class="form-group input-field col s12">
                         <input asp-for="Input.Email" id="email" class="form-control"/>

@@ -7,56 +7,43 @@ go
 use OICAR
 go
 
-create table Address
-(
-	IDAddress int primary key IDENTITY(1, 1) NOT NULL,
-	Country nvarchar(50) NULL,
-	City nvarchar(50) NULL,
-	PinCode nvarchar(50) NULL,
-	Street nvarchar(50) NULL,
-	Number nvarchar(50) NULL,
 
-)
 go
-
-create table Alergy
-(
-	IDAlergy int primary key IDENTITY(1, 1) NOT NULL,
-	Egg bit NOT NULL,
-	Peanut bit NOT NULL,
-	Shellfish bit NOT NULL,
-	Soy bit NOT NULL,
-	Fish bit NOT NULL,
-	Sesame bit NOT NULL,
-
-)
-go
-
-create table EatingHabits
-(
-	IDEatingHabits int primary key IDENTITY(1, 1) NOT NULL,
-	Vegan bit NOT NULL,
-	Vegetarian bit NOT NULL,
-	AlergyID int foreign key references Alergy(IDAlergy) NOT NULL,
-	LactoseIntolerant bit NOT NULL,
-	CrohnsDisease bit NOT NULL,	
-	CeliacDisease bit NOT NULL,	
-
-)
-go
-
 
 create table Customer
 (
-	IDCustomer int primary key IDENTITY(1, 1) NOT NULL,
-	Name nvarchar(50) NOT NULL,
-	Surname nvarchar(50) NOT NULL,
-	EatingHabitsID int foreign key references EatingHabits(IDEatingHabits) NULL,
-	AddressID int foreign key references Address(IDAddress) NULL
+	IDCustomer int primary key  NOT NULL,
+	FullName nvarchar(50) NOT NULL,
+    Gender varchar(10) NULL
+)
+go
+
+go
+
+create table EatingHabitCategory
+(
+	IDEatingHabitCategory int primary key IDENTITY(1, 1) NOT NULL,
+	CategoryName nvarchar(50) NOT NULL
 
 )
 go
 
+create table EatingHabit
+(
+	IDEatingHabit int primary key IDENTITY(1, 1) NOT NULL,
+	EatingHabit nvarchar(50) NOT NULL,
+	EatingHabitCategoryID int foreign key references EatingHabitCategory(IDEatingHabitCategory) NOT NULL
+)
+go
+create table CustomersHabitTest
+(
+	EatingHabitID int foreign key references EatingHabit(IDEatingHabit) NOT NULL,
+    CustomerID int foreign key references Customer(IDCustomer) NOT NULL,
+    PRIMARY KEY(EatingHabitID,CustomerID)
+)
+go
+
+------------------------
 create table Caterer
 (
 	IDCaterer int primary key IDENTITY(1, 1) NOT NULL,
@@ -64,101 +51,87 @@ create table Caterer
 	OIB nvarchar(15) NOT NULL,
 )
 go
-
-create table Meal 
+create table CatererFacility
 (
-	IDMeal int primary key IDENTITY(1, 1) NOT NULL,
+	IDCatererFacility int primary key IDENTITY(1, 1) NOT NULL,
 	Name nvarchar(50) NOT NULL,
-	Amount int NOT NULL,
-	Ingredients nvarchar(200) NOT NULL,
-	EatingHabitsID int foreign key references EatingHabits(IDEatingHabits) NULL,
+    Rating float NULL,
+	CatererID int foreign key references Caterer(IDCaterer) NULL,
+    FacilityAdressID int foreign key references FacilityAdress(IDFacilityAdress) NULL
+    
+)
+go
+create table FacilityAdress 
+(
+	IDFacilityAdress int primary key IDENTITY(1, 1) NOT NULL,
+	Latitude int NOT NULL,
+	Longitude int NOT NULL
 
 )
 go
 
-create table Beverage
+	
+
+create table Article 
 (
-	IDBeverage int primary key IDENTITY(1, 1) NOT NULL,
-	Name nvarchar(50) NOT NULL,
-	EatingHabitsID int foreign key references EatingHabits(IDEatingHabits) NULL
+	IDArticle int primary key IDENTITY(1, 1) NOT NULL,
+	Name nvarchar(50) NOT NULL,	
 )
 go
-
-create table Menu
+create table Ingredient
 (
-	IDMenu int primary key IDENTITY(1, 1) NOT NULL,	
+	IDIngredient int primary key IDENTITY(1, 1) NOT NULL,	
 	Name nvarchar(50)
 )
 go
 
-create table MenuMeal
+create table IngredientsInArticle
 (
-	IDMenuMeal int primary key IDENTITY(1, 1) NOT NULL,	
+	IDIngredientsInArticle int primary key IDENTITY(1, 1) NOT NULL,	
+    Amount int NULL,
+    MesureUnit nvarchar(15)  NULL,
+    IngredientID int foreign key references Ingredient(IDIngredient) NOT NULL,
+	ArticleID int foreign key references Article(IDArticle) NOT NULL,
+    ArticleCategoryID int foreign key references ArticleCategory(IDArticleCategory) NOT NULL
+)
+go
+create table ArticleCategory
+(
+	IDArticleCategory int primary key IDENTITY(1, 1) NOT NULL,	
+    Name nvarchar(50)
+)
+go
+create table Menu
+(
+	IDMenu int primary key IDENTITY(1, 1) NOT NULL,	
+	CatererFacilityID int foreign key references CatererFacility(IDCatererFacility) NOT NULL,
+    
+    
+)
+go
+
+create table MenuArticle
+(
+	IDMenuArticle int primary key IDENTITY(1, 1) NOT NULL,	
 	Price money NOT NULL,
-	MealID int foreign key references Meal(IDMeal) NOT NULL,
+	ArticleID int foreign key references Article(IDArticle) NOT NULL,
 	MenuID int foreign key references Menu(IDMenu) NOT NULL
 )
 go
 
-create table MenuBeverage
-(
-	IDMenuBeverage int primary key IDENTITY(1, 1) NOT NULL,	
-	Price money NOT NULL,
-	BeverageID int foreign key references Beverage(IDBeverage) NOT NULL,
-	MenuID int foreign key references Menu(IDMenu) NOT NULL
-)
-go
-
-
-create table Restaurant
-(
-	IDRestaurant int primary key IDENTITY(1, 1) NOT NULL,
-	Name nvarchar(50) NOT NULL,
-	AddressID int foreign key references Address(IDAddress) NOT NULL,
-	CatererID int foreign key references Caterer(IDCaterer) NOT NULL,
-	Rating float NULL,
-	MenuID int foreign key references Menu(IDMenu) NOT NULL	
-)
-go
-
-create table Caffe
-(
-	IDCaffe int primary key IDENTITY(1, 1) NOT NULL,
-	Name nvarchar(50) NOT NULL,
-	AddressID int foreign key references Address(IDAddress) NOT NULL,
-	CatererID int foreign key references Caterer(IDCaterer) NOT NULL,
-	Rating float NULL,
-	MenuID int foreign key references Menu(IDMenu) NOT NULL
-)
-go
 
 -------------------------------------STORED PROCEDURES
 ---------------------------------------------CUSTOMER
 
 ---AddCustomer
 create proc AddCustomer
-		@Name nvarchar(50),
-		@Surname nvarchar(50),
-		@Vegan bit,
-		@Vegetarian bit, 
-		@LactoseIntolerant bit, 
-		@CrohnsDisease bit, 
-		@CeliacDisease bit, 
-		@Egg bit, 
-		@Peanut bit, 
-		@Shellfish bit, 
-		@Soy bit, 
-		@Fish bit, 
-		@Sesame bit, 
-		@Country nvarchar(50), 
-		@City nvarchar(50), 
-		@PinCode nvarchar(50), 
-		@Street nvarchar(50), 
-		@Number nvarchar(50) 
+		@FullName nvarchar(50),
+        @HabbitList dbo.EatingHabbit READONLY
 as
-INSERT INTO Address (Country, City, PinCode, Street, Number) VALUES (@Country, @City, @PinCode, @Street, @Number)
-DECLARE @AddressID int
-SET @AddressID=SCOPE_IDENTITY()
+insert into EatingHabits([EatingHabit])
+select [EatingHabit] from @HabbitList
+DECLARE @EatingHabitsID int
+SET @EatingHabitsID=SCOPE_IDENTITY()
 INSERT INTO Alergy (Egg, Peanut, Shellfish, Soy, Fish, Sesame) VALUES (@Egg, @Peanut, @Shellfish, @Soy, @Fish, @Sesame)
 DECLARE @AlergyID int
 SET @AlergyID=SCOPE_IDENTITY()
@@ -168,6 +141,38 @@ SET @EatingHabitsID=SCOPE_IDENTITY()
 INSERT INTO Customer (Name, Surname, EatingHabitsID, AddressID) VALUES (@Name, @Surname, @EatingHabitsID, @AddressID)
 go
 
+alter PROC AddHabbits 
+@Values dbo.BasicCDT READONLY
+AS
+
+
+    INSERT INTO EatingHabit([EatingHabit], [EatingHabitCategoryID])
+    OUTPUT INSERTED.IDEatingHabit
+   select a.EatingHabit, EatingHabitCategory.IDEatingHabitCategory from EatingHabitCategory 
+	inner join @Values as a on EatingHabitCategory.CategoryName=a.CategoryName
+	go
+alter PROC AddCustomer2
+AS
+    DECLARE @Ids AS TABLE (Id int);
+    DECLARE @Vals BasicCDT;
+    INSERT INTO @Vals ([EatingHabit], [CategoryName]) VALUES ('vegan','Eating habit'), ('gluten','Dislike'), ('pizza','Eating habit');
+
+    INSERT INTO @Ids
+    EXEC AddHabbits @Vals;
+
+    -- should return three rows with the values 1, 2 and 3.    
+    SELECT *
+    FROM @Ids;
+
+GO
+
+EXEC AddCustomer2
+
+
+
+
+
+---------------------------
 ---DeleteCustomer
 CREATE PROC DeleteCustomer
 	@id int

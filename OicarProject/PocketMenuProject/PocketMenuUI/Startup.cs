@@ -43,12 +43,12 @@ namespace PocketMenuUI
             .RequireConfirmedAccount = true).AddRoles<IdentityRole>()
                 .AddEntityFrameworkStores<ApplicationDbContext>();
             services.AddTransient<IEmailSender, EmailSender>();
-<<<<<<< HEAD
+
             services.AddTransient<IApi, LocalAPI>();
-=======
+
             services.AddTransient<IJelovnikRepository, 
                 SQLRepository>();
->>>>>>> a32519840470b599709091d9c704f2d548f9f37f
+
             services.Configure<AuthMessageSenderOptions>(Configuration);
             services.AddAuthentication().AddGoogle(googleOptions =>
             {

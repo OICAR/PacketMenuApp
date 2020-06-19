@@ -21,11 +21,11 @@ namespace DapperDatabase.Api.Controllers
             this.repository = repository;
         }
 
-        [HttpGet]
-        public async Task<IEnumerable<T>> GetAsync()
-        {
-            return await repository.GetAll();
-        }
+        //[HttpGet]
+        //public async Task<IEnumerable<T>> GetAsync()
+        //{
+        //    return await repository.GetAll();
+        //}
 
 
         [HttpGet("{id}")]
@@ -44,23 +44,23 @@ namespace DapperDatabase.Api.Controllers
         }
 
 
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody]T entity)
-        {
-            Type myType = entity.GetType();
-            PropertyInfo propertyInfo = myType.GetProperties().Where(property => property.Name.StartsWith("ID")).FirstOrDefault();
-            propertyInfo.GetValue(id);
+        //[HttpPut("{id}")]
+        //public void Put(int id, [FromBody]T entity)
+        //{
+        //    Type myType = entity.GetType();
+        //    PropertyInfo propertyInfo = myType.GetProperties().Where(property => property.Name.StartsWith("ID")).FirstOrDefault();
+        //    propertyInfo.GetValue(id);
 
-            if (ModelState.IsValid)
-            {
-                repository.Update(entity);
-            }
-        }
+        //    if (ModelState.IsValid)
+        //    {
+        //        repository.Update(entity);
+        //    }
+        //}
 
-        [HttpDelete]
-        public void Delete(int id)
-        {
-            repository.Delete(id);
-        }
+        //[HttpDelete]
+        //public void Delete(int id)
+        //{
+        //    repository.Delete(id);
+        //}
     }
 }

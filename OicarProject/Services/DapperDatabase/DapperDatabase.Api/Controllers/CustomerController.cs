@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
+using DapperDatabase.Api.DAL.SSMS;
 using DapperDatabase.Api.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
@@ -13,51 +14,52 @@ namespace DapperDatabase.Api.Controllers
     {
 
 
-        private readonly IRepository<Customer> repository;
+        private readonly ICustomerRepository<CustomerDTO> _repository;
 
-        public CustomerController(IConfiguration configuration)
+
+        public CustomerController(ICustomerRepository<CustomerDTO> repository)
         {
-            repository = new CustomerRepository(configuration);
+            _repository = repository ;
         }
 
-        [HttpGet]
-        public async Task<IEnumerable<Customer>> GetAsync()
-        {
-            return await repository.GetAll();
-        }
+        //[HttpGet]
+        //public async Task<IEnumerable<Customer>> GetAsync()
+        //{
+        //    return await repository.GetAll();
+        //}
 
 
-        [HttpGet("{id}")]
-        public async Task<Customer> GetByIdAsync(int id)
-        {
-            return await repository.Get(id);
-        }
+        //[HttpGet("{id}")]
+        //public async Task<CustomerDTO> GetByIdAsync(int id)
+        //{
+        //    return await _repository.Get(id);
+        //}
 
         [HttpPost]
-        public void Post([FromBody]Customer customer)
+        public void Post([FromBody]CustomerDTO customer)
         {
             if (ModelState.IsValid)
             {
-                repository.Add(customer);
+                _repository.Add(customer);
             }
         }
 
-        [ProducesResponseType(typeof(Customer), 200)]
-        [HttpPut("{id}")]
-        public void Put(int id, [FromQuery]Customer customer)
-        {
-            customer.IDCustomer = id;
-            if (ModelState.IsValid)
-            {
-                repository.Update(customer);
-            }
-        }
+        //[ProducesResponseType(typeof(Customer), 200)]
+        //[HttpPut("{id}")]
+        //public void Put(int id, [FromQuery]Customer customer)
+        //{
+        //    customer.IDCustomer = id;
+        //    if (ModelState.IsValid)
+        //    {
+        //        repository.Update(customer);
+        //    }
+        //}
 
-        [HttpDelete]
-        public void Delete(int id)
-        {
-            repository.Delete(id);
-        }
+        //[HttpDelete]
+        //public void Delete(int id)
+        //{
+        //    repository.Delete(id);
+        //}
 
     }
 }

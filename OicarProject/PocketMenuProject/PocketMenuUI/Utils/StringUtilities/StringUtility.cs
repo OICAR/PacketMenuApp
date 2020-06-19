@@ -8,11 +8,13 @@ namespace PocketMenuUI.Utils.StringUtilities
     public static class StringUtility
     {
 
-        public static HashSet<string> ParseString(char delimiter,string stringToParse)
+        public static HashSet<string> ParseString(string stringToParse)
 
         {
 
-          string[] arrayOfStrings =  stringToParse.Split(delimiter);
+            string[] arrayOfStrings = stringToParse.Split(new Char[] { ',', '\\', '\n',';'});
+            //string[] arrayOfStrings = stringToParse.Split(new Char[] { ',', '\\', '\n', ';', ' ', '\t' });
+
             return arrayOfStrings.ToHashSet();
         
         }

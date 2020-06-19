@@ -15,7 +15,8 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using PocketMenuUI.Models;
 using PocketMenuUI.Services;
-
+using AutoMapper;
+using PocketMenuUI.Infrastructure;
 
 namespace PocketMenuUI
 {
@@ -37,13 +38,15 @@ namespace PocketMenuUI
             services.AddDefaultIdentity<ApplicationUser>(options => options.SignIn.RequireConfirmedAccount = true)
                 .AddEntityFrameworkStores<ApplicationDbContext>();
             services.AddTransient<IEmailSender, EmailSender>();
+            services.AddTransient<IApi, LocalAPI>();
             services.Configure<AuthMessageSenderOptions>(Configuration);
             services.AddAuthentication().AddGoogle(googleOptions =>
             {
                 googleOptions.ClientId = Configuration.GetValue<string>("web:client_id");
                 googleOptions.ClientSecret = Configuration.GetValue<string>("web:client_secret");
             });
-            
+        
+            services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
             services.AddControllersWithViews()
                 .Services
                 .AddHttpClientServices(Configuration);
@@ -95,6 +98,8 @@ namespace PocketMenuUI
             services.AddHttpClient<IQRCodeGenerator,QRService>();
             services.AddHttpClient<IGoogleMap, GoogleMapsService>();
             services.AddHttpClient<IExcel, ExcelService>();
+            services.AddHttpClient<IUsers, UserService>();
+
             return services;
 
 

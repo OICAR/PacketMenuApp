@@ -17,11 +17,11 @@ namespace DapperDatabase.Api.Controllers
             repository = new BeverageRepository(configuration);
         }
 
-        [HttpGet]
-        public async Task<IEnumerable<Beverage>> GetAsync()
-        {
-            return await repository.GetAll();
-        }
+        //[HttpGet]
+        //public async Task<IEnumerable<Beverage>> GetAsync()
+        //{
+        //    return await repository.GetAll();
+        //}
 
 
         [HttpGet("{id}")]
@@ -40,20 +40,20 @@ namespace DapperDatabase.Api.Controllers
         }
 
 
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody]Beverage entity)
-        {
-            entity.IDBeverage = id;
-            if (ModelState.IsValid)
-            {
-                repository.Update(entity);
-            }
-        }
+        //[HttpPut("{id}")]
+        //public void Put(int id, [FromBody]Beverage entity)
+        //{
+        //    entity.IDBeverage = id;
+        //    if (ModelState.IsValid)
+        //    {
+        //        repository.Update(entity);
+        //    }
+        //}
 
-        [HttpDelete]
-        public void Delete(int id)
-        {
-            repository.Delete(id);
-        }
+        //[HttpDelete]
+        //public void Delete(int id)
+        //{
+        //    repository.Delete(id);
+        //}
     }
 }

@@ -1,6 +1,7 @@
 using System;
 using System.IO;
 using System.Reflection;
+using DapperDatabase.Api.DAL.SSMS;
 using DapperDatabase.Api.Models;
 using FluentValidation.AspNetCore;
 using MicroElements.Swashbuckle.FluentValidation;
@@ -50,6 +51,8 @@ namespace DapperDatabase.Api
                 c.IncludeXmlComments(xmlPath);
 
             });
+            services.AddSingleton<ISQLConnection, SQLDatabase>();
+            services.AddScoped<ICustomerRepository<CustomerDTO>, CustomerRepository>();
             services.AddSwaggerExamplesFromAssemblyOf<Startup>();
             services.AddLogging(builder => builder.AddConsole());
 

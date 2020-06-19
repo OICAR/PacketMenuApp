@@ -17,11 +17,11 @@ namespace DapperDatabase.Api.Controllers
             repository = new CaffeRepository(configuration);
         }
 
-        [HttpGet]
-        public async Task<IEnumerable<Caffe>> GetAsync()
-        {
-            return await repository.GetAll();
-        }
+        //[HttpGet]
+        //public async Task<IEnumerable<Caffe>> GetAsync()
+        //{
+        //    return await repository.GetAll();
+        //}
 
 
         [HttpGet("{id}")]
@@ -40,20 +40,20 @@ namespace DapperDatabase.Api.Controllers
         }
 
 
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody]Caffe customer)
-        {
-            customer.IDCaffe = id;
-            if (ModelState.IsValid)
-            {
-                repository.Update(customer);
-            }
-        }
+        //[HttpPut("{id}")]
+        //public void Put(int id, [FromBody]Caffe customer)
+        //{
+        //    customer.IDCaffe = id;
+        //    if (ModelState.IsValid)
+        //    {
+        //        repository.Update(customer);
+        //    }
+        //}
 
-        [HttpDelete]
-        public void Delete(int id)
-        {
-            repository.Delete(id);
-        }
+        //[HttpDelete]
+        //public void Delete(int id)
+        //{
+        //    repository.Delete(id);
+        //}
     }
 }

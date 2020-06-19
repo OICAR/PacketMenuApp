@@ -18,11 +18,11 @@ namespace PocketMenuUI.Services
         private readonly IOptions<AppSettings> _settings;
         private readonly HttpClient _apiClient;
         private readonly string _forecastUrl;
-
-        public WeatherForecastService(HttpClient httpClient, IOptions<AppSettings> settings)
+        private readonly IApi _api;
+        public WeatherForecastService(HttpClient httpClient, IOptions<AppSettings> settings, IApi api)
         {
-            _apiClient = httpClient;
-            _forecastUrl = "https://api-gateway20200429072611.azurewebsites.net";
+            _apiClient = httpClient;            
+            _api = api;
         }
 
 
@@ -31,7 +31,7 @@ namespace PocketMenuUI.Services
         {
             List<WeatherForecastDTO> response = new List<WeatherForecastDTO>();
 
-            var uri = API.Forecast.GetWeatherForecast(_forecastUrl);
+            var uri = _api.GetWeatherForecast();
 
 
             //Define request data format  

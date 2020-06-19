@@ -1,5 +1,6 @@
-﻿@model UserDTO
-
+﻿@model User
+@using Microsoft.AspNetCore.Identity;
+@*@inject UserManager<IdentityUser> userManager*@
 @{
     ViewData["Title"] = "Create";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -10,7 +11,7 @@
 <h4>UserDTO</h4>
 <hr />
 
-<div class="row">
+<div onload="myScript()" class="row">
     <div class="col-md-4">
         <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
@@ -40,44 +41,146 @@
 
                 @foreach (var item in Model.EatingHabits)
                 {
-                <p>
-                    <label>
-                        <input type="checkbox" name="@("EatingHabits[" + item.Key + "]")"
-                               value="true" />
-                        <span>@item.Key</span>
-                        <input name="@("EatingHabits[" + item.Key + "]")" type="hidden" value="false">
-                    </label>
-                </p>
+
+
+                    @if (item.Value == true )
+                    {
+                        <p>
+                            <label>
+                                <input checked type="checkbox" name="@("EatingHabits[" + item.Key + "]")"
+                                       value="true" />
+                                <span>@item.Key</span>
+                                <input name="@("EatingHabits[" + item.Key + "]")" type="hidden" value="false">
+                            </label>
+                        </p>
+                    }
+
+                    @if (item.Value == false)
+                    {
+                        <p>
+                            <label>
+                                <input type="checkbox" name="@("EatingHabits[" + item.Key + "]")"
+                                       value="true" />
+                                <span>@item.Key</span>
+                                <input name="@("EatingHabits[" + item.Key + "]")" type="hidden" value="false">
+                            </label>
+                        </p>
+                    }
+
+
+
 
                 }
+
+                <p id="newHabbit1">
+
+
+                </p>
+
+                <div class="row">
+                    <div class="input-field col s6">
+                        <i class="material-icons prefix">mode_edit</i>
+                        <textarea asp-for="temp" id="icon_prefix2" class="materialize-textarea"></textarea>
+                        <label for="icon_prefix2">Eating Habit</label>
+                        <span class="helper-text" data-error="wrong" data-success="right">Example:allergy;intollerant;</span>
+                    </div>
+                </div>
+                <div class="form-group">
+
+                    <button type="button" onclick="myFunction()">Add new habit</button>
+
+                </div>
+
 
             </div>
 
             <div class="form-group">
 
-                        <div class="row">
-                            <div class="input-field col s6">
-                                <i class="material-icons prefix">mode_edit</i>
-                                <textarea asp-for="temp"  id="icon_prefix2" class="materialize-textarea"></textarea>
-                                <label for="icon_prefix2">Favorite Food</label>
-                                <span class="helper-text" data-error="wrong" data-success="right">Example:pizza;burger;cheese</span>
-                            </div>
-                        </div>
-
+                <div class="row">
+                    <div class="input-field col s6">
+                        <i class="material-icons prefix">mode_edit</i>
+                        <textarea asp-for="newEatingHabbit" id="icon_prefix3" class="materialize-textarea"></textarea>
+                        <label for="icon_prefix2">Favorite Food</label>
+                        <span class="helper-text" data-error="wrong" data-success="right">Example:pizza;burger;cheese</span>
+                    </div>
+                </div>
             </div>
 
-                <div class="form-group">
-                    <input type="submit" value="Create" class="btn btn-primary" />
-                </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
         </form>
     </div>
 </div>
 
+
 <div>
     <a asp-action="Index">Back to List</a>
 </div>
+
+@*<label>@userManager.GetUserId(User).ToString()</label>*@
+
+<script onload="ResetCounter()" src="~/js/site.js"></script>
+
 <script>
 
-  $('#textarea1').val('New Text');
-  M.textareaAutoResize($('#textarea1'));
+    $('#textarea1').val('New Text');
+    M.textareaAutoResize($('#textarea1'));
+
+
+
+    function myFunction() {
+
+        var x = document.getElementById("icon_prefix2").value;
+
+        //debugger;
+        if (typeof (Storage) !== "undefined") {
+            if (localStorage.clickcount) {
+                localStorage.clickcount = Number(localStorage.clickcount) + 1;
+            } else {
+                localStorage.clickcount = 1;
+            }
+            x.toUpperCase();
+            var number = Number(localStorage.clickcount) + 1;
+            var newId = "newHabbit" + number;
+            var display =
+                '<label>' +
+                '<input checked="" type="checkbox" name="EatingHabits[' + x + ']" value="true"/>' +
+                '<span>' + x + '</span>' +
+                '<input name="EatingHabits[' + x + ']" type="hidden" value="false"/>' +
+                '</label>'
+
+            if (localStorage.clickcount == 1) {
+                document.getElementById("newHabbit1").innerHTML = display;
+                var d1 = document.getElementById('newHabbit1');
+                d1.insertAdjacentHTML('afterend', '<p id=' + newId + '>' +
+                    '</p>');
+
+            }
+
+            else {
+
+                document.getElementById("newHabbit" + localStorage.clickcount).innerHTML = display;
+            }
+        } else {
+            document.getElementById("result").innerHTML = "Sorry, your browser does not support web storage...";
+        }
+
+
+    }
+
+    //    function clickCounter() {
+    //  if (typeof(Storage) !== "undefined") {
+    //    if (localStorage.clickcount) {
+    //      localStorage.clickcount = Number(localStorage.clickcount)+1;
+    //    } else {
+    //      localStorage.clickcount = 1;
+    //    }
+    //    document.getElementById("result").innerHTML = "You have clicked the button " + localStorage.clickcount + " time(s).";
+    //  } else {
+    //    document.getElementById("result").innerHTML = "Sorry, your browser does not support web storage...";
+    //  }
+    //}
+
+
 </script>

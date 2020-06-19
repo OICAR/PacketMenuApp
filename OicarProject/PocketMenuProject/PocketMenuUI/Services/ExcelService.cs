@@ -15,20 +15,21 @@ namespace PocketMenuUI.Services
 {
     public class ExcelService :IExcel
     {
-        private string _Url = "https://api-gateway20200429072611.azurewebsites.net";
+       
 
         private readonly HttpClient _httpClientFactory;
+        private readonly IApi _api;
 
 
-
-        public ExcelService(HttpClient httpClient)
+        public ExcelService(HttpClient httpClient, IApi api)
         {
             _httpClientFactory = httpClient;
+            _api = api;
         }
 
         public async void Get()
         {
-            var uri = API.ExcelAPI.GetExcel(_Url);
+            var uri = _api.GetExcel();
 
 
             _httpClientFactory.DefaultRequestHeaders.Clear();
@@ -61,7 +62,7 @@ namespace PocketMenuUI.Services
         public async Task<string> PostExcel(CatererViewModel model)
         {
 
-              var uri = API.ExcelAPI.PostExcel(_Url);
+              var uri = _api.PostExcel();
 
 
 

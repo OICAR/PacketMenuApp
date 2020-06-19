@@ -5,23 +5,26 @@ using System.Threading.Tasks;
 
 namespace PocketMenuUI.Infrastructure
 {
-    public class API :IApi
+    public class LocalAPI : IApi
     {
-
         private static string BaseURL = "https://api-gateway20200429072611.azurewebsites.net";
 
         public string GetExcel() => $"{BaseURL}/api/excel";
         public string GetMaps() => $"{BaseURL}/api/maps";
 
-        public string GetQRCode() => $"{BaseURL}/api/QRCode";
+        public string GetQRCode() => "http://localhost:57198"+ "/api/QRGenerator";
 
         public string GetWeatherForecast() => $"{BaseURL}/api/weatherforecast";
 
+
+        
+
+
+
         public string PostExcel() => $"{BaseURL}/api/document";
 
-        public string PostUser()
-        {
-            throw new NotImplementedException();
-        }
+        public string PostUser() => "https://localhost:5001"+ "/api/Customer";
+
+
     }
 }

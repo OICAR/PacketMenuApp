@@ -15,20 +15,21 @@ namespace PocketMenuUI.Services
     {
 
         private readonly IOptions<AppSettings> _settings;
+        private readonly IApi _api;
         private readonly HttpClient _httpClientFactory;
         private readonly string _Url;
 
 
-        public GoogleMapsService(HttpClient httpClient, IOptions<AppSettings> settings)
+        public GoogleMapsService(HttpClient httpClient, IOptions<AppSettings> settings, IApi api)
         {
-            _httpClientFactory = httpClient;
-            _Url = "https://api-gateway20200429072611.azurewebsites.net";
+            _httpClientFactory = httpClient;          
+            _api = api;
         }
 
 
         public async  Task<GoogleMapDTO> Add(GoogleMapDTO location)
         {
-            var uri = API.GoogleMaps.GetMaps(_Url);
+            var uri = _api.GetMaps();
 
             var request = new HttpRequestMessage(HttpMethod.Post, uri);
 
@@ -61,7 +62,7 @@ namespace PocketMenuUI.Services
 
             List<GoogleMapDTO> response = new List<GoogleMapDTO>();
 
-            var uri = API.GoogleMaps.GetMaps(_Url);
+            var uri = _api.GetMaps();
 
 
             _httpClientFactory.DefaultRequestHeaders.Clear();

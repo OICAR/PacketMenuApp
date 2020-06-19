@@ -35,10 +35,20 @@ namespace PocketMenuUI
             services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(
                     Configuration.GetConnectionString("DefaultConnection")));
-            services.AddDefaultIdentity<ApplicationUser>(options => options.SignIn.RequireConfirmedAccount = true)
+            services.AddDbContext<JelovnikDbContext>(options =>
+                options.UseSqlServer(
+                    Configuration.GetConnectionString("JelovnikConnection")));
+            services.AddDefaultIdentity<ApplicationUser>
+            (options => options.SignIn
+            .RequireConfirmedAccount = true).AddRoles<IdentityRole>()
                 .AddEntityFrameworkStores<ApplicationDbContext>();
             services.AddTransient<IEmailSender, EmailSender>();
+<<<<<<< HEAD
             services.AddTransient<IApi, LocalAPI>();
+=======
+            services.AddTransient<IJelovnikRepository, 
+                SQLRepository>();
+>>>>>>> a32519840470b599709091d9c704f2d548f9f37f
             services.Configure<AuthMessageSenderOptions>(Configuration);
             services.AddAuthentication().AddGoogle(googleOptions =>
             {
@@ -51,6 +61,7 @@ namespace PocketMenuUI
                 .Services
                 .AddHttpClientServices(Configuration);
             services.AddRazorPages();
+            
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

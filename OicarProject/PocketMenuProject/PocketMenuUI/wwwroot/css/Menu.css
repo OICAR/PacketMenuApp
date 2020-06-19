@@ -1,0 +1,30 @@
+﻿body {
+}
+
+.shorten-item{
+    min-height:66px !important;
+}
+.avatar-align{
+    margin-top:25%;
+}
+.p-drink {
+    margin-top:3% !important;
+    font-weight:bold;
+}
+.p-ingred{
+    margin-top:1% !important;
+}
+.enlarge{
+    width:45px !important;
+    height:45px !important;
+}
+.bg {
+    background-image: url("../img/bg.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-bottom: -2%;
+}
+.white-bg{
+    background-color:white;
+}

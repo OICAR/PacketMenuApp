@@ -8,6 +8,7 @@ namespace PocketMenuUI.Models
     public  class ApplicationUser : IdentityUser
     {
         //Ode dodati ako nesto pri registraciji ili u profilu.
+     
         public string FirstName { get; set; }
         public string LastName { get; set; }
       
@@ -15,7 +16,13 @@ namespace PocketMenuUI.Models
        
         [NotMapped]
         public IFormFile Photo { get; set; }
+        
+        public bool SaladFilter { get; set; }
+        
+      //  public string RoleName { get; set; }
 
     }
+    
+    
  
 }

@@ -11,9 +11,11 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.UI.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.AspNetCore.WebUtilities;
 using Microsoft.Extensions.Logging;
 using PocketMenuUI.Models;
+using PocketMenuUI.ViewModel;
 
 namespace PocketMenuUI.Areas.Identity.Pages.Account
 {
@@ -28,6 +30,7 @@ namespace PocketMenuUI.Areas.Identity.Pages.Account
 
         private readonly ILogger<RegisterModel> _logger;
         private readonly IEmailSender _emailSender;
+   //     private readonly RoleManager<IdentityRole> _roleManager;
 
         public RegisterModel(
             UserManager<ApplicationUser> userManager,
@@ -39,17 +42,20 @@ namespace PocketMenuUI.Areas.Identity.Pages.Account
             _signInManager = signInManager;
             _logger = logger;
             _emailSender = emailSender;
+        //    _roleManager = roleManager;
         }
 
         [BindProperty] public InputModel Input { get; set; }
 
+      
         public string ReturnUrl { get; set; }
-
+   //     public List<SelectListItem> RolesName { get; set; }
         public IList<AuthenticationScheme> ExternalLogins
         {
             get;
             set;
         }
+     //   public string RoleName { get; set; }
 
         //metoda za dodavanje i edit podataka
         public class InputModel
@@ -81,11 +87,16 @@ namespace PocketMenuUI.Areas.Identity.Pages.Account
             [Compare("Password", ErrorMessage =
                 "The password and confirmation password do not match.")]
             public string ConfirmPassword { get; set; }
+            
+        //    public string RoleName { get; set; }
+
         }
 
-        public async Task OnGetAsync(
+        public async Task OnGet(
             string returnUrl = null)
         {
+
+           // ViewData["roles"] = _roleManager.Roles.ToList();
             ReturnUrl = returnUrl;
             ExternalLogins =
                 (await _signInManager
@@ -93,29 +104,39 @@ namespace PocketMenuUI.Areas.Identity.Pages.Account
                 ).ToList();
         }
 
-        public async Task<IActionResult> OnPostAsync(
-            string returnUrl = null)
+        public async Task<IActionResult> OnPostAsync
+        (string returnUrl = null)
         {
+            /*var role = _roleManager
+                .FindByIdAsync(Input.RoleName).Result;*/
             returnUrl = returnUrl ?? Url.Content("~/");
+            
+            
             ExternalLogins =
                 (await _signInManager
                     .GetExternalAuthenticationSchemesAsync()
                 ).ToList();
             if (ModelState.IsValid)
             {
+                
+                
                 var user = new ApplicationUser
                 {
-                    UserName =
-                        Input.Email,
+                    UserName = Input.Email,
                     Email = Input.Email,
                     FirstName = Input.FirstName,
-                    LastName = Input.LastName
+                    LastName = Input.LastName,
+                 //  RolesName = RoleName
                 };
+          
                 var result =
                     await _userManager.CreateAsync(user,
                         Input.Password);
                 if (result.Succeeded)
                 {
+                  
+                    /*await _userManager
+                        .AddToRoleAsync(user,role.Name);*/
                     _logger.LogInformation(
                         "User created a new account with password.");
 

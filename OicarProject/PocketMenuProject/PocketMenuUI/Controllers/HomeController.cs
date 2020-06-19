@@ -1,6 +1,7 @@
-﻿using System;
+﻿﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Drawing.Text;
 using System.Linq;
 using System.Net.Http;
 using System.Net.Http.Headers;
@@ -20,9 +21,8 @@ namespace PocketMenuUI.Controllers
     {
         private readonly ILogger<HomeController> _logger;
         private IWatherForecast _weatherSvc;
-       
-
-        public HomeController(ILogger<HomeController> logger,IWatherForecast watherForecastService)
+        
+        public HomeController(ILogger<HomeController> logger,IWatherForecast watherForecastService )
         {
             _weatherSvc = watherForecastService;
             _logger = logger;
@@ -39,6 +39,8 @@ namespace PocketMenuUI.Controllers
             return Redirect("https://dapperdatabaseapi20200527121926.azurewebsites.net");
 
         }
+
+
             public async  Task<ActionResult> Index()
         {
 

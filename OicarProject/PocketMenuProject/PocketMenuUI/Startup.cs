@@ -48,7 +48,10 @@ namespace PocketMenuUI
 
             services.AddTransient<IJelovnikRepository, 
                 SQLRepository>();
-
+            services.AddSession(options =>
+            {
+                options.IdleTimeout=TimeSpan.FromSeconds(3600);
+            });
             services.Configure<AuthMessageSenderOptions>(Configuration);
             services.AddAuthentication().AddGoogle(googleOptions =>
             {
@@ -85,7 +88,7 @@ namespace PocketMenuUI
 
             app.UseAuthentication();
             app.UseAuthorization();
-
+            app.UseSession();
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute(

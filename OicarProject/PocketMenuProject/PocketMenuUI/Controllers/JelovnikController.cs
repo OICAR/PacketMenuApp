@@ -1,11 +1,14 @@
 ﻿﻿using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.Identity;
+ using Microsoft.AspNetCore.Http;
+ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
-using PocketMenuUI.Models;
+ using Newtonsoft.Json;
+ using PocketMenuUI.Models;
+ using PocketMenuUI.Models.ModelsDTO;
 
-namespace PocketMenuUI.Controllers
+ namespace PocketMenuUI.Controllers
 {
     public class JelovnikController : Controller
     {
@@ -71,6 +74,7 @@ namespace PocketMenuUI.Controllers
         [HttpGet]
         public async Task<IActionResult> Index()
         {   
+       
             var user =
                 await _userManager.GetUserAsync(User);
         

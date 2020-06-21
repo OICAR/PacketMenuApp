@@ -9,6 +9,6 @@ namespace PocketMenuUI.Services
    public interface IUsers
     {
 
-        public void PostUser(UserDTO user);
+         void PostUser(UserDTO user);
     }
 }

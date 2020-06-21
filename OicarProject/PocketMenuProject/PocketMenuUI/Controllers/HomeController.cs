@@ -7,7 +7,8 @@ using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Identity;
+ using Microsoft.AspNetCore.Http;
+ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
@@ -43,8 +44,7 @@ namespace PocketMenuUI.Controllers
 
             public async  Task<ActionResult> Index()
         {
-
-          
+            
 
             List<WeatherForecastDTO> EmpInfo = new List<WeatherForecastDTO>();
 

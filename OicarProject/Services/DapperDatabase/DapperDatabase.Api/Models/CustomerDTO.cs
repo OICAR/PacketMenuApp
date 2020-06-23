@@ -7,6 +7,9 @@ namespace DapperDatabase.Api.Models
 {
     public class CustomerDTO
     {
+
+        public string UserID { get; set; }
+
         public string FullName { get; set; }
 
 

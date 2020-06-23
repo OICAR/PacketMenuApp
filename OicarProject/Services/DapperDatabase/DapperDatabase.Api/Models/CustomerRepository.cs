@@ -41,6 +41,7 @@ namespace DapperDatabase.Api.Models
 
                 var queryParameters = new DynamicParameters();
                 queryParameters.Add("@customerHabbits", getDataset.AsTableValuedParameter("BasicCDT"));
+                queryParameters.Add("@CustomerID", entity.UserID);
                 queryParameters.Add("@Customer", entity.FullName);
                 queryParameters.Add("@Gender", entity.Gender);
 

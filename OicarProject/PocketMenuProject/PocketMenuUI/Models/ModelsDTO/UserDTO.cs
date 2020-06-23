@@ -9,6 +9,7 @@ namespace PocketMenuUI.Models.ModelsDTO
     public class UserDTO
     {
 
+        public string UserID { get; set; }
 
         public string FullName { get; set; }
 

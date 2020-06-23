@@ -48,15 +48,15 @@ namespace PocketMenuUI.Controllers
             var users =
                 _userManager.GetUserId(User);
             //Read Cookie
-            string key = users;
-            var cookieValue = JsonConvert
-            .DeserializeObject<UserDTO>(Request
-            .Cookies[key]);
-            cookieValue.EatingHabits.Add(cookieValue
-                .ToString());
-            var userInfo = JsonConvert
-                .DeserializeObject(HttpContext.Session
-                    .GetString("SessionUser"));
+            //string key = users;
+            //var cookieValue = JsonConvert
+            //.DeserializeObject<UserDTO>(Request
+            //.Cookies[key]);
+            //cookieValue.EatingHabits.Add(cookieValue
+            //    .ToString());
+            //var userInfo = JsonConvert
+            //    .DeserializeObject(HttpContext.Session
+            //        .GetString("SessionUser"));
             return View(user);
         }
 
@@ -71,6 +71,9 @@ namespace PocketMenuUI.Controllers
             */
             HttpContext.Session.SetString("SessionUser",
                 JsonConvert.SerializeObject(user));
+
+            users.UserID = user;
+
             UserDTO userDto = _mapper.Map<UserDTO>(users);
             _service.PostUser(userDto);
             

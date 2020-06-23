@@ -34,7 +34,7 @@ namespace PocketMenuUI
         {
             services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(
-                    Configuration.GetConnectionString("DefaultConnection")));
+                    Configuration.GetConnectionString("LocalDB")));
             services.AddDbContext<JelovnikDbContext>(options =>
                 options.UseSqlServer(
                     Configuration.GetConnectionString("JelovnikConnection")));

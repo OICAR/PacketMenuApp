@@ -9,6 +9,6 @@ namespace DapperDatabase.Api.DAL.SSMS
 {
    public interface ISQLConnection
     {
-        public SqlConnection Connect(IConfiguration _configuration);
+      public  SqlConnection Connect(IConfiguration _configuration);
     }
 }

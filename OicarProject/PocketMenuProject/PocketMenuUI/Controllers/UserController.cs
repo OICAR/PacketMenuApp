@@ -54,10 +54,10 @@ namespace PocketMenuUI.Controllers
             .Cookies[key]);
             cookieValue.EatingHabits.Add(cookieValue
                 .ToString());
-            /*var userInfo = JsonConvert
+            var userInfo = JsonConvert
                 .DeserializeObject(HttpContext.Session
-                    .GetString("SessionUser"));*/
-            return View(cookieValue);
+                    .GetString("SessionUser"));
+            return View(user);
         }
 
         [HttpPost]
@@ -79,10 +79,10 @@ namespace PocketMenuUI.Controllers
             string key = user;
             CookieOptions cookieOptions = new CookieOptions();
             cookieOptions.Expires = DateTime.Now.AddDays(7);
-            Response.Cookies.Append(key,value,
+            Response.Cookies.Append(key, value,
             cookieOptions);
-            //spremiti ID korisnika u cookie/session, izbor korisnika
-            
+            ////spremiti ID korisnika u cookie/session, izbor korisnika
+
             return RedirectToAction("Index","Home");
         }
 

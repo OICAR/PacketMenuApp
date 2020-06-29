@@ -15,14 +15,15 @@ namespace PocketMenuUI.Controllers
     //[Authorize(Roles="Caterer")]
     public class CatererController : Controller
     {
-
+        private readonly IQRCodeGenerator _QRCodeSvc;
         private readonly ILogger<CatererController> _logger;
         private readonly IGoogleMap _GoogleMapSvc;
 
-        public CatererController(ILogger<CatererController> logger, IGoogleMap googleMapSvc)
+        public CatererController(ILogger<CatererController> logger, IGoogleMap googleMapSvc, IQRCodeGenerator QRCodeSvc)
         {
             _GoogleMapSvc = googleMapSvc;
             _logger = logger;
+            _QRCodeSvc = QRCodeSvc;
         }
 
 
@@ -61,6 +62,8 @@ namespace PocketMenuUI.Controllers
                 };
 
                 //_GoogleMapSvc.Add(newLocation);
+
+                //var QRImage = await _QRCodeSvc.GetQRImage(file);
 
 
                 return RedirectToAction("Index",

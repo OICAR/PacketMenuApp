@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace PocketMenuUI.Models.ModelsDTO
+namespace PocketMenuUI.Services
 {
-    public class CatererDTO
+    public class CatererService
     {
     }
 }

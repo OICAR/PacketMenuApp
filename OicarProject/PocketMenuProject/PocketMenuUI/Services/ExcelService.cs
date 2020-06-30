@@ -71,11 +71,11 @@ namespace PocketMenuUI.Services
             var bytes = await GetBytes(model.FormDocument);
 
 
-            CatererDTO caterer = new CatererDTO();
-            caterer.Document = bytes;
+            MealsDTO mealsDoc = new MealsDTO();
+            mealsDoc.Document = bytes;
 
 
-            request.Content = new StringContent(System.Text.Json.JsonSerializer.Serialize(caterer));
+            request.Content = new StringContent(System.Text.Json.JsonSerializer.Serialize(mealsDoc));
 
             request.Content.Headers.ContentType = new MediaTypeWithQualityHeaderValue("application/json");
 

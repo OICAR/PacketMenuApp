@@ -16,5 +16,6 @@ namespace PocketMenuUI.Infrastructure
 
         public string PostUser();
 
+        public string PostCaterer { get; }
     }
 }

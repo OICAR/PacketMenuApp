@@ -5,7 +5,9 @@ using System.Threading.Tasks;
 
 namespace PocketMenuUI.Models.ModelsDTO
 {
-    public class CatererDTO
+    public class MealsDTO
     {
+
+        public byte[] Document { get; set; }
     }
 }

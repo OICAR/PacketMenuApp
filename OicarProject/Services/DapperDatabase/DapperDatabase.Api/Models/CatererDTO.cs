@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace PocketMenuUI.Models.ModelsDTO
+namespace DapperDatabase.Api.Models
 {
     public class CatererDTO
     {

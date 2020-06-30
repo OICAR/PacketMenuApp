@@ -61,7 +61,12 @@ namespace PocketMenuUI.Controllers
                     Long = model.Long
                 };
 
-                //_GoogleMapSvc.Add(newLocation);
+
+
+
+                _GoogleMapSvc.Add(newLocation);
+
+
 
                 //var QRImage = await _QRCodeSvc.GetQRImage(file);
 

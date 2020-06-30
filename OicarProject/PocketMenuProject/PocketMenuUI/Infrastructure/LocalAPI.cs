@@ -16,10 +16,7 @@ namespace PocketMenuUI.Infrastructure
 
         public string GetWeatherForecast() => $"{BaseURL}/api/weatherforecast";
 
-
-        
-
-
+        public string PostCaterer => throw new NotImplementedException();
 
         public string PostExcel() => $"{BaseURL}/api/document";
 

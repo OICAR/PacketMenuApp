@@ -10,6 +10,8 @@ namespace PocketMenuUI.Infrastructure
 
         private static string BaseURL = "https://api-gateway20200429072611.azurewebsites.net";
 
+        public string PostCaterer => throw new NotImplementedException();
+
         public string GetExcel() => $"{BaseURL}/api/excel";
         public string GetMaps() => $"{BaseURL}/api/maps";
 

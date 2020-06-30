@@ -113,7 +113,7 @@ namespace PocketMenuUI
             services.AddHttpClient<IGoogleMap, GoogleMapsService>();
             services.AddHttpClient<IExcel, ExcelService>();
             services.AddHttpClient<IUsers, UserService>();
-
+            services.AddHttpClient<ICaterers, CatererService>();
             return services;
 
 

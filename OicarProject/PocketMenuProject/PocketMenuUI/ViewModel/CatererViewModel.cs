@@ -11,6 +11,11 @@ namespace PocketMenuUI.ViewModel
 
         public string CatererName { get; set; }
 
+        public string CatererOIB { get; set; }
+
+        public string CatererID { get; set; }
+
+
         public string CateringFacilitiName { get; set; }
 
         //public int? Rating { get; set; }

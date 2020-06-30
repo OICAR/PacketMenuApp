@@ -18,12 +18,14 @@ namespace PocketMenuUI.Controllers
         private readonly IQRCodeGenerator _QRCodeSvc;
         private readonly ILogger<CatererController> _logger;
         private readonly IGoogleMap _GoogleMapSvc;
+        private readonly ICaterers _service;
 
-        public CatererController(ILogger<CatererController> logger, IGoogleMap googleMapSvc, IQRCodeGenerator QRCodeSvc)
+        public CatererController(ILogger<CatererController> logger, IGoogleMap googleMapSvc, IQRCodeGenerator QRCodeSvc, ICaterers service)
         {
             _GoogleMapSvc = googleMapSvc;
             _logger = logger;
             _QRCodeSvc = QRCodeSvc;
+            _service = service;
         }
 
 
@@ -49,8 +51,8 @@ namespace PocketMenuUI.Controllers
 
 
         [HttpPost]
-        public IActionResult Create
-           (CatererViewModel model)
+        public async Task<ActionResult> Create
+            (CatererViewModel model)
         {
             if (ModelState.IsValid)
             {
@@ -61,18 +63,29 @@ namespace PocketMenuUI.Controllers
                     Long = model.Long
                 };
 
+                var newCaterer = new CatererDTO
+                {
+                    Name = model.CatererName,
+                    IDCaterer = 1,
+                    OIB=123
+                };
+
+                var newQRCode = new XMLModel
+                {
+                   Name=model.CateringFacilitiName,
+                   Coordinates=model.Address
+                };
 
 
 
-                _GoogleMapSvc.Add(newLocation);
+                await _GoogleMapSvc.Add(newLocation);
+                _service.PostCaterer(newCaterer);
+
+               var QRImage = await _QRCodeSvc.GetQRImage(newQRCode);
 
 
-
-                //var QRImage = await _QRCodeSvc.GetQRImage(file);
-
-
-                return RedirectToAction("Index",
-                    "GoogleMaps");
+            return File(QRImage.QRImageInBytes, System.Net.Mime.MediaTypeNames.Application.Octet, "MyQRCode.jpg");
+            
             }
 
             return View("Index");

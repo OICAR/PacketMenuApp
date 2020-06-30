@@ -5,113 +5,14 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<<<<<<< HEAD
-<partial name="~/Views/Excel/_Index.cshtml"  />
-=======
 <partial name="~/Views/Excel/_Index.cshtml" />
->>>>>>> 1da9ae36d83b836452026e68260e3b6ab69ce2ca
 
 <br />
 <div class="row">
     <div class="col col-sm-12 m4 offset-m4">
-<<<<<<< HEAD
-        <section class="card">
-            <form enctype="multipart/form-data" asp-action="Create">
-                <div class="card-action blue white-text">
-                    <h3>Caterer Registration</h3>
-                </div>
-                <div class="row">
-                    <div class="col s12">
-                        <ul class="tabs">
-                            <li class="tab col s3">
-                                <a href="#name" class="active">Name</a>
-                            </li>
-                            <li class="tab col s3">
-                                <a href="#foodMenu">Food Menu</a>
-                            </li>
-                            <li class="tab col s3">
-                                <a href="#facility">Facility</a>
-                            </li>
-                            <li class="tab col s3">
-                                <a href="#finish">FINISH</a>
-                            </li>
-                        </ul>
-                    </div>
-
-                    <div id='name' class="col s12 center">
-                        <div class="form-group input-field col s12">
-                            <input asp-for="CatererName" id="catererName" class="form-control" required="" aria-required="true"/>
-                            <label for="catererName"> Caterer Name</label>
-                            <span asp-validation-for="CatererName" class="text-danger"></span>
-                        </div>
-                        <a id="btnFM" class="waves-effect waves-light btn blue center" style="margin-bottom:2%"><i class="material-icons">arrow_forward</i></a>
-                    </div>
-                    <div id='foodMenu' class="col s12 center">
-                        <div class="form-group file-field input-field col s12">
-                            <div class="btn blue">
-                                <span>File</span>
-                                <input type="file">
-                            </div>
-                            <div class="file-path-wrapper">
-                                <input asp-for="FormDocument" class="file-path validate" type="text" placeholder="Upload the food menu file." required="" aria-required="true">
-                                <input asp-for="FormDocument" class="file-path validate" />
-                            </div>
-                        </div>
-                        <a id="btnFac" class="waves-effect waves-light btn blue center" style="margin-bottom:2%"><i class="material-icons">arrow_forward</i></a>
-                    </div>
-                    <div id='facility' class="col s12 center">
-                        <div class="form-group input-field col s12">
-                            <input asp-for="CateringFacilitiName" type="text" id="facilityName" class="form-control" required="" aria-required="true"/>
-                            <label for="facilityName">Catering Facility Name</label>
-                        </div>
-                        <div hidden class="form-group row">
-                            <div class="col-sm-10">
-                                <label asp-for="Address" class="col-sm-2
-                        col-form-label"></label>
-                            </div>
-                            <input class="form-control" id="formatted-address" asp-for="Address" required="" aria-required="true"/>
-                        </div>
-                        <div class="form-group input-field col s12">
-                            <input type="text" id="location-input"
-                                   class="form-control">
-                            <label for="address">Address</label>
-                        </div>
-                        <div id="formatted-components"></div>
-                        <div class="container">
-                            <div class="col-md-4 center">
-                                <input type="button" name="Upload" value=" Google Submit" id="btngoogleupload" class="btn btn-primary blue" required="" aria-required="true"/>
-                            </div>
-                        </div>
-                        <br />
-                        <a id="btnFinish" class="waves-effect waves-light btn blue center" style="margin-bottom:2%"><i class="material-icons">arrow_forward</i></a>
-                    </div>
-                    <div id='finish' class="col s12 center">
-                        <div class="form-group">
-                            <button type="submit" class="btn-large waves-effect waves-dark blue" style="width:100%;margin-top:4%">Register</button>
-                        </div>
-                    </div>
-                </div>
-            </form>
-        </section>
-    </div>
-</div>
-<script>
-    $(document).ready(function () {
-        $('ul.tabs').tabs();
-        $("#btnFM").click(function () {
-            $('ul.tabs').tabs('select', 'foodMenu');
-        });
-        $("#btnFac").click(function () {
-            $('ul.tabs').tabs('select', 'facility');
-        });
-        $("#btnFinish").click(function () {
-            $('ul.tabs').tabs('select', 'finish');
-        });
-    });
-
         <div class="card">
             <div class="card-content">
-                <form method="GET" action="?">
+                <form enctype="multipart/form-data" asp-action="Create">
                     <ul class="stepper linear horizontal demos">
                         <li class="step active wrong">
                             <div data-step-label="Please input your name as a caterer." class="step-title waves-effect waves-dark">Step 1</div>
@@ -141,20 +42,22 @@
                                         <input hidden id="longitude-output" asp-for="Long" class="form-control" />
                                         <span asp-validation-for="Long" class="text-danger"></span>
                                     </div>
+                                    <!--Excel Upload-->
                                     <div class="form-group file-field input-field col s12">
                                         <div class="btn blue">
                                             <span>File</span>
                                             <input type="file">
                                         </div>
                                         <div class="file-path-wrapper">
-                                            <input asp-for="FormDocument" class="file-path validate" type="text" placeholder="Upload the food menu file." required="" aria-required="true">
-                                            <input asp-for="FormDocument" class="file-path validate" />
+                                            <input id="input-excel" asp-for="FormDocument" class="file-path validate invalid" type="text" placeholder="Upload the food menu file." required="">
+
                                         </div>
                                     </div>
                                     <div class="col-md-4 center">
                                         <input type="button" name="Upload" value="Upload" id="btnupload" class="btn btn-primary blue" />
 
                                     </div>
+
                                     <div class="clearfix">&nbsp;</div>
                                     <div class="row">
                                         <div id="divPrint"></div>
@@ -170,14 +73,15 @@
                         <li class="step">
                             <div class="step-title waves-effect waves-dark">Step 3</div>
                             <div class="step-content">
+                                <!--Catering Facility Name-->
                                 <div class="form-group input-field col s12">
                                     <input asp-for="CateringFacilitiName" type="text" id="facilityName" class="form-control" required="" aria-required="true" />
                                     <label for="facilityName">Catering Facility Name</label>
                                 </div>
+                                <!--Google Maps-->
                                 <div hidden class="form-group row">
                                     <div class="col-sm-10">
-                                        <label asp-for="Address" class="col-sm-2
-                            col-form-label"></label>
+                                        <label asp-for="Address" class="col-sm-2 col-form-label"></label>
                                     </div>
                                     <input class="form-control" id="formatted-address" asp-for="Address" required="" aria-required="true" />
                                 </div>
@@ -201,101 +105,9 @@
                 </form>
             </div>
         </div>
-        @*<section class="card">
-                <form enctype="multipart/form-data" asp-action="Create">
-                    <div class="card-action blue white-text">
-                        <h3>Caterer Registration</h3>
-                    </div>
-                    <div class="row">
-                        <div class="col s12">
-                            <ul class="tabs">
-                                <li class="tab col s3">
-                                    <a href="#name" class="active">Name</a>
-                                </li>
-                                <li class="tab col s3">
-                                    <a href="#foodMenu">Food Menu</a>
-                                </li>
-                                <li class="tab col s3">
-                                    <a href="#facility">Facility</a>
-                                </li>
-                                <li class="tab col s3">
-                                    <a href="#finish">FINISH</a>
-                                </li>
-                            </ul>
-                        </div>
-
-                        <div id='name' class="col s12 center">
-                            <div class="form-group input-field col s12">
-                                <input asp-for="CatererName" id="catererName" class="form-control" required="" aria-required="true"/>
-                                <label for="catererName"> Caterer Name</label>
-                                <span asp-validation-for="CatererName" class="text-danger"></span>
-                            </div>
-                            <a id="btnFM" class="waves-effect waves-light btn blue center" style="margin-bottom:2%"><i class="material-icons">arrow_forward</i></a>
-                        </div>
-                        <div id='foodMenu' class="col s12 center">
-                            <div class="form-group file-field input-field col s12">
-                                <div class="btn blue">
-                                    <span>File</span>
-                                    <input type="file">
-                                </div>
-                                <div class="file-path-wrapper">
-                                    <input asp-for="FormDocument" class="file-path validate" type="text" placeholder="Upload the food menu file." required="" aria-required="true">
-                                    <input asp-for="FormDocument" class="file-path validate" />
-                                </div>
-                            </div>
-                            <a id="btnFac" class="waves-effect waves-light btn blue center" style="margin-bottom:2%"><i class="material-icons">arrow_forward</i></a>
-                        </div>
-                        <div id='facility' class="col s12 center">
-                            <div class="form-group input-field col s12">
-                                <input asp-for="CateringFacilitiName" type="text" id="facilityName" class="form-control" required="" aria-required="true"/>
-                                <label for="facilityName">Catering Facility Name</label>
-                            </div>
-                            <div hidden class="form-group row">
-                                <div class="col-sm-10">
-                                    <label asp-for="Address" class="col-sm-2
-                            col-form-label"></label>
-                                </div>
-                                <input class="form-control" id="formatted-address" asp-for="Address" required="" aria-required="true"/>
-                            </div>
-                            <div class="form-group input-field col s12">
-                                <input type="text" id="location-input"
-                                       class="form-control">
-                                <label for="address">Address</label>
-                            </div>
-                            <div id="formatted-components"></div>
-                            <div class="container">
-                                <div class="col-md-4 center">
-                                    <input type="button" name="Upload" value=" Google Submit" id="btngoogleupload" class="btn btn-primary blue" />
-                                </div>
-                            </div>
-                            <br />
-                            <a id="btnFinish" class="waves-effect waves-light btn blue center" style="margin-bottom:2%"><i class="material-icons">arrow_forward</i></a>
-                        </div>
-                        <div id='finish' class="col s12 center">
-                            <div class="form-group">
-                                <button type="submit" class="btn-large waves-effect waves-dark blue" style="width:100%;margin-top:4%">Register</button>
-                            </div>
-                        </div>
-                    </div>
-                </form>
-            </section>*@
     </div>
 </div>
-@*<script>
-        $(document).ready(function () {
-            $('ul.tabs').tabs();
-            $("#btnFM").click(function () {
-                $('ul.tabs').tabs('select', 'foodMenu');
-            });
-            $("#btnFac").click(function () {
-                $('ul.tabs').tabs('select', 'facility');
-            });
-            $("#btnFinish").click(function () {
-                $('ul.tabs').tabs('select', 'finish');
-            });
-        });
-    </script>*@
-<!-- JS -->
+
 <script src="https://unpkg.com/materialize-stepper@3.1.0/dist/js/mstepper.min.js"></script>
 <script>
     var stepper = document.querySelector('.stepper');
@@ -303,7 +115,6 @@
         // options
         firstActive: 0 // this is the default
     })
-
 
 </script>
 <partial name="~/Views/GoogleMaps/_GoogleMapsPart.cshtml" />

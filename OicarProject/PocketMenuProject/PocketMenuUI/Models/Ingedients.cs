@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 namespace PocketMenuUI.Models
 {
 
-    enum MesureUnit {
+    public enum MesureUnit {
 
 
         l,

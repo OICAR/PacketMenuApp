@@ -12,7 +12,7 @@ using PocketMenuUI.ViewModel;
 
 namespace PocketMenuUI.Controllers
 {
-    //[Authorize(Roles="Caterer")]
+    [Authorize(Roles="Caterer")]
     public class CatererController : Controller
     {
         private readonly IQRCodeGenerator _QRCodeSvc;

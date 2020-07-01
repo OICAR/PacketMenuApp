@@ -19,7 +19,6 @@ namespace PocketMenuUI.Models
         
         public bool SaladFilter { get; set; }
         
-      //  public string RoleName { get; set; }
 
     }
     

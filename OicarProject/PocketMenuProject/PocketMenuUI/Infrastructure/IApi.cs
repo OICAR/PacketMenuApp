@@ -13,9 +13,9 @@ namespace PocketMenuUI.Infrastructure
             public  string GetMaps();
             public  string GetExcel() ;
             public  string PostExcel();
+        public string PostCaterer();
 
         public string PostUser();
 
-        public string PostCaterer { get; }
     }
 }

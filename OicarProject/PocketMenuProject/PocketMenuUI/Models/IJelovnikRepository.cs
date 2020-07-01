@@ -5,9 +5,9 @@ namespace PocketMenuUI.Models
 {
     public interface IJelovnikRepository
     {
-        IEnumerable<Meal> GetAllMeals();
+        IEnumerable<Article> GetAllMeals();
         IEnumerable<Beverage> GetAllBeverages();
-        IEnumerable<Meal> f(bool query,bool search);
-        IEnumerable<Meal> fa(bool query);
+        IEnumerable<Article> f(bool query,bool search);
+        IEnumerable<Article> fa(bool query);
     }
 }

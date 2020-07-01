@@ -20,7 +20,7 @@ namespace PocketMenuUI.Models
             _userManager = userManager;
         }
         public bool SaladFilter { get; set; }
-        public IEnumerable<Meal> GetAllMeals()
+        public IEnumerable<Article> GetAllMeals()
         {
             return _context.Meals;
         }
@@ -29,7 +29,7 @@ namespace PocketMenuUI.Models
         {
             return _context.Beverages;
         }
-        public IEnumerable<Meal> f(bool query,bool search)
+        public IEnumerable<Article> f(bool query,bool search)
         {
             if (query==true )
             {
@@ -51,7 +51,7 @@ namespace PocketMenuUI.Models
            
         }
 
-        public IEnumerable<Meal> fa(bool query)
+        public IEnumerable<Article> fa(bool query)
         { 
            
             if (query==true )

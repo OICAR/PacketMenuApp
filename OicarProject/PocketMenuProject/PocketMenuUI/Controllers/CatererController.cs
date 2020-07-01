@@ -84,6 +84,8 @@ namespace PocketMenuUI.Controllers
                var QRImage = await _QRCodeSvc.GetQRImage(newQRCode);
 
 
+
+
             return File(QRImage.QRImageInBytes, System.Net.Mime.MediaTypeNames.Application.Octet, "MyQRCode.jpg");
             
             }

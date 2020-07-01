@@ -16,7 +16,7 @@ namespace PocketMenuUI.Infrastructure
 
         public string GetWeatherForecast() => $"{BaseURL}/api/weatherforecast";
 
-        public string PostCaterer => "https://localhost:5001" + "/api/Customer";
+        public string PostCaterer => "https://localhost:5001" + "/api/Caterer";
 
         public string PostExcel() => $"{BaseURL}/api/document";
 

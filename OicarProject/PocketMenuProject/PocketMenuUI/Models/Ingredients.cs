@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 namespace PocketMenuUI.Models
 {
 
-    enum MesureUnit {
+   public enum MesureUnit {
 
 
         l,
@@ -19,7 +19,7 @@ namespace PocketMenuUI.Models
     }
 
 
-    public class Ingedients
+    public class Ingredients
     {
 
         public string IngredientName { get; set; }
@@ -28,7 +28,6 @@ namespace PocketMenuUI.Models
 
         public double Amount { get; set; }
 
-        public double Price { get; set; }
 
     }
 }

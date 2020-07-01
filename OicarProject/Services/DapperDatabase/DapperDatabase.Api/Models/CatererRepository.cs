@@ -13,20 +13,28 @@ namespace DapperDatabase.Api.Models
     {
 
         private readonly IConfiguration _configuration;
-        public CatererRepository(IConfiguration configuration)
+        ISQLConnection _connection;
+        public CatererRepository(IConfiguration configuration, ISQLConnection connection)
         {
             _configuration = configuration;
+            _connection = connection;
+
         }
 
         public async Task<int> Add(Caterer entity)
         {
             var sql = "AddCaterer";
-            using var connection = new SqlConnection(_configuration.GetConnectionString("DefaultConnection"));
-            connection.Open();
-            var queryParameters = new DynamicParameters();
-            queryParameters.Add("@Name", entity.Name);
-            queryParameters.Add("@OIB", entity.OIB);
-            return await connection.ExecuteAsync(sql, queryParameters, commandType: CommandType.StoredProcedure);
+            using (connection = _connection.Connect(_configuration))
+            {
+                connection.Open();
+                var queryParameters = new DynamicParameters();
+                queryParameters.Add("@IDCaterer", entity.IDCaterer);
+                queryParameters.Add("@Name", entity.Name);
+                queryParameters.Add("@OIB", entity.OIB);
+
+                return await connection.ExecuteAsync(sql, queryParameters, commandType: CommandType.StoredProcedure);
+            }
+
         }
 
         public async Task<int> Delete(int id)

@@ -35,9 +35,6 @@ namespace PocketMenuUI
             services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(
                     Configuration.GetConnectionString("LocalDB")));
-            services.AddDbContext<JelovnikDbContext>(options =>
-                options.UseSqlServer(
-                    Configuration.GetConnectionString("JelovnikConnection")));
             services.AddDefaultIdentity<ApplicationUser>
             (options => options.SignIn
             .RequireConfirmedAccount = true).AddRoles<IdentityRole>()
@@ -46,8 +43,7 @@ namespace PocketMenuUI
 
             services.AddTransient<IApi, LocalAPI>();
 
-            services.AddTransient<IJelovnikRepository, 
-                SQLRepository>();
+      
             services.AddSession(options =>
             {
                 options.IdleTimeout=TimeSpan.FromSeconds(3600);

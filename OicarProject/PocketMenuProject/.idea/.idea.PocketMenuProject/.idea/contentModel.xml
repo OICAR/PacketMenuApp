@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ContentModelStore">
-    <e p="C:\Users\koweratus\.Rider2019.2\config\consoles\db" t="IncludeRecursive" />
-    <e p="C:\Users\koweratus\.Rider2019.2\config\extensions" t="IncludeRecursive" />
-    <e p="C:\Users\koweratus\.Rider2019.2\config\scratches" t="IncludeRecursive" />
-    <e p="C:\Users\koweratus\.Rider2019.2\system\extResources" t="IncludeRecursive" />
-    <e p="C:\Users\koweratus\.Rider2019.2\system\resharper-host\local\Transient\ReSharperHost\v192\SolutionCaches\_PocketMenuProject.-1921121557.00" t="ExcludeRecursive" />
+    <e p="C:\Users\koweratus\AppData\local\JetBrains\Rider2020.1\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\koweratus\AppData\local\JetBrains\Rider2020.1\resharper-host\local\Transient\ReSharperHost\v201\SolutionCaches\_PocketMenuProject.-1921121557.00" t="ExcludeRecursive" />
+    <e p="C:\Users\koweratus\AppData\Roaming\JetBrains\Rider2020.1\consoles\db" t="IncludeRecursive" />
+    <e p="C:\Users\koweratus\AppData\Roaming\JetBrains\Rider2020.1\extensions" t="IncludeRecursive" />
     <e p="C:\Users\koweratus\Desktop\OICAR\PacketMenuApp\OicarProject\PocketMenuProject" t="IncludeFlat">
       <e p=".dockerignore" t="Include" />
       <e p="packages" t="ExcludeRecursive" />
@@ -152,12 +151,14 @@
           <e p="EatingHabits.cs" t="Include" />
           <e p="ErrorViewModel.cs" t="Include" />
           <e p="IJelovnikRepository.cs" t="Include" />
+          <e p="Ingedients.cs" t="Include" />
           <e p="Meal.cs" t="Include" />
           <e p="Menu.cs" t="Include" />
           <e p="ModelBuilderExtensions.cs" t="Include" />
           <e p="ModelsDTO" t="Include">
             <e p="CatererDTO.cs" t="Include" />
             <e p="GoogleMapDTO.cs" t="Include" />
+            <e p="MealsDTO.cs" t="Include" />
             <e p="UserDTO.cs" t="Include" />
             <e p="WeatherForecastDTO.cs" t="Include" />
             <e p="XMLModel.cs" t="Include" />
@@ -169,6 +170,7 @@
           <e p="Debug" t="Include">
             <e p="netcoreapp3.1" t="Include">
               <e p="PocketMenuUI.AssemblyInfo.cs" t="Include" />
+              <e p="PocketMenuUI.RazorAssemblyInfo.cs" t="Include" />
             </e>
           </e>
         </e>
@@ -183,9 +185,11 @@
         <e p="ScaffoldingReadMe.txt" t="Include" />
         <e p="Services" t="Include">
           <e p="AuthMessageSenderOptions.cs" t="Include" />
+          <e p="CatererService.cs" t="Include" />
           <e p="EmailSender.cs" t="Include" />
           <e p="ExcelService.cs" t="Include" />
           <e p="GoogleMapsService.cs" t="Include" />
+          <e p="ICaterers.cs" t="Include" />
           <e p="IExcel.cs" t="Include" />
           <e p="IGoogleMap.cs" t="Include" />
           <e p="IQRCodeGenerator.cs" t="Include" />

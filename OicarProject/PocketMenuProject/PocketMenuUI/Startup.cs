@@ -110,6 +110,7 @@ namespace PocketMenuUI
             services.AddHttpClient<IExcel, ExcelService>();
             services.AddHttpClient<IUsers, UserService>();
             services.AddHttpClient<ICaterers, CatererService>();
+            services.AddHttpClient<IMenu,MenuService>();
             return services;
 
 

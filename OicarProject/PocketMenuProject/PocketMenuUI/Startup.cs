@@ -39,7 +39,7 @@ namespace PocketMenuUI
             (options => options.SignIn
             .RequireConfirmedAccount = true).AddRoles<IdentityRole>()
                 .AddEntityFrameworkStores<ApplicationDbContext>();
-            services.AddTransient<IEmailSender, EmailSender>();
+           // services.AddTransient<IEmailSender, EmailSender>();
 
             services.AddTransient<IApi, LocalAPI>();
 
@@ -60,7 +60,8 @@ namespace PocketMenuUI
                 .Services
                 .AddHttpClientServices(Configuration);
             services.AddRazorPages();
-            
+   
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

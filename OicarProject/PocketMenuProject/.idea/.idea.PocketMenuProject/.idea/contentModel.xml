@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ContentModelStore">
-    <e p="C:\Users\koweratus\AppData\local\JetBrains\Rider2020.1\extResources" t="IncludeRecursive" />
-    <e p="C:\Users\koweratus\AppData\local\JetBrains\Rider2020.1\resharper-host\local\Transient\ReSharperHost\v201\SolutionCaches\_PocketMenuProject.-1921121557.00" t="ExcludeRecursive" />
-    <e p="C:\Users\koweratus\AppData\Roaming\JetBrains\Rider2020.1\consoles\db" t="IncludeRecursive" />
-    <e p="C:\Users\koweratus\AppData\Roaming\JetBrains\Rider2020.1\extensions" t="IncludeRecursive" />
+    <e p="C:\Users\koweratus\.Rider2019.2\config\consoles\db" t="IncludeRecursive" />
+    <e p="C:\Users\koweratus\.Rider2019.2\config\extensions" t="IncludeRecursive" />
+    <e p="C:\Users\koweratus\.Rider2019.2\config\scratches" t="IncludeRecursive" />
+    <e p="C:\Users\koweratus\.Rider2019.2\system\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\koweratus\.Rider2019.2\system\resharper-host\local\Transient\ReSharperHost\v192\SolutionCaches\_PocketMenuProject.-1921121557.00" t="ExcludeRecursive" />
     <e p="C:\Users\koweratus\Desktop\OICAR\PacketMenuApp\OicarProject\PocketMenuProject" t="IncludeFlat">
       <e p=".dockerignore" t="Include" />
       <e p="packages" t="ExcludeRecursive" />
@@ -83,6 +84,8 @@
                 </e>
                 <e p="Register.cshtml" t="Include" />
                 <e p="Register.cshtml.cs" t="Include" />
+                <e p="RegisterCaterer.cshtml" t="Include" />
+                <e p="RegisterCaterer.cshtml.cs" t="Include" />
                 <e p="RegisterConfirmation.cshtml" t="Include" />
                 <e p="RegisterConfirmation.cshtml.cs" t="Include" />
                 <e p="ResendEmailConfirmation.cshtml" t="Include" />
@@ -103,31 +106,12 @@
           <e p="ExcelController.cs" t="Include" />
           <e p="GoogleMapsController.cs" t="Include" />
           <e p="HomeController.cs" t="Include" />
-          <e p="JelovnikController.cs" t="Include" />
           <e p="QRCodeController.cs" t="Include" />
           <e p="RoleController.cs" t="Include" />
           <e p="UserController.cs" t="Include" />
         </e>
         <e p="Data" t="Include">
           <e p="ApplicationDbContext.cs" t="Include" />
-          <e p="JelovnikDbContext.cs" t="Include" />
-          <e p="Migrations" t="Include">
-            <e p="00000000000000_CreateIdentitySchema.cs" t="Include" />
-            <e p="00000000000000_CreateIdentitySchema.Designer.cs" t="Include" />
-            <e p="20200530124141_Extend_IdentityUser.cs" t="Include" />
-            <e p="20200530124141_Extend_IdentityUser.Designer.cs" t="Include" />
-            <e p="20200530155257_Photo_Path.cs" t="Include" />
-            <e p="20200530155257_Photo_Path.Designer.cs" t="Include" />
-            <e p="20200530155656_IForm_File.cs" t="Include" />
-            <e p="20200530155656_IForm_File.Designer.cs" t="Include" />
-            <e p="20200611161117_filerTest.cs" t="Include" />
-            <e p="20200611161117_filerTest.Designer.cs" t="Include" />
-            <e p="ApplicationDbContextModelSnapshot.cs" t="Include" />
-          </e>
-          <e p="Services" t="Include">
-            <e p="AuthMessageSenderOptions.cs" t="Include" />
-            <e p="EmailSender.cs" t="Include" />
-          </e>
         </e>
         <e p="Dictionary.cs" t="Include" />
         <e p="Dockerfile" t="Include" />
@@ -136,25 +120,14 @@
           <e p="IApi.cs" t="Include" />
           <e p="LocalAPI.cs" t="Include" />
         </e>
-        <e p="Migrations" t="Include">
-          <e p="20200611142902_jelovnici.cs" t="Include" />
-          <e p="20200611142902_jelovnici.Designer.cs" t="Include" />
-          <e p="20200611143644_jelovniciSedd.cs" t="Include" />
-          <e p="20200611143644_jelovniciSedd.Designer.cs" t="Include" />
-          <e p="JelovnikDbContextModelSnapshot.cs" t="Include" />
-        </e>
+        <e p="Migrations" t="Include" />
         <e p="Models" t="Include">
-          <e p="Alergy.cs" t="Include" />
           <e p="ApplicationRole.cs" t="Include" />
           <e p="ApplicationUser.cs" t="Include" />
-          <e p="Beverage.cs" t="Include" />
-          <e p="EatingHabits.cs" t="Include" />
           <e p="ErrorViewModel.cs" t="Include" />
-          <e p="IJelovnikRepository.cs" t="Include" />
-          <e p="Ingedients.cs" t="Include" />
-          <e p="Meal.cs" t="Include" />
+          <e p="Ingredients.cs" t="Include" />
+          <e p="Item.cs" t="Include" />
           <e p="Menu.cs" t="Include" />
-          <e p="ModelBuilderExtensions.cs" t="Include" />
           <e p="ModelsDTO" t="Include">
             <e p="CatererDTO.cs" t="Include" />
             <e p="GoogleMapDTO.cs" t="Include" />
@@ -163,14 +136,12 @@
             <e p="WeatherForecastDTO.cs" t="Include" />
             <e p="XMLModel.cs" t="Include" />
           </e>
-          <e p="SQLRepository.cs" t="Include" />
           <e p="User.cs" t="Include" />
         </e>
         <e p="obj" t="ExcludeRecursive">
           <e p="Debug" t="Include">
             <e p="netcoreapp3.1" t="Include">
               <e p="PocketMenuUI.AssemblyInfo.cs" t="Include" />
-              <e p="PocketMenuUI.RazorAssemblyInfo.cs" t="Include" />
             </e>
           </e>
         </e>
@@ -192,9 +163,11 @@
           <e p="ICaterers.cs" t="Include" />
           <e p="IExcel.cs" t="Include" />
           <e p="IGoogleMap.cs" t="Include" />
+          <e p="IMenu.cs" t="Include" />
           <e p="IQRCodeGenerator.cs" t="Include" />
           <e p="IUsers.cs" t="Include" />
           <e p="IWatherForecast.cs" t="Include" />
+          <e p="MenuService.cs" t="Include" />
           <e p="QRService.cs" t="Include" />
           <e p="UserService.cs" t="Include" />
           <e p="WeatherForecastService.cs" t="Include" />
@@ -203,6 +176,9 @@
         <e p="Utils" t="Include">
           <e p="ExcelUtlities" t="Include">
             <e p="ExcelUtility.cs" t="Include" />
+          </e>
+          <e p="HttpMethodsUtilities" t="Include">
+            <e p="HttpPost.cs" t="Include" />
           </e>
           <e p="StringUtilities" t="Include">
             <e p="StringUtility.cs" t="Include" />
@@ -236,13 +212,11 @@
           </e>
           <e p="Home" t="Include">
             <e p="Index.cshtml" t="Include" />
-            <e p="Menu.cshtml" t="Include" />
             <e p="Privacy.cshtml" t="Include" />
           </e>
-          <e p="Jelovnik" t="Include">
-            <e p="Index.cshtml" t="Include" />
+          <e p="Menus" t="Include">
+            <e p="Menu.cshtml" t="Include" />
           </e>
-          <e p="Menu" t="Include" />
           <e p="QRCode" t="Include">
             <e p="Index.cshtml" t="Include" />
           </e>

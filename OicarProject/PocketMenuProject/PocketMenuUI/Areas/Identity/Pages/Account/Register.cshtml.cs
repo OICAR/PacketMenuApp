@@ -49,8 +49,7 @@ namespace PocketMenuUI.Areas.Identity.Pages.Account
 
       
         public string ReturnUrl { get; set; }
-        public List<SelectListItem> RolesName { get; set; }
-        public string RoleName { get; set; }
+
         public IList<AuthenticationScheme> ExternalLogins
         {
             get;
@@ -189,7 +188,9 @@ namespace PocketMenuUI.Areas.Identity.Pages.Account
                         error.Description);
                 }
             }
-            ViewData["roles"] = _roleManager.Roles.ToList();
+            ViewData["roles"] =
+                _roleManager.Roles.Where(r =>
+                    r.Name == "User").ToList();
 
             // If we got this far, something failed, redisplay form
             return Page();

@@ -3,6 +3,7 @@
 @inject UserManager<ApplicationUser> UserManager
 
 
+
 @if (SignInManager.IsSignedIn(User))
 {
     <li>
@@ -41,7 +42,7 @@ else
         
                 <a class="waves-effect waves-light 
                 btn-large"style=" margin-left: 27%;" 
-                asp-area="" asp-controller="Caterer" asp-action="Registration"><i class="material-icons right">cloud</i>
+                asp-area="Identity" asp-page="/Account/RegisterCaterer"><i class="material-icons right">cloud</i>
                 Caterer
             </a>
            

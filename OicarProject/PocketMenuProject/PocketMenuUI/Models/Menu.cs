@@ -13,7 +13,7 @@ namespace PocketMenuUI.Models
         public int CateringFacilityName { get; set; }
 
 
-        public List<Article> Articles{ get; set; }
+        public List<Item> Articles{ get; set; }
   
     }
 }

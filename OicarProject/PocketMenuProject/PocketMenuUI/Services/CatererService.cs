@@ -30,7 +30,7 @@ namespace PocketMenuUI.Services
         public async void PostCaterer(CatererDTO caterer)
         {
 
-            var uri = _api.PostCaterer;
+            var uri = _api.PostCaterer();
 
             var request = new HttpRequestMessage(HttpMethod.Post, uri);
 

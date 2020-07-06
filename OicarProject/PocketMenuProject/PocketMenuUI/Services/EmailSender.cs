@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PocketMenuUI.Services
 {
-    public class EmailSender : IEmailSender
+    public class EmailSender 
     {
         public EmailSender(
             IOptions<AuthMessageSenderOptions>

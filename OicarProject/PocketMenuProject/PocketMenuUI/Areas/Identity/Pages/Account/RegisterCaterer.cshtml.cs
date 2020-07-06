@@ -20,7 +20,7 @@ using PocketMenuUI.ViewModel;
 namespace PocketMenuUI.Areas.Identity.Pages.Account
 {
     [AllowAnonymous]
-    public class RegisterModel : PageModel
+    public class RegisterCatererModel : PageModel
     {
         private readonly SignInManager<ApplicationUser>
             _signInManager;
@@ -28,14 +28,14 @@ namespace PocketMenuUI.Areas.Identity.Pages.Account
         private readonly UserManager<ApplicationUser>
             _userManager;
 
-        private readonly ILogger<RegisterModel> _logger;
+        private readonly ILogger<RegisterCatererModel> _logger;
         private readonly IEmailSender _emailSender;
         private readonly RoleManager<IdentityRole> _roleManager;
 
-        public RegisterModel(
+        public RegisterCatererModel(
             UserManager<ApplicationUser> userManager,
             SignInManager<ApplicationUser> signInManager,
-            ILogger<RegisterModel> logger,
+            ILogger<RegisterCatererModel> logger,
             IEmailSender emailSender,RoleManager<IdentityRole> roleManager)
         {
             _userManager = userManager;
@@ -49,7 +49,6 @@ namespace PocketMenuUI.Areas.Identity.Pages.Account
 
       
         public string ReturnUrl { get; set; }
-
         public IList<AuthenticationScheme> ExternalLogins
         {
             get;
@@ -97,7 +96,7 @@ namespace PocketMenuUI.Areas.Identity.Pages.Account
 
             ViewData["roles"] =
                 _roleManager.Roles.Where(r =>
-                    r.Name == "User").ToList();
+                    r.Name == "Caterer").ToList();
             ReturnUrl = returnUrl;
             ExternalLogins =
                 (await _signInManager
@@ -190,7 +189,7 @@ namespace PocketMenuUI.Areas.Identity.Pages.Account
             }
             ViewData["roles"] =
                 _roleManager.Roles.Where(r =>
-                    r.Name == "User").ToList();
+                    r.Name == "Caterer").ToList();
 
             // If we got this far, something failed, redisplay form
             return Page();

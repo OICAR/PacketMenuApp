@@ -5,12 +5,10 @@ using System.Threading.Tasks;
 
 namespace PocketMenuUI.Infrastructure
 {
-    public class API :IApi
+    public class API : IApi
     {
 
         private static string BaseURL = "https://api-gateway20200429072611.azurewebsites.net";
-
-        public string PostCaterer => throw new NotImplementedException();
 
         public string GetExcel() => $"{BaseURL}/api/excel";
         public string GetMaps() => $"{BaseURL}/api/maps";
@@ -19,11 +17,14 @@ namespace PocketMenuUI.Infrastructure
 
         public string GetWeatherForecast() => $"{BaseURL}/api/weatherforecast";
 
+        public string PostCaterer() => throw new NotImplementedException();
+
         public string PostExcel() => $"{BaseURL}/api/document";
 
         public string PostUser()
         {
             throw new NotImplementedException();
         }
+
     }
 }

@@ -35,19 +35,15 @@ namespace PocketMenuUI
             services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(
                     Configuration.GetConnectionString("LocalDB")));
-            services.AddDbContext<JelovnikDbContext>(options =>
-                options.UseSqlServer(
-                    Configuration.GetConnectionString("JelovnikConnection")));
             services.AddDefaultIdentity<ApplicationUser>
             (options => options.SignIn
             .RequireConfirmedAccount = true).AddRoles<IdentityRole>()
                 .AddEntityFrameworkStores<ApplicationDbContext>();
-            services.AddTransient<IEmailSender, EmailSender>();
+           // services.AddTransient<IEmailSender, EmailSender>();
 
             services.AddTransient<IApi, LocalAPI>();
 
-            services.AddTransient<IJelovnikRepository, 
-                SQLRepository>();
+      
             services.AddSession(options =>
             {
                 options.IdleTimeout=TimeSpan.FromSeconds(3600);
@@ -64,7 +60,8 @@ namespace PocketMenuUI
                 .Services
                 .AddHttpClientServices(Configuration);
             services.AddRazorPages();
-            
+   
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -114,6 +111,7 @@ namespace PocketMenuUI
             services.AddHttpClient<IExcel, ExcelService>();
             services.AddHttpClient<IUsers, UserService>();
             services.AddHttpClient<ICaterers, CatererService>();
+            services.AddHttpClient<IMenu,MenuService>();
             return services;
 
 

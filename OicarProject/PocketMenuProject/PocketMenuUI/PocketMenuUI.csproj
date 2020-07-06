@@ -7,6 +7,13 @@
     <LangVersion>8</LangVersion>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Compile Remove="Views\Menu\**" />
+    <Content Remove="Views\Menu\**" />
+    <EmbeddedResource Remove="Views\Menu\**" />
+    <None Remove="Views\Menu\**" />
+  </ItemGroup>
+
 
   <ItemGroup>
     <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="7.0.0" />
@@ -26,7 +33,7 @@
 
 
   <ItemGroup>
-    <Folder Include="Views\Menu\" />
+    <Folder Include="Migrations\" />
   </ItemGroup>
 
 </Project>

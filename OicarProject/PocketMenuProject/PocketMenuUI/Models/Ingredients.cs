@@ -6,12 +6,7 @@ using System.Threading.Tasks;
 namespace PocketMenuUI.Models
 {
 
-<<<<<<< HEAD:OicarProject/PocketMenuProject/PocketMenuUI/Models/Ingredients.cs
-   public enum MesureUnit {
-=======
     public enum MesureUnit {
->>>>>>> 1377a2954c3908b2325add34f40d05be11047a80:OicarProject/PocketMenuProject/PocketMenuUI/Models/Ingedients.cs
-
 
         l,
         mg,

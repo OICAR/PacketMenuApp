@@ -1,4 +1,5 @@
 ﻿using Dapper;
+using DapperDatabase.Api.DAL.SSMS;
 using Microsoft.Extensions.Configuration;
 using System;
 using System.Collections.Generic;
@@ -24,7 +25,7 @@ namespace DapperDatabase.Api.Models
         public async Task<int> Add(Caterer entity)
         {
             var sql = "AddCaterer";
-            using (connection = _connection.Connect(_configuration))
+            using ( var connection = _connection.Connect(_configuration))
             {
                 connection.Open();
                 var queryParameters = new DynamicParameters();

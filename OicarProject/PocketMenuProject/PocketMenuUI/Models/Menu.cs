@@ -7,18 +7,13 @@ namespace PocketMenuUI.Models
 {
     public class Menu
     {
-        public Menu(List<Meal> meals)
-        {
-            Meals = meals;
-        }
 
-        public Menu(List<Meal> meals,List<Beverage> beverages)
-        {
-            Meals = meals;
-            Beverages = beverages;
-        }
+        public int CateringFacilityID { get; set; }
 
-        public List<Meal> Meals { get; set; }
-        public List<Beverage> Beverages { get; set; }
+        public int CateringFacilityName { get; set; }
+
+
+        public List<Article> Articles{ get; set; }
+  
     }
 }

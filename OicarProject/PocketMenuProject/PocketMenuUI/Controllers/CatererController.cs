@@ -12,7 +12,7 @@ using PocketMenuUI.ViewModel;
 
 namespace PocketMenuUI.Controllers
 {
-    //[Authorize(Roles="Caterer")]
+    [Authorize(Roles="Caterer")]
     public class CatererController : Controller
     {
         private readonly IQRCodeGenerator _QRCodeSvc;
@@ -82,6 +82,8 @@ namespace PocketMenuUI.Controllers
                 _service.PostCaterer(newCaterer);
 
                var QRImage = await _QRCodeSvc.GetQRImage(newQRCode);
+
+
 
 
             return File(QRImage.QRImageInBytes, System.Net.Mime.MediaTypeNames.Application.Octet, "MyQRCode.jpg");

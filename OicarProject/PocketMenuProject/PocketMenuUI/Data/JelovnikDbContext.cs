@@ -10,13 +10,13 @@ namespace PocketMenuUI.Data
         {
             
         }
-        public DbSet<Meal> Meals { get; set; }
+        public DbSet<Article> Meals { get; set; }
         public DbSet<Beverage> Beverages { get; set; }
      //   public DbSet<Menu> Menus { get; set; }
      protected override void OnModelCreating(ModelBuilder modelBuilder)
      {
          base.OnModelCreating(modelBuilder);
-         modelBuilder.Seed();
+         //modelBuilder.Seed();
      }
     }
     

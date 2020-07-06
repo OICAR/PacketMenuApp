@@ -13,8 +13,13 @@
         <div class="card">
             <div class="card-content">
                 <form enctype="multipart/form-data" asp-action="Create">
+<<<<<<< HEAD
                     <ul class="stepper linear horizontal demos">
                         <li class="step active wrong">
+=======
+                    <ul class="stepper linear horizontal">
+                        <li class="step active">
+>>>>>>> b90f04b32232de53557cfedcdba58909a52924fe
                             <div data-step-label="Please input your name as a caterer." class="step-title waves-effect waves-dark">Step 1</div>
                             <div class="step-content" style="">
                                 <div class="row">
@@ -44,31 +49,47 @@
                                     </div>
                                     <!--Excel Upload-->
                                     <div class="form-group file-field input-field col s12">
-                                        <div class="btn blue">
-                                            <span>File</span>
-                                            <input type="file">
+
+                                        <div class="file-field input-field">
+                                            <div class="btn blue">
+                                                <span>File</span>
+                                                <input type="file" asp-for="FormDocument" id="fileupload" class="form-control custom-file-input validate" required="">
+                                            </div>
+                                            <div class="file-path-wrapper">  
+                                                <input class="file-path validate" type="text">
+                                            </div>
                                         </div>
+<<<<<<< HEAD
                                         <div class="file-path-wrapper">
                                             <input id="input-excel" asp-for="FormDocument" class="file-path validate invalid" type="text" placeholder="Upload the food menu file." required="">
 
+=======
+                                        <br/>
+                                        <div class="col-md-4">
+                                            <input type="button" name="Upload" value="Upload" id="btnupload" class="btn btn-primary blue" />
+>>>>>>> b90f04b32232de53557cfedcdba58909a52924fe
                                         </div>
-                                    </div>
-                                    <div class="col-md-4 center">
-                                        <input type="button" name="Upload" value="Upload" id="btnupload" class="btn btn-primary blue" />
 
+<<<<<<< HEAD
                                     </div>
 
                                     <div class="clearfix">&nbsp;</div>
                                     <div class="row">
                                         <div id="divPrint"></div>
+=======
+                                        <div class="clearfix">&nbsp;</div>
+
+                                        <div class="row">
+                                            <div id="divPrint"></div>
+                                        </div>
+>>>>>>> b90f04b32232de53557cfedcdba58909a52924fe
 
                                     </div>
+                                    <div class="step-actions">
+                                        <button class="waves-effect waves-dark btn blue next-step">CONTINUE</button>
+                                        <button class="waves-effect waves-dark btn-flat previous-step">BACK</button>
+                                    </div>
                                 </div>
-                                <div class="step-actions">
-                                    <button class="waves-effect waves-dark btn blue next-step">CONTINUE</button>
-                                    <button class="waves-effect waves-dark btn-flat previous-step">BACK</button>
-                                </div>
-                            </div>
                         </li>
                         <li class="step">
                             <div class="step-title waves-effect waves-dark">Step 3</div>

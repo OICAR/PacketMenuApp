@@ -39,7 +39,7 @@ namespace PocketMenuUI
             (options => options.SignIn
             .RequireConfirmedAccount = true).AddRoles<IdentityRole>()
                 .AddEntityFrameworkStores<ApplicationDbContext>();
-           // services.AddTransient<IEmailSender, EmailSender>();
+            services.AddTransient<IEmailSender, EmailSender>();
 
             services.AddTransient<IApi, LocalAPI>();
 

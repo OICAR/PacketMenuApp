@@ -134,7 +134,6 @@ namespace PocketMenuUI.Controllers
                         "Sorry, the resource you requested could not be found";
                     break;
             }
-
             return View("Error");
 
         }

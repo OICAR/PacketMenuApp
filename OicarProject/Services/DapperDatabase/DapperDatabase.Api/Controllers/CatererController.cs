@@ -17,7 +17,8 @@ namespace DapperDatabase.Api.Controllers
 
         public CatererController(IConfiguration configuration)
         {
-            repository = new CatererRepository(configuration);
+            repository = new CatererRepository
+            (configuration);
         }
 
         [HttpGet]

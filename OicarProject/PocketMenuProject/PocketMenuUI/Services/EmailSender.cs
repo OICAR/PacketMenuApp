@@ -22,23 +22,22 @@ namespace PocketMenuUI.Services
             string subject, string message)
         {
             var apiKey = System.Environment.GetEnvironmentVariable("pocketMenu");
-
-            //return Execute(Options.SendGridKey, subject, message, email);
             return Execute(apiKey, subject, message, email);
+            //return Execute(Options.SendGridKey, subject, message, email);
 
         }
 
         public Task Execute(string apiKey, string subject,
             string message, string email)
         {
-            var SendGridUser = System.Environment.GetEnvironmentVariable("User");
+            apiKey = System.Environment.GetEnvironmentVariable("pocketMenu");
             var client = new SendGridClient(apiKey);
             var msg = new SendGridMessage()
             {
                 //Options.SendGridUser
 
             From = new EmailAddress("kowerules@gmail.com",
-                    SendGridUser),
+                "pocketMenu"),
                 Subject = subject,
                 PlainTextContent = message,
                 HtmlContent = message

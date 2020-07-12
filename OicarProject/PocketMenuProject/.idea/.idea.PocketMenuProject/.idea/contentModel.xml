@@ -152,6 +152,9 @@
         <e p="Program.cs" t="Include" />
         <e p="Properties" t="Include">
           <e p="launchSettings.json" t="Include" />
+          <e p="PublishProfiles" t="Include">
+            <e p="PocketMenuUI20200712011232 - Web Deploy.pubxml" t="Include" />
+          </e>
         </e>
         <e p="ScaffoldingReadMe.txt" t="Include" />
         <e p="Services" t="Include">

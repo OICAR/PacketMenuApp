@@ -5,7 +5,6 @@ using System.Threading.Tasks;
 using GoogleMapsService.Data;
 using GoogleMapsService.Data.Services;
 using GoogleMapsService.Models;
-using GoogleMapsService.Models;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;

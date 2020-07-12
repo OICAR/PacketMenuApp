@@ -3,9 +3,11 @@
     public class QRDataCatering
     {
 
-        public string LocationCordinates { get; set; }
-
-        public string CateringName { get; set; }
+        public int Id { get; set; }
+        public int? Rating { get; set; }
+        public string Address { get; set; }
+        public double Lat { get; set; }
+        public double Long { get; set; }
 
     }
 }

@@ -23,10 +23,10 @@ namespace GoogleMapsService.Controllers
         }
 
         [HttpPost]
-        public void Create
+        public GoogleMap Create
             (GoogleMap model)
         {
-            _googleMapsRepository.Add(model);
+         return    _googleMapsRepository.Add(model);
 
         }
 

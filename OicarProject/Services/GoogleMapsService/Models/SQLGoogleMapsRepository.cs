@@ -23,6 +23,9 @@ namespace GoogleMapsService.Models
         {
             _context.GoogleMap.Add(googleMap);
             _context.SaveChanges();
+
+            int ID = googleMap.Id;
+
             return googleMap;
         }
     }

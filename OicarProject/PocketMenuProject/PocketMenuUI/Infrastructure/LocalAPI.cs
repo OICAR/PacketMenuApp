@@ -10,7 +10,7 @@ namespace PocketMenuUI.Infrastructure
         private static string BaseURL = "https://api-gateway20200429072611.azurewebsites.net";
 
         public string GetExcel() => $"{BaseURL}/api/excel";
-        public string GetMaps() => $"{BaseURL}/api/maps";
+        public string GetMaps() => $"http://localhost:51421"+"/api/maps";
 
         public string GetQRCode() => "http://localhost:57198"+ "/api/QRGenerator";
 
@@ -18,7 +18,7 @@ namespace PocketMenuUI.Infrastructure
 
         public string PostCaterer() => "https://localhost:5001" + "/api/Caterer";
 
-        public string PostExcel() => $"{BaseURL}/api/document";
+        public string PostExcel() => "https://localhost:44398"+ "/api/Home";
 
         public string PostUser() => "https://localhost:5001"+ "/api/Customer";
 

@@ -4,8 +4,10 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Authorization.Infrastructure;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using PocketMenuUI.Models;
 using PocketMenuUI.Models.ModelsDTO;
 using PocketMenuUI.Services;
 using PocketMenuUI.ViewModel;
@@ -19,13 +21,15 @@ namespace PocketMenuUI.Controllers
         private readonly ILogger<CatererController> _logger;
         private readonly IGoogleMap _GoogleMapSvc;
         private readonly ICaterers _CatererSvc;
-
-        public CatererController(ILogger<CatererController> logger, IGoogleMap googleMapSvc, IQRCodeGenerator QRCodeSvc, ICaterers catererSvc)
+        private readonly UserManager<ApplicationUser>
+           _userManager;
+        public CatererController(ILogger<CatererController> logger, IGoogleMap googleMapSvc, IQRCodeGenerator QRCodeSvc, ICaterers catererSvc, UserManager<ApplicationUser> userManager)
         {
             _GoogleMapSvc = googleMapSvc;
             _logger = logger;
             _QRCodeSvc = QRCodeSvc;
             _CatererSvc = catererSvc;
+            _userManager = userManager;
         }
 
 
@@ -62,26 +66,26 @@ namespace PocketMenuUI.Controllers
                     Lat = model.Lat,
                     Long = model.Long
                 };
-
+                 var userID =
+                _userManager.GetUserId(User);
                 var newCaterer = new CatererDTO
                 {
-                    Name = model.CatererName,
-                    IDCaterer = 1,
-                    OIB=123
+                    CatererID=userID,
+                    Address=model.Address,
+                    Lat=model.Lat,
+                    Long=model.Long,
+                    CateringFacilitiName=model.CateringFacilitiName,
+                    CatererName=model.CatererName
                 };
 
-                var newQRCode = new XMLModel
-                {
-                   Name=model.CateringFacilitiName,
-                   Coordinates=model.Address
-                };
-
-
-
-                await _GoogleMapSvc.Add(newLocation);
+                newLocation= await _GoogleMapSvc.Add(newLocation);
                 _CatererSvc.PostCaterer(newCaterer);
 
-               var QRImage = await _QRCodeSvc.GetQRImage(newQRCode);
+               
+
+
+
+               var QRImage = await _QRCodeSvc.GetQRImage(newLocation);
 
 
 

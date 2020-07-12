@@ -12,7 +12,7 @@ namespace PocketMenuUI.Services
     public interface IQRCodeGenerator
     {
 
-       Task<QRImage>  GetQRImage(XMLModel qRDataCatering);
+       Task<QRImage>  GetQRImage(GoogleMapDTO CateringFacility);
 
     }
 }

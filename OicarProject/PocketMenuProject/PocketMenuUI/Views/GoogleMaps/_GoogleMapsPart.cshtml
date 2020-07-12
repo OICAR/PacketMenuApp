@@ -62,7 +62,9 @@
 var locationForm=document.getElementById('btngoogleupload');
 locationForm.addEventListener('click',geocode);
    
-function geocode(e) {
+    function geocode(e) {
+
+        
     e.preventDefault();
     var location=document.getElementById('location-input').value;
   axios.get('https://maps.googleapis.com/maps/api/geocode/json',{
@@ -74,6 +76,9 @@ function geocode(e) {
    .then(function(response){
        console.log(response);
 
+
+         if (response.data.status != "ZERO_RESULTS") {
+            console.log("Hero");
               var formattedAddress= response.data.results[0]
               .formatted_address;
               var formattedAddressOutput = `${formattedAddress}`/* `
@@ -107,6 +112,15 @@ function geocode(e) {
               =latitudeOutput;
               document.getElementById('longitude-output')
                     .value=longitudeOutput;
+       }
+
+         else {
+
+        console.log("zero");
+             document.getElementById('formatted-components')
+              .innerHTML='<div><p>Nije pronađena nijedna lokacija </p></div>';
+         }
+
 
    })
    .catch(function(error){

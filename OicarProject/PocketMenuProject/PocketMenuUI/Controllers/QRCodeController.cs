@@ -35,10 +35,13 @@ namespace PocketMenuUI.Controllers
 
 
         [HttpPost]
-        public async Task<ActionResult> SingleFile(XMLModel file)
+        public async Task<ActionResult> SingleFile(GoogleMapDTO file)
         {
 
             var QRImage = await _QRCodeSvc.GetQRImage(file);
+
+
+
 
             // ReturnFileFromBitmap();
             

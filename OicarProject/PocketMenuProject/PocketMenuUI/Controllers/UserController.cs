@@ -47,6 +47,7 @@ namespace PocketMenuUI.Controllers
         { 
             var users =
                 _userManager.GetUserId(User);
+            
             //Read Cookie
             //string key = users;
             //var cookieValue = JsonConvert

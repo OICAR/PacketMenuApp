@@ -27,14 +27,14 @@ namespace PocketMenuUI.Services
         }
 
 
-        public async  Task<GoogleMapDTO> Add(GoogleMapDTO location)
+        public async  Task<GoogleMapDTO> Add(GoogleMapDTO cateringFacility)
         {
             var uri = _api.GetMaps();
 
             var request = new HttpRequestMessage(HttpMethod.Post, uri);
 
 
-            request.Content = new StringContent(System.Text.Json.JsonSerializer.Serialize(location));
+            request.Content = new StringContent(System.Text.Json.JsonSerializer.Serialize(cateringFacility));
 
             request.Content.Headers.ContentType = new MediaTypeWithQualityHeaderValue("application/json");
 

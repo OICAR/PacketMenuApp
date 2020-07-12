@@ -7,14 +7,10 @@ namespace PocketMenuUI.Models
 {
 
     public enum MesureUnit {
-
         l,
         mg,
         dl,
         cl
-
-
-
     }
 
 

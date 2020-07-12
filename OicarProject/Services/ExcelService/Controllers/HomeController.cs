@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using ExcelService.Models;
+using ExcelService.Utils;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using NPOI.HSSF.UserModel;
@@ -29,7 +30,9 @@ namespace ExcelService.Controllers
 
             IFormFile file = new FormFile( stream2,0, model.Document.Length,"name", "filename.xlsx");
 
-           
+
+            List<Item> items = Utilities.CreateItem(model);
+
 
             string folderName = "UploadExcel";
             //string webRootPath = _hostingEnvironment.WebRootPath;
@@ -42,12 +45,12 @@ namespace ExcelService.Controllers
 
 
             string sFileExtension = Path.GetExtension(file.FileName).ToLower();
-
+                List<string> ItemLista = new List<string>();
+                List<string> IngredientsLista = new List<string>();
             if (file.Length > 0)
             {
 
                 ISheet sheet;
-
 
 
 
@@ -88,6 +91,7 @@ namespace ExcelService.Controllers
                         {
                             if (row.GetCell(j) != null)
                                 sb.Append("<td>" + row.GetCell(j).ToString() + "</td>");
+
                         }
                         sb.AppendLine("</tr>");
                     }
@@ -98,6 +102,8 @@ namespace ExcelService.Controllers
 
             }
             //return this.Content(sb.ToString());
+
+            List<string> testLista2 = ItemLista;
 
             return sb.ToString();
 

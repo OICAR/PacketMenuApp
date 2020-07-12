@@ -18,6 +18,11 @@ namespace QRService.Controllers
     [ApiController]
     public class QRGeneratorController : ControllerBase
     {
+
+        private const string _MENUURL = "http://localhost:57198/api/QRGenerator";
+
+
+
         private readonly ILogger<QRGeneratorController> _logger;
 
         //  private Jelovnik jelovnik = new Jelovnik();
@@ -47,7 +52,9 @@ namespace QRService.Controllers
         private Bitmap generateQRCode(QRDataCatering file)
         {
             QRCodeGenerator qrGenerator = new QRCodeGenerator();
-            QRCodeData qrCodeData = qrGenerator.CreateQrCode("Prvi obrok je: " + file.CateringName, QRCodeGenerator.ECCLevel.Q);
+            //QRCodeData qrCodeData = qrGenerator.CreateQrCode(_MENUURL + file.Id, QRCodeGenerator.ECCLevel.Q);
+            QRCodeData qrCodeData = qrGenerator.CreateQrCode("https://www.youtube.com/?hl=hr&gl=HR", QRCodeGenerator.ECCLevel.Q);
+
             QRCode qrCode = new QRCode(qrCodeData);
             Bitmap qrCodeImage = qrCode.GetGraphic(10);
 

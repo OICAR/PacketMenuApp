@@ -13,25 +13,29 @@ namespace DapperDatabase.Api.Controllers
     [ApiController]
     public class CatererController : ControllerBase
     {
-        private readonly IRepository<Caterer> repository;
+        private readonly IRepository<Caterer> _repository;
 
-        public CatererController(IConfiguration configuration)
+        public CatererController(IRepository<Caterer> repository)
         {
+<<<<<<< HEAD
             repository = new CatererRepository
             (configuration);
+=======
+            _repository = repository;
+>>>>>>> d1550256c0fa04190130e1ffcdc6fd80f2149b17
         }
 
         [HttpGet]
         public async Task<IEnumerable<Caterer>> GetAsync()
         {
-            return await repository.GetAll();
+            return await _repository.GetAll();
         }
 
 
         [HttpGet("{id}")]
         public async Task<Caterer> GetByIdAsync(int id)
         {
-            return await repository.Get(id);
+            return await _repository.Get(id);
         }
 
         [HttpPost]
@@ -39,7 +43,7 @@ namespace DapperDatabase.Api.Controllers
         {
             if (ModelState.IsValid)
             {
-                repository.Add(entity);
+                _repository.Add(entity);
             }
         }
 
@@ -50,14 +54,14 @@ namespace DapperDatabase.Api.Controllers
             entity.IDCaterer = id;
             if (ModelState.IsValid)
             {
-                repository.Update(entity);
+                _repository.Update(entity);
             }
         }
 
         [HttpDelete]
         public void Delete(int id)
         {
-            repository.Delete(id);
+            _repository.Delete(id);
         }
 
     }

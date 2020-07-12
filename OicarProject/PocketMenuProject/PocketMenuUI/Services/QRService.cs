@@ -32,7 +32,7 @@ namespace PocketMenuUI.Services
 
 
 
-        public async Task<QRImage> GetQRImage(XMLModel qRDataCatering)
+        public async Task<QRImage> GetQRImage(GoogleMapDTO qRDataCatering)
         {
 
 
@@ -42,7 +42,7 @@ namespace PocketMenuUI.Services
             var request = new HttpRequestMessage(HttpMethod.Post, uri);
 
 
-            request.Content = new StringContent(System.Text.Json.JsonSerializer.Serialize(new QRDataCatering() { CateringName = "nikola", LocationCordinates = "1.23.22.20" }));
+            request.Content = new StringContent(System.Text.Json.JsonSerializer.Serialize(qRDataCatering));
 
             request.Content.Headers.ContentType = new MediaTypeWithQualityHeaderValue("application/json");
 

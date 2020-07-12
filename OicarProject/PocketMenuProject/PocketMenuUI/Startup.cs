@@ -51,8 +51,8 @@ namespace PocketMenuUI
             services.Configure<AuthMessageSenderOptions>(Configuration);
             services.AddAuthentication().AddGoogle(googleOptions =>
             {
-                googleOptions.ClientId = Configuration.GetValue<string>("web:client_id");
-                googleOptions.ClientSecret = Configuration.GetValue<string>("web:client_secret");
+                googleOptions.ClientId = Configuration.GetValue<string>("client_id");
+                googleOptions.ClientSecret = Configuration.GetValue<string>("client_secret");
             });
         
             services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());

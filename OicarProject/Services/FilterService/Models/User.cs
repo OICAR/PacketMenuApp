@@ -1,15 +1,9 @@
-﻿using PocketMenuUI.Utils.StringUtilities;
-using PocketMenuUI.Utils.UserUtilities;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
-namespace PocketMenuUI.Models
+namespace WebApplication3.Models
 {
     public class User
     {
-
         public string UserID { get; set; }
 
 
@@ -31,7 +25,5 @@ namespace PocketMenuUI.Models
 
 
         public HashSet<string> TempEatingHabits { get => TempEatingHabits = EatingHabits == null ? null : UserUtility.GetSelectedHabits(EatingHabits); set { } }
-        
-
     }
 }

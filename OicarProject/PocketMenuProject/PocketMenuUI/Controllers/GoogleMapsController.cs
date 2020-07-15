@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using PocketMenuUI.Models.ModelsDTO;
@@ -10,6 +11,8 @@ using PocketMenuUI.ViewModel;
 
 namespace PocketMenuUI.Controllers
 {
+    [Authorize(Roles="Caterer")]
+
     public class GoogleMapsController : Controller
     {
         private readonly ILogger<GoogleMapsController> _logger;

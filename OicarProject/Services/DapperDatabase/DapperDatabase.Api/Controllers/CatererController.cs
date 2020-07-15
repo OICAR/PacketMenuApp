@@ -17,12 +17,10 @@ namespace DapperDatabase.Api.Controllers
 
         public CatererController(IRepository<Caterer> repository)
         {
-<<<<<<< HEAD
-            repository = new CatererRepository
-            (configuration);
-=======
+
+
             _repository = repository;
->>>>>>> d1550256c0fa04190130e1ffcdc6fd80f2149b17
+
         }
 
         [HttpGet]

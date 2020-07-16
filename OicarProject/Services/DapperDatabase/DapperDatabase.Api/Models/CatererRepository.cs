@@ -22,18 +22,60 @@ namespace DapperDatabase.Api.Models
 
         }
 
-        public async Task<int> Add(Caterer entity)
+        public Task<int> Add(Caterer entity)
+        {
+            throw new NotImplementedException();
+        }
+
+        //public  Task<int> Add(Caterer entity)
+        //{
+        //    //var sql = "AddCaterer";
+        //    //using (var connection = _connection.Connect(_configuration))
+        //    //{
+        //    //    connection.Open();
+        //    //    var queryParameters = new DynamicParameters();
+        //    //    queryParameters.Add("@IDCaterer", entity.IDCaterer);
+        //    //    queryParameters.Add("@Name", entity.Name);
+        //    //    queryParameters.Add("@OIB", entity.OIB);
+
+        //    //    return await connection.ExecuteAsync(sql, queryParameters, commandType: CommandType.StoredProcedure);
+        //    //}
+        //    var sql = "AddCaterer";
+
+        //    using (var connection = _connection.Connect(_configuration))
+        //    {
+        //        connection.Open();
+        //        var queryParameters = new DynamicParameters();
+        //        queryParameters.Add("@IDCaterer", entity.IDCaterer);
+        //        queryParameters.Add("@Name", entity.Name);
+        //        queryParameters.Add("@OIB", entity.OIB);
+
+        //        return connection.Query<int>(sql, queryParameters, commandType: CommandType.StoredProcedure)
+        //                   .SingleOrDefault();
+        //    }
+
+
+
+        //}
+
+        public int Adding(Caterer entity)
         {
             var sql = "AddCaterer";
-            using ( var connection = _connection.Connect(_configuration))
+
+            using (var connection = _connection.Connect(_configuration))
             {
                 connection.Open();
                 var queryParameters = new DynamicParameters();
-                queryParameters.Add("@IDCaterer", entity.IDCaterer);
-                queryParameters.Add("@Name", entity.Name);
-                queryParameters.Add("@OIB", entity.OIB);
+                queryParameters.Add("@catererName", entity.CatererName);
+                queryParameters.Add("@CatererId", entity.IDCaterer);
+                queryParameters.Add("@FacilityName", entity.CateringFacilitiName);
+                queryParameters.Add("@Adress", entity.Address);
+                queryParameters.Add("@lat", entity.Lat);
+                queryParameters.Add("@long", entity.Long);
+       
 
-                return await connection.ExecuteAsync(sql, queryParameters, commandType: CommandType.StoredProcedure);
+                return  connection.Query<int>(sql, queryParameters, commandType: CommandType.StoredProcedure)
+                           .SingleOrDefault();
             }
 
         }
@@ -78,5 +120,7 @@ namespace DapperDatabase.Api.Models
 
             return await connection.ExecuteAsync(sql, queryParameters, commandType: CommandType.StoredProcedure);
         }
+
+
     }
 }

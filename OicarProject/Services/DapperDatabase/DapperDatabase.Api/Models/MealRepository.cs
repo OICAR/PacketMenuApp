@@ -95,5 +95,10 @@ namespace DapperDatabase.Api.Models
             connection.Open();
             return await connection.QueryAsync<Meal>(sql, commandType: CommandType.StoredProcedure);
         }
+
+        public int Adding(Caterer entity)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

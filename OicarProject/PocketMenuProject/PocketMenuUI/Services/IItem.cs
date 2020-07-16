@@ -1,4 +1,4 @@
-﻿using PocketMenuUI.Models.ModelsDTO;
+﻿using PocketMenuUI.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace PocketMenuUI.Services
 {
-  public  interface ICaterers
+  public interface IItem
     {
 
-        Task<int> PostCaterer(CatererDTO caterer);
+        Task<string> PostItem(List<Item> caterer);
 
     }
 }

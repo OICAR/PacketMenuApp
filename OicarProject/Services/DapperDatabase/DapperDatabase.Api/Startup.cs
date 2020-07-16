@@ -54,6 +54,7 @@ namespace DapperDatabase.Api
             services.AddSingleton<ISQLConnection, SQLDatabase>();
             services.AddScoped<ICustomerRepository<CustomerDTO>, CustomerRepository>();
             services.AddScoped<IRepository<Caterer>, CatererRepository>();
+            services.AddScoped<IItemRepository<Item>, ItemRepository>();
             services.AddSwaggerExamplesFromAssemblyOf<Startup>();
             services.AddLogging(builder => builder.AddConsole());
 

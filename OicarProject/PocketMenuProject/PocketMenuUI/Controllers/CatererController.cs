@@ -18,18 +18,23 @@ namespace PocketMenuUI.Controllers
     public class CatererController : Controller
     {
         private readonly IQRCodeGenerator _QRCodeSvc;
+        private readonly IExcel _ExcelSvc;
         private readonly ILogger<CatererController> _logger;
         private readonly IGoogleMap _GoogleMapSvc;
         private readonly ICaterers _CatererSvc;
+        private readonly IItem _ItemSvc;
+
         private readonly UserManager<ApplicationUser>
            _userManager;
-        public CatererController(ILogger<CatererController> logger, IGoogleMap googleMapSvc, IQRCodeGenerator QRCodeSvc, ICaterers catererSvc, UserManager<ApplicationUser> userManager)
+        public CatererController(ILogger<CatererController> logger, IGoogleMap googleMapSvc, IQRCodeGenerator QRCodeSvc, ICaterers catererSvc, UserManager<ApplicationUser> userManager, IExcel ExcelSvc, IItem ItemSvc)
         {
             _GoogleMapSvc = googleMapSvc;
             _logger = logger;
             _QRCodeSvc = QRCodeSvc;
             _CatererSvc = catererSvc;
             _userManager = userManager;
+            _ExcelSvc = ExcelSvc;
+            _ItemSvc = ItemSvc;
         }
 
 
@@ -78,15 +83,18 @@ namespace PocketMenuUI.Controllers
                     CatererName=model.CatererName
                 };
 
-                newLocation= await _GoogleMapSvc.Add(newLocation);
-                _CatererSvc.PostCaterer(newCaterer);
+                //newLocation= await _GoogleMapSvc.Add(newLocation);
+             //var a= await  _CatererSvc.PostCaterer(newCaterer);
 
-               
 
+           List<Item> itemList=     await _ExcelSvc.Get(model.FormDocument);
+
+         
+
+           await _ItemSvc.PostItem(itemList);
 
 
                var QRImage = await _QRCodeSvc.GetQRImage(newLocation);
-
 
 
 

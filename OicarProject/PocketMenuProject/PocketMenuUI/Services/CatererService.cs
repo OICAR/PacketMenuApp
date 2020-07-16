@@ -1,4 +1,5 @@
-﻿using PocketMenuUI.Infrastructure;
+﻿using Newtonsoft.Json;
+using PocketMenuUI.Infrastructure;
 using PocketMenuUI.Models.ModelsDTO;
 using System;
 using System.Collections.Generic;
@@ -27,7 +28,7 @@ namespace PocketMenuUI.Services
 
 
 
-        public async void PostCaterer(CatererDTO caterer)
+        public async Task<int> PostCaterer(CatererDTO caterer)
         {
 
             var uri = _api.PostCaterer();
@@ -44,6 +45,10 @@ namespace PocketMenuUI.Services
 
 
             var response = await client.SendAsync(request);
+
+
+            return response.IsSuccessStatusCode ? JsonConvert.DeserializeObject<int>(await response.Content.ReadAsStringAsync()) : throw new Exception("Error cancelling order, try later.");
+
 
             // GoogleMapDTO locations = null;
             //if (response.IsSuccessStatusCode)
@@ -64,6 +69,6 @@ namespace PocketMenuUI.Services
 
 
 
-        
+
     }
 }

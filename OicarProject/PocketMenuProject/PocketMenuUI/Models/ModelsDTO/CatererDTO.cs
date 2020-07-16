@@ -8,6 +8,10 @@ namespace PocketMenuUI.Models.ModelsDTO
     public class CatererDTO
     {
 
+        public int IDCaterer { get; set; }
+        public string Name { get; set; }
+        public string OIB { get; set; }
+
         public string CatererName { get; set; }
 
         //public string CatererOIB { get; set; }

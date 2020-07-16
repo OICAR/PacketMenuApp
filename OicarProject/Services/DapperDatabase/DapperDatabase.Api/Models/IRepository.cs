@@ -10,6 +10,7 @@ namespace DapperDatabase.Api.Models
         Task<T> Get(int id);
         Task<IEnumerable<T>> GetAll();
         Task<int> Add(T entity);
+         int Adding(Caterer entity);
         Task<int> Delete(int id);
         Task<int> Update(T entity);
 

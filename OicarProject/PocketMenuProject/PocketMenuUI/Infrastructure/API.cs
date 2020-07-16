@@ -7,8 +7,8 @@ namespace PocketMenuUI.Infrastructure
 {
     public class API : IApi
     {
-
-        private static string BaseURL = "https://api-gateway20200429072611.azurewebsites.net";
+        
+        private static string BaseURL = "https://api-gateway20200712080357.azurewebsites.net";
 
         public string GetExcel() => $"{BaseURL}/api/excel";
         public string GetMaps() => $"{BaseURL}/api/maps";
@@ -21,10 +21,9 @@ namespace PocketMenuUI.Infrastructure
 
         public string PostExcel() => $"{BaseURL}/api/document";
 
-        public string PostUser()
-        {
-            throw new NotImplementedException();
-        }
+        public string PostItem() => $"{BaseURL}/api/Item";
+
+        public string PostUser() => $"{BaseURL}/api/Customer";
 
     }
 }

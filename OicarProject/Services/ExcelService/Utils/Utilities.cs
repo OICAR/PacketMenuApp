@@ -7,6 +7,8 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Net.Http;
+using System.Net.Http.Headers;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -120,6 +122,31 @@ namespace ExcelService.Utils
             }
             return _tempList;
         }
+
+
+
+        public async static void PostToService(List<Item> items, HttpClient _client)
+        {
+            string BaseURL = "https://api-gateway20200712080357.azurewebsites.net";
+
+            var uri = $"{BaseURL}/api/Meal";
+
+
+
+            var request = new HttpRequestMessage(HttpMethod.Post, uri);
+
+
+            request.Content = new StringContent(System.Text.Json.JsonSerializer.Serialize(items));
+
+            request.Content.Headers.ContentType = new MediaTypeWithQualityHeaderValue("application/json");
+
+            var client = _client;
+            client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+
+            await client.SendAsync(request);
+
+        }
+
 
 
 

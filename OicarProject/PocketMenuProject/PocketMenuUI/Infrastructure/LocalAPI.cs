@@ -18,6 +18,8 @@ namespace PocketMenuUI.Infrastructure
 
         public string PostCaterer() => "https://localhost:5001" + "/api/Caterer";
 
+        public string PostItem() => "https://localhost:5001" + "/api/Item";
+
         public string PostExcel() => "https://localhost:44398"+ "/api/Home";
 
         public string PostUser() => "https://localhost:5001"+ "/api/Customer";

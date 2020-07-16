@@ -19,6 +19,24 @@ namespace ExcelService.Controllers
     public class HomeController : ControllerBase
     {
 
+
+        public HomeController()
+        {
+
+        }
+
+
+
+        [HttpGet]
+        public  List<Item> Get(Caterer model)
+        {
+            return   Utilities.CreateItem(model); ;
+        }
+
+
+
+
+
         [HttpPost]
         
         public ActionResult<string> Create
@@ -29,9 +47,6 @@ namespace ExcelService.Controllers
             var stream2 = new MemoryStream(model.Document);
 
             IFormFile file = new FormFile( stream2,0, model.Document.Length,"name", "filename.xlsx");
-
-
-            List<Item> items = Utilities.CreateItem(model);
 
 
             string folderName = "UploadExcel";

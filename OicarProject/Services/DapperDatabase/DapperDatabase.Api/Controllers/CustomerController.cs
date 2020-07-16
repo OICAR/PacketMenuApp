@@ -36,7 +36,7 @@ namespace DapperDatabase.Api.Controllers
         //}
 
         [HttpPost]
-        public void Post([FromBody]CustomerDTO customer)
+        public void Post(CustomerDTO customer)
         {
             if (ModelState.IsValid)
             {

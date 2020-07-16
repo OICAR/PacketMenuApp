@@ -15,6 +15,8 @@ namespace PocketMenuUI.Infrastructure
             public  string PostExcel();
         public string PostCaterer();
 
+        public string PostItem();
+
         public string PostUser();
 
     }

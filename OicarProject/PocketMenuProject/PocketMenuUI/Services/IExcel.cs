@@ -1,4 +1,6 @@
-﻿using PocketMenuUI.ViewModel;
+﻿using Microsoft.AspNetCore.Http;
+using PocketMenuUI.Models;
+using PocketMenuUI.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,7 +11,7 @@ namespace PocketMenuUI.Services
   public  interface IExcel
     {
 
-        public  void Get();
+        public Task<List<Item>> Get(IFormFile document);
 
 
         public Task<string> PostExcel(CatererViewModel model);

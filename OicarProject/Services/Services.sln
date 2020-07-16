@@ -13,6 +13,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ExcelService", "ExcelServic
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DapperDatabase.Api", "DapperDatabase\DapperDatabase.Api\DapperDatabase.Api.csproj", "{60C70DA2-428A-46B1-9B09-AD036AB7284B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FilterService", "FilterService\FilterService.csproj", "{71484660-9765-4A53-AB3B-CF0362006057}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -32,9 +34,12 @@ Global
 		{F3984BB2-DB56-4D95-A98A-324D89015615}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F3984BB2-DB56-4D95-A98A-324D89015615}.Release|Any CPU.Build.0 = Release|Any CPU
 		{60C70DA2-428A-46B1-9B09-AD036AB7284B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{60C70DA2-428A-46B1-9B09-AD036AB7284B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{60C70DA2-428A-46B1-9B09-AD036AB7284B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{60C70DA2-428A-46B1-9B09-AD036AB7284B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{71484660-9765-4A53-AB3B-CF0362006057}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{71484660-9765-4A53-AB3B-CF0362006057}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{71484660-9765-4A53-AB3B-CF0362006057}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{71484660-9765-4A53-AB3B-CF0362006057}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

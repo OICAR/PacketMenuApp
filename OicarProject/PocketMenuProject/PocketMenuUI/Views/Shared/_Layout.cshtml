@@ -79,7 +79,7 @@
                         @if (signInManager.IsSignedIn(User) && User.IsInRole("User"))
                         {
                             <li>
-                                <a class="nav-link text-dark" asp-area="" asp-controller="User" asp-action="Create">TestUser</a>
+                                <a class="nav-link text-dark" asp-area="" asp-controller="User" asp-action="Create">Habits</a>
                             </li>
 
                             @*<li>
@@ -89,14 +89,12 @@
                             <li>
                                 <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="SwaggerIndex">Swagger</a>
                             </li>
-                            <li>
-                                <a class="nav-link text-dark" asp-area="" asp-controller="Caterer" asp-action="Registration">Caterer</a>
-                            </li>
+                        
                         }
                         @if (signInManager.IsSignedIn(User) && User.IsInRole("Caterer"))
                         {
                             <li>
-                                <a class="nav-link text-dark" asp-area="" asp-controller="Caterer" asp-action="Registration">TestCaterer</a>
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Caterer" asp-action="Registration">Caterer</a>
                             </li>
                             <li>
                                 <a class="nav-link text-dark" asp-area="" asp-controller="GoogleMaps" asp-action="Index">Maps</a>

@@ -1,0 +1,20 @@
+﻿{
+"prehrane":[
+  {
+    "prehrana": "Vegan",
+    "sastojci": [ "krava", "pase","travu" ]
+  },
+  {
+    "prehrana": "Celikalija",
+    "sastojci": [ "celer" ,"celer","celer"]
+  },
+  {
+    "prehrana": "SVE",
+    "sastojci": [ "Pizza" ,"crnci","test"]
+  },
+  {
+    "prehrana": "Vegeterijan",
+    "sastojci": [ "Tours","nikola","srica","zic" ]
+  }
+  ]
+}

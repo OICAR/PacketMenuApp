@@ -102,6 +102,7 @@
         <e p="ExcelService.csproj" t="IncludeRecursive" />
         <e p="Models" t="Include">
           <e p="Caterer.cs" t="Include" />
+          <e p="Item.cs" t="Include" />
         </e>
         <e p="obj" t="ExcludeRecursive">
           <e p="Debug" t="Include">
@@ -115,7 +116,39 @@
           <e p="launchSettings.json" t="Include" />
         </e>
         <e p="Startup.cs" t="Include" />
-        <e p="Utils" t="Include" />
+        <e p="Utils" t="Include">
+          <e p="Utilities.cs" t="Include" />
+        </e>
+        <e p="WeatherForecast.cs" t="Include" />
+      </e>
+      <e p="FilterService" t="IncludeRecursive">
+        <e p="appsettings.Development.json" t="Include" />
+        <e p="appsettings.json" t="Include" />
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="Controllers" t="Include">
+          <e p="WeatherForecastController.cs" t="Include" />
+        </e>
+        <e p="FilterService.csproj" t="IncludeRecursive" />
+        <e p="Models" t="Include">
+          <e p="Prehrana.cs" t="Include" />
+          <e p="PrehranaData.cs" t="Include" />
+          <e p="StringUtility.cs" t="Include" />
+          <e p="User.cs" t="Include" />
+          <e p="UserUtility.cs" t="Include" />
+        </e>
+        <e p="obj" t="ExcludeRecursive">
+          <e p="Debug" t="Include">
+            <e p="netcoreapp3.1" t="Include">
+              <e p="FilterService.AssemblyInfo.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+        <e p="Program.cs" t="Include" />
+        <e p="Properties" t="Include">
+          <e p="launchSettings.json" t="Include" />
+        </e>
+        <e p="Startup.cs" t="Include" />
+        <e p="test.json" t="Include" />
         <e p="WeatherForecast.cs" t="Include" />
       </e>
       <e p="GoogleMapsService" t="IncludeRecursive">

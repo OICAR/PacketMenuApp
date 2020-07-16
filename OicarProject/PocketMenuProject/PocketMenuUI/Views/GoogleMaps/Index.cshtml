@@ -2,8 +2,12 @@
     ViewBag.Title = "Index";
 }
 
-<div id="map" style="width: 400px; height: 400px;"></div>
-<a asp-action="Create" asp-controller="GoogleMaps">Create</a>
+<div class="row">
+    <div class="container">
+        <div id="map" style="width: auto; height: 70vh;" class="card"></div>
+    </div>
+</div>
+@*<a asp-action="Create" asp-controller="GoogleMaps">Create</a>*@
 
 <partial name="_Disqus" />
 
@@ -24,7 +28,7 @@
           for(var i=0;i<data.length;i++)
             {
                     marker[i] = new google.maps.Marker({
-                    position: {lat:data[i].lat, lng: 
+                    position: {lat:data[i].lat, lng:
                     data[i].long}, map: map});
                                contentString[i] = '<div ' +
                                 'id="content">'+
@@ -35,7 +39,7 @@
                               '<p><b>Uluru</b>, also ' +
                                'referred to as <b>Ayers ' +
                                 'Rock</b>Address:</p>'+
-                                data[i].address+ 
+                                data[i].address+
                                 '<p>Attribution: Uluru, <a href="https://en.wikipedia.org/w/index.php?title=Uluru&oldid=297882194">'+
                               'https://en.wikipedia.org/w/index.php?title=Uluru</a> '+
                               '(last visited June 22, 2009).</p>'+

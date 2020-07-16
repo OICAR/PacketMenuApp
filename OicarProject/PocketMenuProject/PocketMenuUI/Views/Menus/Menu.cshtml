@@ -1,7 +1,6 @@
-﻿@*@model Menu
+﻿@model Menu
 @{
     ViewBag.Title = "Food Menu";
-
 }
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
@@ -17,7 +16,7 @@
     <div class="container">
         <div class="row">
             <div class="card yellow darken-3 col l6 m6 s12 offset-l3 offset-m3" style="padding-top:1%;padding-bottom:2%;margin-top:2%">
-                <h3 class="white-text center font-weight-bold">Restoran X</h3>
+                <h3 class="white-text center font-weight-bold">@Model.CateringFacilityName</h3>
             </div>
         </div>
     </div>
@@ -70,10 +69,13 @@
         </div>
     }
     <br />
+    <partial name="_Disqus" />
+    <br />
+    <br />
 </div>
 
 <script>
     $(document).ready(function () {
         $('.parallax').parallax();
     });
-</script>*@
+</script>

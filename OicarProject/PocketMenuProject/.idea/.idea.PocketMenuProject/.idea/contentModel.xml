@@ -106,6 +106,7 @@
           <e p="ExcelController.cs" t="Include" />
           <e p="GoogleMapsController.cs" t="Include" />
           <e p="HomeController.cs" t="Include" />
+          <e p="MenusController.cs" t="Include" />
           <e p="QRCodeController.cs" t="Include" />
           <e p="RoleController.cs" t="Include" />
           <e p="UserController.cs" t="Include" />
@@ -122,11 +123,15 @@
         </e>
         <e p="Migrations" t="Include" />
         <e p="Models" t="Include">
+          <e p="Alergy.cs" t="Include" />
           <e p="ApplicationRole.cs" t="Include" />
           <e p="ApplicationUser.cs" t="Include" />
+          <e p="Beverage.cs" t="Include" />
+          <e p="EatingHabits.cs" t="Include" />
           <e p="ErrorViewModel.cs" t="Include" />
           <e p="Ingredients.cs" t="Include" />
           <e p="Item.cs" t="Include" />
+          <e p="Meal.cs" t="Include" />
           <e p="Menu.cs" t="Include" />
           <e p="ModelsDTO" t="Include">
             <e p="CatererDTO.cs" t="Include" />
@@ -152,9 +157,6 @@
         <e p="Program.cs" t="Include" />
         <e p="Properties" t="Include">
           <e p="launchSettings.json" t="Include" />
-          <e p="PublishProfiles" t="Include">
-            <e p="PocketMenuUI20200712011232 - Web Deploy.pubxml" t="Include" />
-          </e>
         </e>
         <e p="ScaffoldingReadMe.txt" t="Include" />
         <e p="Services" t="Include">
@@ -166,8 +168,10 @@
           <e p="ICaterers.cs" t="Include" />
           <e p="IExcel.cs" t="Include" />
           <e p="IGoogleMap.cs" t="Include" />
+          <e p="IItem.cs" t="Include" />
           <e p="IMenu.cs" t="Include" />
           <e p="IQRCodeGenerator.cs" t="Include" />
+          <e p="ItemService.cs" t="Include" />
           <e p="IUsers.cs" t="Include" />
           <e p="IWatherForecast.cs" t="Include" />
           <e p="MenuService.cs" t="Include" />

@@ -19,16 +19,14 @@
           </e>
         </e>
         <e p="Controllers" t="Include">
-          <e p="BeverageController.cs" t="Include" />
-          <e p="CaffeController.cs" t="Include" />
           <e p="CatererController.cs" t="Include" />
           <e p="CRUDController.cs" t="Include" />
           <e p="CustomerController.cs" t="Include" />
+          <e p="ItemController.cs" t="Include" />
           <e p="MealController.cs" t="Include" />
           <e p="MenuBeverageController.cs" t="Include" />
           <e p="MenuController.cs" t="Include" />
           <e p="MenuMealController.cs" t="Include" />
-          <e p="RestaurantController.cs" t="Include" />
         </e>
         <e p="DAL" t="Include">
           <e p="SSMS" t="Include">
@@ -41,10 +39,6 @@
         <e p="Models" t="Include">
           <e p="Address.cs" t="Include" />
           <e p="Alergy.cs" t="Include" />
-          <e p="Beverage.cs" t="Include" />
-          <e p="BeverageRepository.cs" t="Include" />
-          <e p="Caffe.cs" t="Include" />
-          <e p="CaffeRepository.cs" t="Include" />
           <e p="Caterer.cs" t="Include" />
           <e p="CatererRepository.cs" t="Include" />
           <e p="Customer.cs" t="Include" />
@@ -52,7 +46,11 @@
           <e p="CustomerRepository.cs" t="Include" />
           <e p="EatingHabits.cs" t="Include" />
           <e p="ICustomerRepository.cs" t="Include" />
+          <e p="IItemRepository.cs" t="Include" />
+          <e p="Ingredients.cs" t="Include" />
           <e p="IRepository.cs" t="Include" />
+          <e p="Item.cs" t="Include" />
+          <e p="ItemRepository.cs" t="Include" />
           <e p="Meal.cs" t="Include" />
           <e p="MealRepository.cs" t="Include" />
           <e p="Menu.cs" t="Include" />
@@ -61,8 +59,6 @@
           <e p="MenuMeal.cs" t="Include" />
           <e p="MenuMealRepository.cs" t="Include" />
           <e p="MenuRepository.cs" t="Include" />
-          <e p="Restaurant.cs" t="Include" />
-          <e p="RestaurantRepository.cs" t="Include" />
         </e>
         <e p="obj" t="ExcludeRecursive">
           <e p="Debug" t="Include">
@@ -87,6 +83,7 @@
         <e p="Utils" t="Include">
           <e p="CustomerUtilities" t="Include">
             <e p="SqlCustomerUtility.cs" t="Include" />
+            <e p="SqlItemUtility.cs" t="Include" />
           </e>
         </e>
       </e>
@@ -126,15 +123,12 @@
         <e p="appsettings.json" t="Include" />
         <e p="bin" t="ExcludeRecursive" />
         <e p="Controllers" t="Include">
-          <e p="WeatherForecastController.cs" t="Include" />
+          <e p="FilterController.cs" t="Include" />
         </e>
         <e p="FilterService.csproj" t="IncludeRecursive" />
         <e p="Models" t="Include">
-          <e p="Prehrana.cs" t="Include" />
-          <e p="PrehranaData.cs" t="Include" />
-          <e p="StringUtility.cs" t="Include" />
+          <e p="Item.cs" t="Include" />
           <e p="User.cs" t="Include" />
-          <e p="UserUtility.cs" t="Include" />
         </e>
         <e p="obj" t="ExcludeRecursive">
           <e p="Debug" t="Include">
@@ -149,6 +143,10 @@
         </e>
         <e p="Startup.cs" t="Include" />
         <e p="test.json" t="Include" />
+        <e p="Utils" t="Include">
+          <e p="StringUtility.cs" t="Include" />
+          <e p="UserUtility.cs" t="Include" />
+        </e>
         <e p="WeatherForecast.cs" t="Include" />
       </e>
       <e p="GoogleMapsService" t="IncludeRecursive">

@@ -14,6 +14,8 @@ namespace DapperDatabase.Api.Models
 
         public List<Ingredients> Ingredients { get; set; }
 
+        public int CatererFacilityID { get; set; }
+
         public double Price { get; set; }
 
     }

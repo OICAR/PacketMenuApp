@@ -83,6 +83,8 @@ namespace DapperDatabase.Api.Models
                     queryParameters.Add("@Title", item.Title);
                     queryParameters.Add("@Price", item.Price);
                     queryParameters.Add("@Ingredients", getDataset.AsTableValuedParameter("ItemsType"));
+                    queryParameters.Add("@IDCateringFacility", item.ID);
+
                     await cnn.ExecuteAsync(sql, queryParameters, commandType: CommandType.StoredProcedure);
                 }
 

@@ -84,10 +84,10 @@ namespace PocketMenuUI.Controllers
                 };
 
                 //newLocation= await _GoogleMapSvc.Add(newLocation);
-             //var a= await  _CatererSvc.PostCaterer(newCaterer);
+             var IDCateringFacility= await  _CatererSvc.PostCaterer(newCaterer);
 
 
-           List<Item> itemList=     await _ExcelSvc.Get(model.FormDocument);
+           List<Item> itemList=     await _ExcelSvc.Get(model.FormDocument, IDCateringFacility);
 
          
 

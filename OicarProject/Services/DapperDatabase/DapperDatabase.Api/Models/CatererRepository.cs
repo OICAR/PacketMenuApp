@@ -67,7 +67,7 @@ namespace DapperDatabase.Api.Models
                 connection.Open();
                 var queryParameters = new DynamicParameters();
                 queryParameters.Add("@catererName", entity.CatererName);
-                queryParameters.Add("@CatererId", entity.IDCaterer);
+                queryParameters.Add("@CatererId", entity.CatererID);
                 queryParameters.Add("@FacilityName", entity.CateringFacilitiName);
                 queryParameters.Add("@Adress", entity.Address);
                 queryParameters.Add("@lat", entity.Lat);

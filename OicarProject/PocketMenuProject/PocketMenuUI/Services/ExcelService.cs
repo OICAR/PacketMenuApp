@@ -83,7 +83,7 @@ namespace PocketMenuUI.Services
 
         }
 
-        public async Task<List<Item>>  Get(IFormFile document)
+        public async Task<List<Item>>  Get(IFormFile document,int ID)
         {
             _tempList = new List<Item>();
             //_temp = new Item();
@@ -179,7 +179,7 @@ namespace PocketMenuUI.Services
                             }
 
                         }
-
+                        item.ID = ID;
                         _tempList.Add(_temp);
 
                     }

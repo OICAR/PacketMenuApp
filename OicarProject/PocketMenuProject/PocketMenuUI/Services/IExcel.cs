@@ -11,7 +11,7 @@ namespace PocketMenuUI.Services
   public  interface IExcel
     {
 
-        public Task<List<Item>> Get(IFormFile document);
+        public Task<List<Item>> Get(IFormFile document,int ID);
 
 
         public Task<string> PostExcel(CatererViewModel model);

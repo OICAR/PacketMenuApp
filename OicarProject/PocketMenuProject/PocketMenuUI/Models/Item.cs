@@ -11,6 +11,8 @@ namespace PocketMenuUI.Models
 
         public string Title { get; set; }
 
+        public int CatererFacilityID { get; set; }
+
         public List<Ingredients> Ingredients { get; set; }
 
         public double Price { get; set; }

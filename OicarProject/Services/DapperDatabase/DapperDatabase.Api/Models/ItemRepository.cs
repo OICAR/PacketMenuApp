@@ -24,41 +24,6 @@ namespace DapperDatabase.Api.Models
             _connection = connection;
         }
 
-
-        //public async Add(List<Item> entity)
-        //{
-
-        //    using (IDbConnection cnn = _connection.Connect(_configuration))
-        //    {
-        //        var sql = "addItems";
-
-                
-
-
-        //        //var p = new
-        //        //{
-        //        //    customerHabbits = getDataset.AsTableValuedParameter("BasicCDT"),
-        //        //    Customer=entity.FullName
-        //        //};
-
-
-        //        foreach (var item in entity)
-        //        {
-        //            var getDataset = SqlItemUtility.GetPreferences(item.Ingredients);
-
-        //            var queryParameters = new DynamicParameters();
-        //            queryParameters.Add("@Title", item.Title);
-        //            //queryParameters.Add("@Price", item.Price);
-        //            //queryParameters.Add("@Ingredients", getDataset.AsTableValuedParameter("ItemsType"));
-        //            await cnn.ExecuteAsync(sql, queryParameters, commandType: CommandType.StoredProcedure);
-        //        }
-
-        //    }
-
-
-        //}
-
-
         public async void Add(List<Item> entity)
         {
 
@@ -87,16 +52,6 @@ namespace DapperDatabase.Api.Models
 
                     await cnn.ExecuteAsync(sql, queryParameters, commandType: CommandType.StoredProcedure);
                 }
-
-
-
-                //var queryParameters = new DynamicParameters();
-                //queryParameters.Add("@customerHabbits", getDataset.AsTableValuedParameter("BasicCDT"));
-                //queryParameters.Add("@CustomerID", entity.UserID);
-                //queryParameters.Add("@Customer", entity.FullName);
-                //queryParameters.Add("@Gender", entity.Gender);
-
-
 
             }
 

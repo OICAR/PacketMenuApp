@@ -10,19 +10,14 @@ namespace PocketMenuUI.Controllers
 {
     public class MenusController : Controller
     {
+
+        
         [Route("{controller}/{id}")]
-        public IActionResult Menu(string id)
+        public IActionResult Menu(int id)
         {
-            string catererID = id;
-            //List<Meal> meals = new List<Meal> {
-            //new Meal("Spaghetti bolognes","Spaghetti, bolognese sauce",35.00),
-            //new Meal("Salad", "Onions, tomatoes, turnips",18.00) };
 
-            //List<Beverage> drinks = new List<Beverage> {
-            //new Beverage("Coca-Cola",15.00),
-            //new Beverage("Sprite",15.00) };
 
-            //Menu menu = new Menu("RE02", meals, drinks);
+            //string catererID = coordinates;
 
             Item item1 = new Item("Cevapi",new List<Ingredients> 
             { 

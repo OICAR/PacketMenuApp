@@ -41,7 +41,7 @@ namespace PocketMenuUI
                 .AddEntityFrameworkStores<ApplicationDbContext>();
             services.AddTransient<IEmailSender, EmailSender>();
 
-            services.AddTransient<IApi, LocalAPI>();
+            services.AddTransient<IApi, API>();
 
       
             services.AddSession(options =>
@@ -51,8 +51,8 @@ namespace PocketMenuUI
             services.Configure<AuthMessageSenderOptions>(Configuration);
             services.AddAuthentication().AddGoogle(googleOptions =>
             {
-                googleOptions.ClientId = Configuration.GetValue<string>("web:client_id");
-                googleOptions.ClientSecret = Configuration.GetValue<string>("web:client_secret");
+                googleOptions.ClientId = Configuration.GetValue<string>("client_id");
+                googleOptions.ClientSecret = Configuration.GetValue<string>("client_secret");
             });
         
             services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
@@ -74,7 +74,7 @@ namespace PocketMenuUI
             }
             else
             {
-                app.UseExceptionHandler("/Home/Error/");
+                //app.UseExceptionHandler("/Home/Error/");
                 // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
                 //app.UseHsts();
             }

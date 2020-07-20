@@ -60,55 +60,55 @@ namespace DapperDatabase.Api.Models
 
         public int Adding(Caterer entity)
         {
-            //var sql = "AddCaterer";
-
-            //using (var connection = _connection.Connect(_configuration))
-            //{
-            //    connection.Open();
-            //    var queryParameters = new DynamicParameters();
-            //    queryParameters.Add("@catererName", entity.CatererName);
-            //    queryParameters.Add("@CatererId", entity.CatererID);
-            //    queryParameters.Add("@FacilityName", entity.CateringFacilitiName);
-            //    queryParameters.Add("@Adress", entity.Address);
-            //    queryParameters.Add("@lat", entity.Lat);
-            //    queryParameters.Add("@long", entity.Long);
-
-
-            //    return  connection.Query<int>(sql, queryParameters, commandType: CommandType.StoredProcedure)
-            //               .SingleOrDefault();
-            //}
-
-
-            //Testing
-
-            var sql = "testTWO";
+            var sql = "AddCaterer";
 
             using (var connection = _connection.Connect(_configuration))
             {
                 connection.Open();
-                //var queryParameters = new DynamicParameters();
-                //queryParameters.Add("@catererName", 1);
-
-                //var grid = connection.QueryMultiple("testTWO", queryParameters,
-                //                     commandType: CommandType.StoredProcedure);
-                //var result1 = grid.Read<dynamic, dynamic, Tuple<dynamic, dynamic>>(
-                //  (a, b) => Tuple.Create((object)a, (object)b)).ToList();
-                //var result2 = grid.Read<dynamic, dynamic, Tuple<dynamic, dynamic>>(
-                //  (a, b) => Tuple.Create((object)a, (object)b)).ToList();
+                var queryParameters = new DynamicParameters();
+                queryParameters.Add("@catererName", entity.CatererName);
+                queryParameters.Add("@CatererId", entity.CatererID);
+                queryParameters.Add("@FacilityName", entity.CateringFacilitiName);
+                queryParameters.Add("@Adress", entity.Address);
+                queryParameters.Add("@lat", entity.Lat);
+                queryParameters.Add("@long", entity.Long);
 
 
-                var reader = connection.QueryMultiple("testTWO", param: new { CategoryID = 1, SubCategoryID = "", PageNumber = 1 }, commandType: CommandType.StoredProcedure);
-                var CategoryOneList = reader.Read<string>().ToList();
-                var CategoryTwoList = reader.Read<string>().ToList();
-
-
-
-
-
-                return 1;
+                return connection.Query<int>(sql, queryParameters, commandType: CommandType.StoredProcedure)
+                           .SingleOrDefault();
             }
 
 
+            //Testing
+
+            //var sql = "testTWO";
+
+            //using (var connection = _connection.Connect(_configuration))
+            //{
+            //    connection.Open();
+            //    //var queryParameters = new DynamicParameters();
+            //    //queryParameters.Add("@catererName", 1);
+
+            //    //var grid = connection.QueryMultiple("testTWO", queryParameters,
+            //    //                     commandType: CommandType.StoredProcedure);
+            //    //var result1 = grid.Read<dynamic, dynamic, Tuple<dynamic, dynamic>>(
+            //    //  (a, b) => Tuple.Create((object)a, (object)b)).ToList();
+            //    //var result2 = grid.Read<dynamic, dynamic, Tuple<dynamic, dynamic>>(
+            //    //  (a, b) => Tuple.Create((object)a, (object)b)).ToList();
+
+
+            //    var reader = connection.QueryMultiple("testTWO", param: new { CategoryID = 1, SubCategoryID = "", PageNumber = 1 }, commandType: CommandType.StoredProcedure);
+            //    var CategoryOneList = reader.Read<string>().ToList();
+            //    var CategoryTwoList = reader.Read<string>().ToList();
+
+
+
+
+
+            //    return 1;
+        //}
+
+    
         }
 
         public async Task<int> Delete(int id)

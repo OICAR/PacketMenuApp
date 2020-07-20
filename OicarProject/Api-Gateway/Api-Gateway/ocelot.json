@@ -17,7 +17,7 @@
       "DownstreamScheme": "https",
       "DownstreamHostAndPorts": [
         {
-          "Host": "qrservice20200427113923.azurewebsites.net",
+          "Host": "qrservice20200720081315.azurewebsites.net",
           "Port": 443
         }
       ],
@@ -37,11 +37,23 @@
       "UpstreamHttpMethod": [ "Post" ]
     },
     {
+      "DownstreamPathTemplate": "/api/Caterer",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "dapperdatabaseapi20200712065211.azurewebsites.net",
+          "Port": 443
+        }
+      ],
+      "UpstreamPathTemplate": "/api/Caterer",
+      "UpstreamHttpMethod": [ "Post" ]
+    },
+    {
       "DownstreamPathTemplate": "/api/maps",
       "DownstreamScheme": "https",
       "DownstreamHostAndPorts": [
         {
-          "Host": "googlemapsservice20200601100829.azurewebsites.net",
+          "Host": "googlemapsservice20200720090932.azurewebsites.net",
           "Port": 443
         }
       ],
@@ -53,7 +65,7 @@
       "DownstreamScheme": "https",
       "DownstreamHostAndPorts": [
         {
-          "Host": "excelservice20200603054038.azurewebsites.net",
+          "Host": "excelservice20200720090510.azurewebsites.net",
           "Port": 443
         }
       ],
@@ -62,6 +74,6 @@
     }
   ],
   "GlobalConfiguration": {
-    "BaseUrl": "https://api-gateway20200429072611.azurewebsites.net"
+    "BaseUrl": "https://api-gateway20200712080357.azurewebsites.net"
   }
 }

@@ -17,7 +17,7 @@ namespace PocketMenuUI.Infrastructure
 
         public string GetWeatherForecast() => $"{BaseURL}/api/weatherforecast";
 
-        public string PostCaterer() => throw new NotImplementedException();
+        public string PostCaterer() => $"https://dapperdatabaseapi20200712065211.azurewebsites.net/api/Caterer" ;
 
         public string PostExcel() => $"{BaseURL}/api/document";
 

@@ -48,8 +48,7 @@ namespace PocketMenuUI.Services
 
 
             return response.IsSuccessStatusCode ? JsonConvert.DeserializeObject<int>(await response.Content.ReadAsStringAsync()) : throw new Exception("Error cancelling order, try later.");
-
-
+            
             // GoogleMapDTO locations = null;
             //if (response.IsSuccessStatusCode)
             //{

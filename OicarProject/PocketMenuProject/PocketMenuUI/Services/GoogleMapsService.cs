@@ -64,6 +64,7 @@ namespace PocketMenuUI.Services
 
             var uri = _api.GetMaps();
 
+            var request = new HttpRequestMessage(HttpMethod.Get, uri);
 
             _httpClientFactory.DefaultRequestHeaders.Clear();
             //Define request data format  

@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ContentModelStore">
+    <e p="C:\Users\koweratus\.Rider2019.2\config\consoles\db" t="IncludeRecursive" />
+    <e p="C:\Users\koweratus\.Rider2019.2\config\extensions" t="IncludeRecursive" />
+    <e p="C:\Users\koweratus\.Rider2019.2\config\scratches" t="IncludeRecursive" />
+    <e p="C:\Users\koweratus\.Rider2019.2\system\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\koweratus\.Rider2019.2\system\resharper-host\local\Transient\ReSharperHost\v192\SolutionCaches\_DapperDatabase.-1134101363.00" t="ExcludeRecursive" />
+    <e p="C:\Users\koweratus\Desktop\OICAR\PacketMenuApp\OicarProject\Services\DapperDatabase" t="IncludeFlat">
+      <e p=".dockerignore" t="Include" />
+      <e p="DapperDatabase.Api" t="IncludeRecursive">
+        <e p="appsettings.Development.json" t="Include" />
+        <e p="appsettings.json" t="Include" />
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="Connected Services" t="Include">
+          <e p="Key Vault" t="Include">
+            <e p="ConnectedService.json" t="Include" />
+          </e>
+        </e>
+        <e p="Controllers" t="Include">
+          <e p="CatererController.cs" t="Include" />
+          <e p="CRUDController.cs" t="Include" />
+          <e p="CustomerController.cs" t="Include" />
+          <e p="ItemController.cs" t="Include" />
+          <e p="MealController.cs" t="Include" />
+          <e p="MenuBeverageController.cs" t="Include" />
+          <e p="MenuController.cs" t="Include" />
+          <e p="MenuMealController.cs" t="Include" />
+        </e>
+        <e p="DAL" t="Include">
+          <e p="SSMS" t="Include">
+            <e p="ISQLConnection.cs" t="Include" />
+            <e p="SQLDatabase.cs" t="Include" />
+          </e>
+        </e>
+        <e p="DapperDatabase.Api.csproj" t="IncludeRecursive" />
+        <e p="Dockerfile" t="Include" />
+        <e p="Models" t="Include">
+          <e p="Address.cs" t="Include" />
+          <e p="Alergy.cs" t="Include" />
+          <e p="Caterer.cs" t="Include" />
+          <e p="CatererRepository.cs" t="Include" />
+          <e p="Customer.cs" t="Include" />
+          <e p="CustomerDTO.cs" t="Include" />
+          <e p="CustomerRepository.cs" t="Include" />
+          <e p="EatingHabits.cs" t="Include" />
+          <e p="ICustomerRepository.cs" t="Include" />
+          <e p="IItemRepository.cs" t="Include" />
+          <e p="Ingredients.cs" t="Include" />
+          <e p="IRepository.cs" t="Include" />
+          <e p="Item.cs" t="Include" />
+          <e p="ItemRepository.cs" t="Include" />
+          <e p="Meal.cs" t="Include" />
+          <e p="MealRepository.cs" t="Include" />
+          <e p="Menu.cs" t="Include" />
+          <e p="MenuBeverage.cs" t="Include" />
+          <e p="MenuBeverageRepository.cs" t="Include" />
+          <e p="MenuMeal.cs" t="Include" />
+          <e p="MenuMealRepository.cs" t="Include" />
+          <e p="MenuRepository.cs" t="Include" />
+        </e>
+        <e p="obj" t="ExcludeRecursive">
+          <e p="Debug" t="Include">
+            <e p="netcoreapp3.1" t="Include">
+              <e p="DapperDatabase.Api.AssemblyInfo.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+        <e p="Program.cs" t="Include" />
+        <e p="Properties" t="Include">
+          <e p="launchSettings.json" t="Include" />
+        </e>
+        <e p="Startup.cs" t="Include" />
+        <e p="SwaggerExamples" t="Include">
+          <e p="Requests" t="Include">
+            <e p="CreateCustomerRequestExample.cs" t="Include" />
+          </e>
+          <e p="Responses" t="Include">
+            <e p="CustomerResponseExample.cs" t="Include" />
+          </e>
+        </e>
+        <e p="Utils" t="Include">
+          <e p="CustomerUtilities" t="Include">
+            <e p="SqlCustomerUtility.cs" t="Include" />
+            <e p="SqlItemUtility.cs" t="Include" />
+          </e>
+        </e>
+      </e>
+      <e p="DapperDatabase.sln" t="IncludeFlat" />
+      <e p="packages" t="ExcludeRecursive" />
+    </e>
+  </component>
+</project>

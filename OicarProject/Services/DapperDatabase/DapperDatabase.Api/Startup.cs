@@ -58,7 +58,7 @@ namespace DapperDatabase.Api
             services.AddSwaggerExamplesFromAssemblyOf<Startup>();
             services.AddLogging(builder => builder.AddConsole());
 
-            string conStr = Configuration.GetConnectionString("DefaultConnection");
+            string conStr = Configuration.GetConnectionString("LocalDB");
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

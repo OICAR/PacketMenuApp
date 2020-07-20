@@ -71,41 +71,46 @@ namespace PocketMenuUI.Controllers
                     Lat = model.Lat,
                     Long = model.Long
                 };
-                 var userID =
-                _userManager.GetUserId(User);
+                var userID =
+                    _userManager.GetUserId(User);
                 var newCaterer = new CatererDTO
                 {
-                    CatererID=userID,
-                    Address=model.Address,
-                    Lat=model.Lat,
-                    Long=model.Long,
-                    CateringFacilitiName=model.CateringFacilitiName,
-                    CatererName=model.CatererName
+                    CatererID = userID,
+                    Address = model.Address,
+                    Lat = model.Lat,
+                    Long = model.Long,
+                    CateringFacilitiName =
+                        model.CateringFacilitiName,
+                    CatererName = model.CatererName
                 };
 
-                newLocation= await _GoogleMapSvc.Add(newLocation);
-             var IDCateringFacility= await  _CatererSvc.PostCaterer(newCaterer);
+                 newLocation= await _GoogleMapSvc.Add(newLocation);
+
+                var idCateringFacility =
+                    await _CatererSvc.PostCaterer(
+                        newCaterer);
 
 
-           List<Item> itemList=     await _ExcelSvc.Get(model.FormDocument, IDCateringFacility);
-
-         
-
-           await _ItemSvc.PostItem(itemList);
-
-
-               var QRImage = await _QRCodeSvc.GetQRImage(newLocation);
+                List<Item> itemList =
+                    await _ExcelSvc.Get(model.FormDocument,
+                        idCateringFacility);
 
 
 
-            return File(QRImage.QRImageInBytes, System.Net.Mime.MediaTypeNames.Application.Octet, "MyQRCode.jpg");
+                await _ItemSvc.PostItem(itemList);
+
+
+                var QRImage = await _QRCodeSvc.GetQRImage(newLocation);
+ 
+ 
+ 
+             return File(QRImage.QRImageInBytes, System.Net.Mime.MediaTypeNames.Application.Octet, "MyQRCode.jpg");
+             
+             }
             
-            }
 
             return View("Index");
         }
-
-
 
 
     }

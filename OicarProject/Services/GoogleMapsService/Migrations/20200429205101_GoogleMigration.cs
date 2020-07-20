@@ -12,8 +12,7 @@ namespace GoogleMapsService.Migrations
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:Identity",
-                            "1, 1"),
+                        .Annotation("SqlServer:Identity","1, 1"),
                     Rating =
                         table.Column<int>(nullable: true),
                     Address =

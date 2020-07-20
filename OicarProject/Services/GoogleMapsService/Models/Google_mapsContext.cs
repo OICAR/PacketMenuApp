@@ -13,8 +13,7 @@ namespace GoogleMapsService.Models
 
         public virtual DbSet<GoogleMap> GoogleMap
         {
-            get;
-            set;
+            get; set;
         }
 
         protected override void OnModelCreating(

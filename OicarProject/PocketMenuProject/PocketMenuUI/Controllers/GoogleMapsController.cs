@@ -63,8 +63,7 @@ namespace PocketMenuUI.Controllers
 
         public async Task<JsonResult> GetAllLocation()
         {
-            var data =
-                       await _GoogleMapSvc.GetAllLocations();
+            var data =  await _GoogleMapSvc.GetAllLocations();
             return Json(data);
         }
 

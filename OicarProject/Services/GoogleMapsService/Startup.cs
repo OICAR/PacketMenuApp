@@ -2,8 +2,6 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using GoogleMapsService.Data;
-using GoogleMapsService.Data.Services;
 using GoogleMapsService.Models;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -36,33 +34,17 @@ namespace GoogleMapsService
             services.AddDbContext<Google_mapsContext>
             (options =>
                 options.UseSqlServer(
-                    Configuration.GetConnectionString(
-                        "google")));
-            services.AddDbContext<ApplicationDbContext>(
-                options =>
-                    options.UseSqlServer(
-                        Configuration.GetConnectionString(
-                            "DefaultConnection")));
-            services.AddDefaultIdentity<IdentityUser>(
-                    options =>
-                        options.SignIn
-                            .RequireConfirmedAccount = true)
-                .AddEntityFrameworkStores<
-                    ApplicationDbContext>();
+                    Configuration.GetConnectionString("google")));
 
+            services.AddControllersWithViews();
+            services.AddTransient<IGoogleMapsRepository, SQLGoogleMapsRepository>();
+            services.AddRazorPages();
+            services.AddHealthChecks();
             // requires
             // using Microsoft.AspNetCore.Identity.UI.Services;
             // using WebPWrecover.Services;
 
-            services
-                .AddTransient<IEmailSender, EmailSender>();
-            services
-                .AddTransient<IGoogleMapsRepository,
-                    SQLGoogleMapsRepository>();
-            services.Configure<AuthMessageSenderOptions>(
-                Configuration);
 
-         
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -86,8 +68,8 @@ namespace GoogleMapsService
 
             app.UseRouting();
 
-           
-            app.UseAuthorization();
+
+            // app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
             {

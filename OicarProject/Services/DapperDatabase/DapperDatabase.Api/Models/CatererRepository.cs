@@ -63,6 +63,7 @@ namespace DapperDatabase.Api.Models
             var sql = "AddCaterer";
 
             using (var connection = _connection.Connect(_configuration))
+          //  using var connection = new SqlConnection(_configuration.GetConnectionString("LocalDB"));
             {
                 connection.Open();
                 var queryParameters = new DynamicParameters();

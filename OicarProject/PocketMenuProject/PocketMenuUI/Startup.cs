@@ -37,7 +37,7 @@ namespace PocketMenuUI
                     Configuration.GetConnectionString("LocalDB")));
             services.AddDefaultIdentity<ApplicationUser>
             (options => options.SignIn
-            .RequireConfirmedAccount = true).AddRoles<IdentityRole>()
+            .RequireConfirmedAccount = false).AddRoles<IdentityRole>()
                 .AddEntityFrameworkStores<ApplicationDbContext>();
             services.AddTransient<IEmailSender, EmailSender>();
 

@@ -21,7 +21,9 @@ namespace PocketMenuUI.Services
         public Task SendEmailAsync(string email,
             string subject, string message)
         {
-            var apiKey = System.Environment.GetEnvironmentVariable("pocketMenu");
+            //var apiKey = System.Environment.GetEnvironmentVariable("pocketMenu");
+            var apiKey = "null";
+
             return Execute(apiKey, subject, message, email);
             //return Execute(Options.SendGridKey, subject, message, email);
 
@@ -30,8 +32,10 @@ namespace PocketMenuUI.Services
         public Task Execute(string apiKey, string subject,
             string message, string email)
         {
-            apiKey = System.Environment.GetEnvironmentVariable("pocketMenu");
-            var client = new SendGridClient(apiKey);
+            //apiKey = System.Environment.GetEnvironmentVariable("pocketMenu");
+            //var client = new SendGridClient(apiKey);
+             apiKey = "null";
+
             var msg = new SendGridMessage()
             {
                 //Options.SendGridUser
@@ -46,9 +50,10 @@ namespace PocketMenuUI.Services
 
             // Disable click tracking.
             // See https://sendgrid.com/docs/User_Guide/Settings/tracking.html
-         //   msg.SetClickTracking(false, false);
+            //   msg.SetClickTracking(false, false);
 
-            return client.SendEmailAsync(msg);
+            //return client.SendEmailAsync(msg);
+            return null;
         }
     }
 }

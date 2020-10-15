@@ -39,10 +39,7 @@ namespace PocketMenuUI.Controllers
         {
 
             var QRImage = await _QRCodeSvc.GetQRImage(file);
-
-
-
-
+            
             // ReturnFileFromBitmap();
             
             //Isto kao sto bi se inace vratio View, na ovaj nacin pretrazivac izbaci sirovi file(u ovom slucaju QR kod)

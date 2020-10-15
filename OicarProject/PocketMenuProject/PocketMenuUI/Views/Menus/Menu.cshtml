@@ -21,48 +21,41 @@
         </div>
     </div>
 
-    @if (Model.Meals != null)
+    @if (Model.Items != null)
     {
         <div class="container">
             <div class="row">
                 <ul class="collection col l6 m6 s12 offset-l3 offset-m3 with-header z-depth-1 white-bg">
-                    <li class="collection-header"><h4>Meals</h4></li>
-                    @foreach (var m in Model.Meals)
+                    <li class="collection-header"><h4>Items</h4></li>
+                    @foreach (var m in Model.Items)
                     {
-                        <li class="collection-item avatar shorten-item">
-                            <div class="yellow darken-3 circle z-depth-1 enlarge">
-                                <div class="white-text center-align avatar-align">
-                                    <p>@m.Price kn</p>
+                        @if (m.Ingredients != null)
+                        {
+                <li class="collection-item avatar shorten-item">
+                    <div class="yellow darken-3 circle z-depth-1 enlarge">
+                        <div class="white-text center-align avatar-align">
+                            <p>@m.Price kn</p>
+                        </div>
+                    </div>
+                    <span class="title" style="font-weight:bold">@m.Title</span>
+                    <p>
+                        @String.Join(", ", m.Ingredients.Select(i => i.IngredientName).ToArray())
+                    </p>
+                    </li>
+                        }
+                        else
+                        {
+                            <li class="collection-item avatar shorten-item">
+                                <div class="yellow darken-3 circle z-depth-1 enlarge">
+                                    <div class="white-text center-align avatar-align">
+                                        <p>@m.Price kn</p>
+                                    </div>
                                 </div>
-                            </div>
-                            <span class="title" style="font-weight:bold">@m.Title</span>
-                            <p>
-                                @m.Ingredients
-                            </p>
-                        </li>
-                    }
-                </ul>
-            </div>
-        </div>
-    }
-    @if (Model.Beverages != null)
-    {
-        <div class="container">
-            <div class="row">
-                <ul class="collection col l6 m6 s12 offset-l3 offset-m3 with-header z-depth-1 white-bg">
-                    <li class="collection-header"><h4>Drinks</h4></li>
-                    @foreach (var m in Model.Beverages)
-                    {
-                        <li class="collection-item avatar shorten-item">
-                            <div class="yellow darken-3 circle z-depth-1 enlarge">
-                                <div class="white-text center-align avatar-align">
-                                    <p>@m.Price kn</p>
-                                </div>
-                            </div>
-                            <p class="title p-drink">
-                                @m.Title
-                            </p>
-                        </li>
+                                <p class="title p-drink">
+                                    @m.Title
+                                </p>
+                            </li>
+                        }
                     }
                 </ul>
             </div>

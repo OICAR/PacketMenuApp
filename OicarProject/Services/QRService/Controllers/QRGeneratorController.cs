@@ -19,7 +19,7 @@ namespace QRService.Controllers
     public class QRGeneratorController : ControllerBase
     {
 
-        private const string _MENUURL = "http://localhost:57198/api/QRGenerator";
+        private const string _MENUURL = "https://localhost:44347/Menus/";
 
 
 
@@ -53,7 +53,7 @@ namespace QRService.Controllers
         {
             QRCodeGenerator qrGenerator = new QRCodeGenerator();
             //QRCodeData qrCodeData = qrGenerator.CreateQrCode(_MENUURL + file.Id, QRCodeGenerator.ECCLevel.Q);
-            QRCodeData qrCodeData = qrGenerator.CreateQrCode("https://www.youtube.com/?hl=hr&gl=HR", QRCodeGenerator.ECCLevel.Q);
+            QRCodeData qrCodeData = qrGenerator.CreateQrCode($"{_MENUURL}+{file.Lat}+{file.Long}", QRCodeGenerator.ECCLevel.Q);
 
             QRCode qrCode = new QRCode(qrCodeData);
             Bitmap qrCodeImage = qrCode.GetGraphic(10);

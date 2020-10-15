@@ -83,7 +83,7 @@ namespace PocketMenuUI.Controllers
                     CatererName=model.CatererName
                 };
 
-                //newLocation= await _GoogleMapSvc.Add(newLocation);
+                newLocation= await _GoogleMapSvc.Add(newLocation);
              var IDCateringFacility= await  _CatererSvc.PostCaterer(newCaterer);
 
 

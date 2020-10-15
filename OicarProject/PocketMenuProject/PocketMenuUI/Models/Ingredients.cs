@@ -10,12 +10,24 @@ namespace PocketMenuUI.Models
         l,
         mg,
         dl,
-        cl
+        cl,
+        g,
+        komad
     }
 
 
     public class Ingredients
     {
+        public Ingredients(string ingredientName, MesureUnit unit, double amount)
+        {
+            IngredientName = ingredientName;
+            Unit = unit;
+            Amount = amount;
+        }
+
+        public Ingredients()
+        {
+        }
 
         public string IngredientName { get; set; }
 

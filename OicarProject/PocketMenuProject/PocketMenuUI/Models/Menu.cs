@@ -16,31 +16,44 @@ namespace PocketMenuUI.Models
     //    public List<Item> Articles{ get; set; }
 
     //}
+    //public class Menu
+    //{
+
+    //    public Menu(List<Meal> meals)
+    //    {
+    //        Meals = meals;
+    //    }
+
+    //    public Menu(List<Meal> meals, List<Beverage> beverages)
+    //    {
+    //        Meals = meals;
+    //        Beverages = beverages;
+    //    }
+
+    //    public Menu(string iDCateringFacility, List<Meal> meals, List<Beverage> beverages)
+    //    {
+    //        IDCateringFacility = iDCateringFacility;
+    //        Meals = meals;
+    //        Beverages = beverages;
+    //    }
+
+    //    public string IDCateringFacility { get; set; }
+
+    //    public string CateringFacilityName { get; set; }
+    //    public List<Meal> Meals { get; set; }
+    //    public List<Beverage> Beverages { get; set; }
+    //}
+
     public class Menu
     {
-
-        public Menu(List<Meal> meals)
+        public Menu(List<Item> items, string cateringFacilityName)
         {
-            Meals = meals;
+            Items = items;
+            CateringFacilityName = cateringFacilityName;
         }
 
-        public Menu(List<Meal> meals, List<Beverage> beverages)
-        {
-            Meals = meals;
-            Beverages = beverages;
-        }
-
-        public Menu(string iDCateringFacility, List<Meal> meals, List<Beverage> beverages)
-        {
-            IDCateringFacility = iDCateringFacility;
-            Meals = meals;
-            Beverages = beverages;
-        }
-
-        public string IDCateringFacility { get; set; }
+        public List<Item> Items { get; set; }
 
         public string CateringFacilityName { get; set; }
-        public List<Meal> Meals { get; set; }
-        public List<Beverage> Beverages { get; set; }
     }
 }
